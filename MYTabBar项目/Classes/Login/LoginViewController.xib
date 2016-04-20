@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="denglu" destination="8GU-yB-yRF" id="zd4-OC-cPZ"/>
+                <outlet property="mima" destination="G3I-Gq-2Oq" id="Dgs-VK-rPd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zhanghao" destination="bGq-C2-WvB" id="KOs-0m-JiQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号信息" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGq-C2-WvB">
+                    <rect key="frame" x="64" y="198" width="192" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-Gq-2Oq">
+                    <rect key="frame" x="64" y="269" width="192" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GU-yB-yRF">
+                    <rect key="frame" x="116" y="353" width="89" height="30"/>
+                    <state key="normal" title="登    陆"/>
+                    <connections>
+                        <action selector="denglu:" destination="-1" eventType="touchUpInside" id="dUK-Bg-iSJ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大锅烩APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lh-Rb-I7W">
+                    <rect key="frame" x="97" y="122" width="126" height="29"/>
+                    <color key="backgroundColor" red="0.31853217820000002" green="0.44244531079999999" blue="0.86837369109999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="vKn-1S-wHv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8GU-yB-yRF" secondAttribute="bottom" constant="185" id="1na-WR-z7Q"/>
+                <constraint firstItem="G3I-Gq-2Oq" firstAttribute="top" secondItem="bGq-C2-WvB" secondAttribute="bottom" constant="41" id="4Il-WU-cXR"/>
+                <constraint firstItem="8GU-yB-yRF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="116" id="A8C-CU-PD9"/>
+                <constraint firstAttribute="trailing" secondItem="bGq-C2-WvB" secondAttribute="trailing" constant="64" id="CDI-Je-Q79"/>
+                <constraint firstItem="8GU-yB-yRF" firstAttribute="top" secondItem="G3I-Gq-2Oq" secondAttribute="bottom" constant="54" id="JsF-CS-PlH"/>
+                <constraint firstItem="bGq-C2-WvB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="MXU-3m-PIO"/>
+                <constraint firstItem="5Lh-Rb-I7W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="97" id="XB0-E7-oap"/>
+                <constraint firstItem="bGq-C2-WvB" firstAttribute="top" secondItem="5Lh-Rb-I7W" secondAttribute="bottom" constant="47" id="Yvo-mN-DU8"/>
+                <constraint firstItem="5Lh-Rb-I7W" firstAttribute="centerX" secondItem="bGq-C2-WvB" secondAttribute="centerX" id="bYt-9X-sgT"/>
+                <constraint firstAttribute="trailing" secondItem="8GU-yB-yRF" secondAttribute="trailing" constant="115" id="cNq-c5-yce"/>
+                <constraint firstAttribute="trailing" secondItem="G3I-Gq-2Oq" secondAttribute="trailing" constant="64" id="qWb-7m-4HX"/>
+                <constraint firstItem="G3I-Gq-2Oq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="u2A-4M-Iy0"/>
+            </constraints>
+            <point key="canvasLocation" x="407" y="472"/>
+        </view>
+    </objects>
+</document>

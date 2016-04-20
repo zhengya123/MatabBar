@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErweimaViewController">
+            <connections>
+                <outlet property="backImage" destination="ndi-kZ-e2x" id="EPu-Dx-xBo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-kZ-e2x">
+                    <rect key="frame" x="8" y="94" width="304" height="304"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7x-sW-MMr">
+                    <rect key="frame" x="8" y="476" width="304" height="30"/>
+                    <color key="backgroundColor" red="0.36669979670000002" green="0.8931609948" blue="0.66258517859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="返          回"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="O5c-EY-Mec"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的微信二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bt-jd-TZb">
+                    <rect key="frame" x="31" y="56" width="259" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.96789103403141363" green="0.96789103403141363" blue="0.96789103403141363" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ndi-kZ-e2x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="H0T-cN-YUM"/>
+                <constraint firstItem="4bt-jd-TZb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="Ha9-yG-Gc6"/>
+                <constraint firstAttribute="trailing" secondItem="g7x-sW-MMr" secondAttribute="trailing" constant="8" id="UW2-Uc-8Qs"/>
+                <constraint firstAttribute="bottom" secondItem="g7x-sW-MMr" secondAttribute="bottom" constant="62" id="YRu-47-lyc"/>
+                <constraint firstItem="g7x-sW-MMr" firstAttribute="top" secondItem="ndi-kZ-e2x" secondAttribute="bottom" constant="78" id="edv-zC-yWQ"/>
+                <constraint firstItem="g7x-sW-MMr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="gSw-pe-Smi"/>
+                <constraint firstAttribute="trailing" secondItem="ndi-kZ-e2x" secondAttribute="trailing" constant="8" id="h6b-bS-7mJ"/>
+                <constraint firstItem="ndi-kZ-e2x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="kGh-jx-XLB"/>
+                <constraint firstItem="4bt-jd-TZb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="31" id="lyK-16-Do6"/>
+                <constraint firstItem="ndi-kZ-e2x" firstAttribute="top" secondItem="4bt-jd-TZb" secondAttribute="bottom" constant="8" id="p2W-pm-L0P"/>
+                <constraint firstItem="g7x-sW-MMr" firstAttribute="top" secondItem="ndi-kZ-e2x" secondAttribute="bottom" constant="78" id="rtk-Ed-nLX"/>
+                <constraint firstAttribute="trailing" secondItem="4bt-jd-TZb" secondAttribute="trailing" constant="30" id="sSU-Xx-aSu"/>
+            </constraints>
+            <point key="canvasLocation" x="407" y="453"/>
+        </view>
+    </objects>
+</document>

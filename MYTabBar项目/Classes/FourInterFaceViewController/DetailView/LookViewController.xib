@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LookViewController">
+            <connections>
+                <outlet property="kaishis" destination="wZr-ar-CLH" id="Ggb-JW-ZXN"/>
+                <outlet property="lblStadus" destination="ctS-rF-cnd" id="5ut-ai-zWQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPreview" destination="KER-1e-shV" id="6Fr-93-MXn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KER-1e-shV">
+                    <rect key="frame" x="8" y="148" width="304" height="241"/>
+                    <color key="backgroundColor" red="1" green="0.30274376120000002" blue="0.35457761069999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctS-rF-cnd">
+                    <rect key="frame" x="8" y="38" width="299" height="89"/>
+                    <color key="backgroundColor" red="0.5507328697945264" green="0.96789103403141363" blue="0.5511548844673726" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEI-u8-UcR">
+                    <rect key="frame" x="8" y="455" width="64" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.30274376120000002" blue="0.35457761069999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="sEL-kd-8Hw"/>
+                    </constraints>
+                    <state key="normal" title="取消"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="qixiao:" destination="-1" eventType="touchUpInside" id="k5Q-2p-fj8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZr-ar-CLH">
+                    <rect key="frame" x="243" y="455" width="64" height="30"/>
+                    <color key="backgroundColor" red="0.36669979670000002" green="0.8931609948" blue="0.66258517859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="0e4-Me-DQZ"/>
+                    </constraints>
+                    <state key="normal" title="开始"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="kaishi:" destination="-1" eventType="touchUpInside" id="Ppm-ay-twW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.92439054319371727" green="0.92439054319371727" blue="0.92439054319371727" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ctS-rF-cnd" secondAttribute="trailing" constant="13" id="31f-oP-BOP"/>
+                <constraint firstItem="ctS-rF-cnd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="HP6-Um-bwi"/>
+                <constraint firstItem="wZr-ar-CLH" firstAttribute="top" secondItem="KER-1e-shV" secondAttribute="bottom" constant="66" id="Ppb-IT-wLy"/>
+                <constraint firstItem="PEI-u8-UcR" firstAttribute="leading" secondItem="KER-1e-shV" secondAttribute="leading" id="Qys-YD-SEM"/>
+                <constraint firstItem="wZr-ar-CLH" firstAttribute="baseline" secondItem="PEI-u8-UcR" secondAttribute="baseline" id="WnS-AX-QJh"/>
+                <constraint firstItem="wZr-ar-CLH" firstAttribute="trailing" secondItem="ctS-rF-cnd" secondAttribute="trailing" id="YND-87-8QX"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="h5m-GH-ghJ"/>
+                <constraint firstItem="PEI-u8-UcR" firstAttribute="leading" secondItem="ctS-rF-cnd" secondAttribute="leading" id="hso-Bq-vGr"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="ctS-rF-cnd" secondAttribute="bottom" constant="21" id="l3k-jD-jaa"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="148" id="rb3-FZ-xWa"/>
+                <constraint firstItem="ctS-rF-cnd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="tJw-qT-U6v"/>
+                <constraint firstAttribute="bottom" secondItem="wZr-ar-CLH" secondAttribute="bottom" constant="83" id="ttd-q9-sRG"/>
+            </constraints>
+            <point key="canvasLocation" x="407" y="453"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="MySecondTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="aQs-Nv-Z0Z">
+                        <rect key="frame" x="8" y="8" width="106" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="106" id="v2w-G2-39X"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="肩关节疼痛不只是肩周炎（一）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9V-k4-Inw">
+                        <rect key="frame" x="122" y="8" width="196" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张建中 （主任医师/教授）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWU-PW-6gc">
+                        <rect key="frame" x="122" y="39" width="211" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首都医科大学附属北京同仁医院" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bQ-Fs-NYo">
+                        <rect key="frame" x="122" y="75" width="211" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="iel-kG-590"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9bQ-Fs-NYo" firstAttribute="leading" secondItem="ZWU-PW-6gc" secondAttribute="leading" id="1YM-lC-D6z"/>
+                    <constraint firstItem="aQs-Nv-Z0Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="1yk-vt-deD"/>
+                    <constraint firstItem="9bQ-Fs-NYo" firstAttribute="top" secondItem="ZWU-PW-6gc" secondAttribute="bottom" constant="8" symbolic="YES" id="4tF-Bq-YxS"/>
+                    <constraint firstItem="J9V-k4-Inw" firstAttribute="leading" secondItem="aQs-Nv-Z0Z" secondAttribute="trailing" constant="8" id="AKm-Md-6Aj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZWU-PW-6gc" secondAttribute="trailing" constant="-21" id="O32-bb-iEF"/>
+                    <constraint firstItem="ZWU-PW-6gc" firstAttribute="top" secondItem="J9V-k4-Inw" secondAttribute="bottom" constant="3" id="Qwd-9x-6dc"/>
+                    <constraint firstItem="aQs-Nv-Z0Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Wdf-cd-9e5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9bQ-Fs-NYo" secondAttribute="bottom" constant="-1" id="cBz-4n-gNg"/>
+                    <constraint firstItem="aQs-Nv-Z0Z" firstAttribute="centerY" secondItem="ZWU-PW-6gc" secondAttribute="centerY" id="fHA-wq-C0e"/>
+                    <constraint firstItem="ZWU-PW-6gc" firstAttribute="top" secondItem="J9V-k4-Inw" secondAttribute="bottom" constant="3" id="hsg-zS-TKA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="J9V-k4-Inw" secondAttribute="trailing" constant="-6" id="knH-BE-KOs"/>
+                    <constraint firstItem="ZWU-PW-6gc" firstAttribute="leading" secondItem="aQs-Nv-Z0Z" secondAttribute="trailing" constant="8" id="lfa-bW-HdP"/>
+                    <constraint firstItem="9bQ-Fs-NYo" firstAttribute="trailing" secondItem="ZWU-PW-6gc" secondAttribute="trailing" id="u6J-a8-1cg"/>
+                    <constraint firstItem="aQs-Nv-Z0Z" firstAttribute="top" secondItem="J9V-k4-Inw" secondAttribute="top" id="ufM-t4-HAN"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aQs-Nv-Z0Z" secondAttribute="bottom" constant="4" id="vUH-wn-liE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="305" y="384.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="banner.png" width="750" height="360"/>
+    </resources>
+</document>
