@@ -199,7 +199,7 @@
 //在集合视图中，每一个cell叫做item
 //设置每个cell(item)的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(110,39);
+    return CGSizeMake(SCREEN_W/3,39);
 }
 //描述的是所有cell最外边组成的视图与collectionView上、左、下、右的间隔
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{

@@ -67,12 +67,14 @@
                         <constraint firstItem="XXY-nG-GRw" firstAttribute="trailing" secondItem="kzF-SD-VMD" secondAttribute="trailing" id="5db-PX-uiq"/>
                         <constraint firstItem="F4F-3c-OJP" firstAttribute="leading" secondItem="kzF-SD-VMD" secondAttribute="leading" id="5fy-ic-NHa"/>
                         <constraint firstItem="kzF-SD-VMD" firstAttribute="leading" secondItem="hJH-qH-tje" secondAttribute="leading" constant="28" id="6Hn-Td-FM0"/>
+                        <constraint firstItem="F4F-3c-OJP" firstAttribute="top" secondItem="kzF-SD-VMD" secondAttribute="bottom" constant="18" id="CHJ-le-3iK"/>
                         <constraint firstAttribute="bottom" secondItem="F4F-3c-OJP" secondAttribute="bottom" constant="131" id="RIt-Aq-jTU"/>
                         <constraint firstAttribute="trailing" secondItem="kzF-SD-VMD" secondAttribute="trailing" constant="28" id="TcH-2a-bxb"/>
                         <constraint firstItem="F4F-3c-OJP" firstAttribute="trailing" secondItem="kzF-SD-VMD" secondAttribute="trailing" id="e9g-5U-cXA"/>
                         <constraint firstItem="F4F-3c-OJP" firstAttribute="top" secondItem="kzF-SD-VMD" secondAttribute="bottom" constant="18" id="faG-RY-Qsu"/>
                         <constraint firstItem="XXY-nG-GRw" firstAttribute="leading" secondItem="kzF-SD-VMD" secondAttribute="leading" id="mYc-HU-BW1"/>
                         <constraint firstItem="IqY-rE-sCS" firstAttribute="top" secondItem="hJH-qH-tje" secondAttribute="top" constant="73" id="v2d-eU-Rcb"/>
+                        <constraint firstItem="kzF-SD-VMD" firstAttribute="top" secondItem="XXY-nG-GRw" secondAttribute="bottom" constant="17" id="zW5-Vd-wkE"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWo-g2-X2P">

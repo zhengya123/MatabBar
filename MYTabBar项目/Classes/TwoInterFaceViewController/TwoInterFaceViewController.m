@@ -14,6 +14,7 @@
 #import "TwoInterDetailViewController.h"
 #import "VideoViewController.h"
 #import "DescripeViewController.h"
+#import "ZXShopCartViewController.h"
 @interface TwoInterFaceViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -24,6 +25,7 @@
     UITableView * _tableView;
     UIImageView * BaseV;
     NSArray * arrayLabeltext;
+    NSArray * arrayTitles;
 
 }
 - (void)viewDidLoad {
@@ -36,7 +38,7 @@
 -(void)createData{
 
     arrayLabeltext = @[@"咨询*会议",@"视频中心",@"技术邦",@"驻地手术指导",@"学术会议",@"人工关节登记"];
-
+    arrayTitles = @[@"技术邦精选",@"老教授信息"];
 
 }
 -(void)createUI{
@@ -72,6 +74,7 @@
     _tableView.dataSource=self;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.showsVerticalScrollIndicator = NO;
+    
     [_tableView registerNib:[UINib nibWithNibName:@"MySecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"nameCell"];
 
     [_tableView registerNib:[UINib nibWithNibName:@"MyFirst1TableViewCell" bundle:nil] forCellReuseIdentifier:@"firstnameCell"];
@@ -166,7 +169,8 @@
         
         
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, self.view.frame.size.width / 2, 40)];
-        nameLabel.text = @"技术邦精选";
+        NSLog(@"%ld",section);
+        nameLabel.text = arrayTitles[section-1];
         nameLabel.textAlignment = NSTextAlignmentLeft;
         nameLabel.textColor = [UIColor blackColor];
         
@@ -227,10 +231,12 @@
 }
 - (void)zixunhuizhen{
    
-    TwoInterDetailViewController * twoDetail = [[TwoInterDetailViewController alloc]init];
-   twoDetail.titleName = arrayLabeltext[0];
-    NSLog(@"%@",arrayLabeltext[0]);
-    [self.navigationController pushViewController:twoDetail animated:YES];
+//    TwoInterDetailViewController * twoDetail = [[TwoInterDetailViewController alloc]init];
+//   twoDetail.titleName = arrayLabeltext[0];
+//    NSLog(@"%@",arrayLabeltext[0]);
+//    [self.navigationController pushViewController:twoDetail animated:YES];
+    ZXShopCartViewController * shop = [[ZXShopCartViewController alloc]init];
+    [self.navigationController pushViewController:shop animated:YES];
 }
 -(void)shipinzhongxin{
 
