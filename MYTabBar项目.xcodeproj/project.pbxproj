@@ -195,6 +195,8 @@
 		DF45FA011C7EF284008DA1A7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF45F9FF1C7EF284008DA1A7 /* LoginViewController.xib */; };
 		DF9449241C7D407C003744F4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF9449211C7D407C003744F4 /* SVProgressHUD.bundle */; };
 		DF9449251C7D407C003744F4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9449231C7D407C003744F4 /* SVProgressHUD.m */; };
+		DFA3CCB81CC9B18500509FB5 /* sanpengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */; };
+		DFA3CCB91CC9B18500509FB5 /* sanpengViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */; };
 		DFAFBC9D1CBE47910033F57C /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAFBC9B1CBE47910033F57C /* ADViewController.m */; };
 		DFAFBC9E1CBE47910033F57C /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAFBC9C1CBE47910033F57C /* ADViewController.xib */; };
 		DFB7A17E1CB78EEB00F0BAB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB7A17D1CB78EEB00F0BAB3 /* Foundation.framework */; };
@@ -585,6 +587,9 @@
 		DF9449211C7D407C003744F4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		DF9449221C7D407C003744F4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		DF9449231C7D407C003744F4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DFA3CCB51CC9B18500509FB5 /* sanpengViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sanpengViewController.h; path = sanpeng/sanpengViewController.h; sourceTree = "<group>"; };
+		DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sanpengViewController.m; path = sanpeng/sanpengViewController.m; sourceTree = "<group>"; };
+		DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = sanpengViewController.xib; path = sanpeng/sanpengViewController.xib; sourceTree = "<group>"; };
 		DFAFBC9A1CBE47910033F57C /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		DFAFBC9B1CBE47910033F57C /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		DFAFBC9C1CBE47910033F57C /* ADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
@@ -1049,6 +1054,7 @@
 		DF3ED86F1C7C0CB300597967 /* OneInterFaceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DFA3CCB41CC9B13F00509FB5 /* sanpeng */,
 				DF3ED8E21C7C352000597967 /* Controller */,
 				DF3ED8E11C7C351100597967 /* View */,
 				DF3ED8E01C7C350900597967 /* Model */,
@@ -1473,6 +1479,16 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		DFA3CCB41CC9B13F00509FB5 /* sanpeng */ = {
+			isa = PBXGroup;
+			children = (
+				DFA3CCB51CC9B18500509FB5 /* sanpengViewController.h */,
+				DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */,
+				DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */,
+			);
+			name = sanpeng;
+			sourceTree = "<group>";
+		};
 		DFB7A2511CB791D500F0BAB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1710,6 +1726,7 @@
 				DF3ED86A1C7C0B7F00597967 /* tab_c0.png in Resources */,
 				DF3ED9281C7C5A7600597967 /* MJRefresh.bundle in Resources */,
 				DF45FA011C7EF284008DA1A7 /* LoginViewController.xib in Resources */,
+				DFA3CCB91CC9B18500509FB5 /* sanpengViewController.xib in Resources */,
 				DF42D7991CB3AB91008DD4E0 /* trailer@2x.png in Resources */,
 				DFFDC12F1CBF628200E3FBA5 /* 咨询消息.png in Resources */,
 				DF26884C1CC87C3500334D9D /* goods.json in Resources */,
@@ -1834,6 +1851,7 @@
 				DF3ED8DB1C7C32FE00597967 /* commonNavigation.m in Sources */,
 				DF3ED8DF1C7C32FE00597967 /* PrintObject.m in Sources */,
 				DF3ED8CA1C7C32FE00597967 /* AFHTTPSessionManager.m in Sources */,
+				DFA3CCB81CC9B18500509FB5 /* sanpengViewController.m in Sources */,
 				DF3ED8D31C7C32FE00597967 /* UIAlertView+AFNetworking.m in Sources */,
 				DF436E261CBB9FF30058565C /* SerialLocationViewController.m in Sources */,
 				DF3ED91A1C7C5A7600597967 /* MJRefreshAutoFooter.m in Sources */,
