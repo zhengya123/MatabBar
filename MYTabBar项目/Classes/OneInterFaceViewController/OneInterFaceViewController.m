@@ -20,7 +20,7 @@
 #import "OtherViewController.h"
 #import "ADViewController.h"
 #import "UINavigationBar+Awesome.h"
-
+#import "sanpengViewController.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -280,9 +280,11 @@
 }
 -(void)buttonone{
     NSLog(@"议价交易");
-    OtherViewController * other = [[OtherViewController alloc]init];
-    other.titles = @"议价交易";
-    [self.navigationController pushViewController:other animated:YES];
+//    OtherViewController * other = [[OtherViewController alloc]init];
+//    other.titles = @"议价交易";
+//    [self.navigationController pushViewController:other animated:YES];
+    sanpengViewController * sanpeng = [sanpengViewController new];
+    [self.navigationController pushViewController:sanpeng animated:YES];
 
 }
 -(void)buttontwo{

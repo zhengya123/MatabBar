@@ -25,6 +25,7 @@
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(10, 100, 50, 50);
     button.backgroundColor = [UIColor redColor];
+    button.layer.cornerRadius = 25;
     [button addTarget:self action:@selector(playInputClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 

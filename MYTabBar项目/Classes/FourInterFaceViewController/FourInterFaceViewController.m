@@ -12,14 +12,17 @@
 #import "RootNavigationController.h"
 #import "ErweimaViewController.h"
 #import "LookViewController.h"
-
+#import "API.h"
 #import "BUIView.h"
 #import "NewsViewController.h"
+#import <CoreLocation/CoreLocation.h>
 @interface FourInterFaceViewController ()<
 UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+CLLocationManagerDelegate>
 
-
+//初始化定位变量
+@property (nonatomic, strong) CLLocationManager *manager;
 @end
 
 @implementation FourInterFaceViewController
@@ -29,6 +32,10 @@ UITableViewDataSource>
     UIImageView * _imageView;
     CATransition *animation;
     NSString * message;
+    CLPlacemark * plmark;
+    UIView * view;
+    NSTimer * time;
+    NSString * weizhixinxi;
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -40,10 +47,17 @@ UITableViewDataSource>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   [self getLocation];
     [self initData];
     [self initUI];
     // Do any additional setup after loading the view from its nib.
+}
+//(定位)初始化变量manager
+- (void)getLocation{
+    _manager = [[CLLocationManager alloc]init];
+    [_manager requestAlwaysAuthorization];
+    _manager.delegate = self;
+    [_manager startUpdatingLocation];
 }
 -(void)initData{
     
@@ -70,7 +84,7 @@ UITableViewDataSource>
     
     NSString * strfive=[NSString stringWithFormat:@"我的二维码"];
     NSString * strsix=[NSString stringWithFormat:@"扫一扫"];
-    NSString * strseven=[NSString stringWithFormat:@"摇一摇"];
+    NSString * strseven=[NSString stringWithFormat:@"我的城市"];
     [arraytwo addObject:strfive];
     [arraytwo addObject:strsix];
     [arraytwo addObject:strseven];
@@ -114,7 +128,28 @@ UITableViewDataSource>
     animation.duration = 1.0;
     animation.timingFunction = UIViewAnimationCurveEaseInOut;
     
+    /**
+     View显示正在定位中、、、
+     */
+    view = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_W/4 , SCREEN_H/2- SCREEN_W/4 *( 9/16), SCREEN_W/2, SCREEN_W/2 * ( 9/16))];
+    view.layer.cornerRadius = 25;
+    view.backgroundColor = [UIColor whiteColor];
+    //[view setBackgroundColor:[UIColor colorWithRed:0.0 green:1.0 blue:1.0 alpha:0.5]];
+    [self.view addSubview:view];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, 50)];
+    label.text = @"正在定位中、、、";
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [view addSubview:label];
+    
+    view.hidden = YES;
+    
 }
+//- (UIColor *)colorWithAlphaComponent:(CGFloat)alpha
+//{
+//[view.backgroundColor colorWithAlphaComponent:0.5];
+//    
+//}
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -223,6 +258,13 @@ UITableViewDataSource>
             
             }
                 break;
+            case 2:
+            {
+                //我的定位的城市
+                [self location];
+            
+            }
+                break;
                 
             default:
                 break;
@@ -268,6 +310,48 @@ UITableViewDataSource>
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 40;
     
+}
+-(void)location{
+    
+    
+    if (plmark.name == nil) {
+        view.hidden = NO;
+        time = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(dingweijianche) userInfo:nil repeats:YES];
+    }else{
+    
+        NSString * location = [NSString stringWithFormat:@"您现在的地址是：%@",plmark.name];
+        
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:location delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+    
+
+}
+-(void)dingweijianche{
+
+    if (plmark.name !=nil) {
+        view.hidden = YES;
+        [self location];
+        [time invalidate];
+    }
+
+
+
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *currLocation=[locations lastObject];
+    NSLog(@"la---%f, lo---%f",currLocation.coordinate.latitude,currLocation.coordinate.longitude);
+    // 使用CLGeocoder的做法，其实是因为ios5开始，iphone推荐的做法。而MKReverseGeocoder在ios5之后，就不再推荐使用了，因为这个类需要实现两个委托方法。而使用CLGeocodre，则可以使用直接的方法。
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:currLocation completionHandler:^(NSArray* placemarks,NSError *error) {
+        if (placemarks.count >0   ) {
+            // 自动定位获取城市等信息
+            plmark = [placemarks objectAtIndex:0];
+            NSLog(@"%@", plmark.name); //显示所有地址
+            //            _label.text = plmark.name; //给label负值
+        }
+    }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

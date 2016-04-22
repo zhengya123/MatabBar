@@ -236,6 +236,7 @@
 //    NSLog(@"%@",arrayLabeltext[0]);
 //    [self.navigationController pushViewController:twoDetail animated:YES];
     ZXShopCartViewController * shop = [[ZXShopCartViewController alloc]init];
+    //self.tabBarController.tabBar.hidden = YES;
     [self.navigationController pushViewController:shop animated:YES];
 }
 -(void)shipinzhongxin{
