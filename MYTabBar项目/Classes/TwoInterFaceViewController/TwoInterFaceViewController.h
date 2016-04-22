@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TwoInterFaceViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *BaseView;
+
 
 @end

@@ -3,10 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="sanpengViewController">
             <connections>
+                <outlet property="titleBaseView" destination="1Ps-ME-joT" id="ZgP-Su-K4u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,12 +17,48 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-ME-joT">
-                    <rect key="frame" x="0.0" y="8" width="320" height="161"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-ME-joT">
+                    <rect key="frame" x="0.0" y="61" width="320" height="161"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车型 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz9-wP-42a">
+                            <rect key="frame" x="8" y="48" width="75" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="jz9-wP-42a" secondAttribute="height" multiplier="75:31" id="ys0-Oh-En3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="配置表" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ox-Lj-gzZ">
+                            <rect key="frame" x="8" y="87" width="75" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="0ox-Lj-gzZ" secondAttribute="height" multiplier="75:31" id="v0X-mO-V5p"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.36669979670000002" green="0.8931609948" blue="0.66258517859999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jz9-wP-42a" secondAttribute="trailing" constant="237" id="8kE-EX-cmc"/>
+                        <constraint firstItem="0ox-Lj-gzZ" firstAttribute="top" secondItem="jz9-wP-42a" secondAttribute="bottom" constant="8" id="B1j-Pa-FOg"/>
+                        <constraint firstItem="0ox-Lj-gzZ" firstAttribute="leading" secondItem="1Ps-ME-joT" secondAttribute="leading" constant="8" id="Wi9-cr-ZXB"/>
+                        <constraint firstAttribute="width" secondItem="1Ps-ME-joT" secondAttribute="height" multiplier="320:161" id="X2s-9K-WVX"/>
+                        <constraint firstAttribute="bottom" secondItem="0ox-Lj-gzZ" secondAttribute="bottom" constant="43" id="YuS-GS-bWX"/>
+                        <constraint firstItem="jz9-wP-42a" firstAttribute="leading" secondItem="1Ps-ME-joT" secondAttribute="leading" constant="8" id="aTJ-4d-MnD"/>
+                        <constraint firstItem="0ox-Lj-gzZ" firstAttribute="top" secondItem="jz9-wP-42a" secondAttribute="bottom" constant="8" id="lPh-c1-LLK"/>
+                        <constraint firstItem="jz9-wP-42a" firstAttribute="top" secondItem="1Ps-ME-joT" secondAttribute="top" constant="48" id="rRl-Fn-4hn"/>
+                        <constraint firstAttribute="trailing" secondItem="0ox-Lj-gzZ" secondAttribute="trailing" constant="237" id="z4L-LU-mV4"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Ps-ME-joT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XCw-SM-eHI"/>
+                <constraint firstAttribute="trailing" secondItem="1Ps-ME-joT" secondAttribute="trailing" id="lK8-vh-nFn"/>
+                <constraint firstItem="1Ps-ME-joT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="61" id="yFU-go-PqS"/>
+            </constraints>
             <point key="canvasLocation" x="447" y="415"/>
         </view>
     </objects>

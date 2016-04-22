@@ -41,6 +41,7 @@
     NSMutableArray * imageArray;
     BOOL _isLoadMore;
     UIImageView * _imageView;
+    commonModel * requestData;
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
@@ -176,7 +177,7 @@
      }
 -(void)next{
 
-    NSLog(@"%@",dict);
+   // NSLog(@"%@",dict);
     NSDictionary * dict1 = [NSDictionary new];
     NSDictionary * dict2 = [NSDictionary new];
     NSDictionary * dicAD = [NSDictionary new];

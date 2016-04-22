@@ -9,5 +9,6 @@
 #import "TWOBASEViewController.h"
 
 @interface sanpengViewController : TWOBASEViewController
+@property (weak, nonatomic) IBOutlet UIView *titleBaseView;
 
 @end

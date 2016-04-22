@@ -197,6 +197,8 @@
 		DF9449251C7D407C003744F4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9449231C7D407C003744F4 /* SVProgressHUD.m */; };
 		DFA3CCB81CC9B18500509FB5 /* sanpengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */; };
 		DFA3CCB91CC9B18500509FB5 /* sanpengViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */; };
+		DFA3CCBE1CCA036100509FB5 /* CarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA3CCBC1CCA036100509FB5 /* CarCollectionViewCell.m */; };
+		DFA3CCBF1CCA036100509FB5 /* CarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFA3CCBD1CCA036100509FB5 /* CarCollectionViewCell.xib */; };
 		DFAFBC9D1CBE47910033F57C /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAFBC9B1CBE47910033F57C /* ADViewController.m */; };
 		DFAFBC9E1CBE47910033F57C /* ADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAFBC9C1CBE47910033F57C /* ADViewController.xib */; };
 		DFB7A17E1CB78EEB00F0BAB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB7A17D1CB78EEB00F0BAB3 /* Foundation.framework */; };
@@ -590,6 +592,9 @@
 		DFA3CCB51CC9B18500509FB5 /* sanpengViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sanpengViewController.h; path = sanpeng/sanpengViewController.h; sourceTree = "<group>"; };
 		DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = sanpengViewController.m; path = sanpeng/sanpengViewController.m; sourceTree = "<group>"; };
 		DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = sanpengViewController.xib; path = sanpeng/sanpengViewController.xib; sourceTree = "<group>"; };
+		DFA3CCBB1CCA036100509FB5 /* CarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarCollectionViewCell.h; path = sanpeng/Views/CarCollectionViewCell.h; sourceTree = "<group>"; };
+		DFA3CCBC1CCA036100509FB5 /* CarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarCollectionViewCell.m; path = sanpeng/Views/CarCollectionViewCell.m; sourceTree = "<group>"; };
+		DFA3CCBD1CCA036100509FB5 /* CarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarCollectionViewCell.xib; path = sanpeng/Views/CarCollectionViewCell.xib; sourceTree = "<group>"; };
 		DFAFBC9A1CBE47910033F57C /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
 		DFAFBC9B1CBE47910033F57C /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
 		DFAFBC9C1CBE47910033F57C /* ADViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADViewController.xib; sourceTree = "<group>"; };
@@ -1482,11 +1487,22 @@
 		DFA3CCB41CC9B13F00509FB5 /* sanpeng */ = {
 			isa = PBXGroup;
 			children = (
+				DFA3CCBA1CC9FFA300509FB5 /* View */,
 				DFA3CCB51CC9B18500509FB5 /* sanpengViewController.h */,
 				DFA3CCB61CC9B18500509FB5 /* sanpengViewController.m */,
 				DFA3CCB71CC9B18500509FB5 /* sanpengViewController.xib */,
 			);
 			name = sanpeng;
+			sourceTree = "<group>";
+		};
+		DFA3CCBA1CC9FFA300509FB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFA3CCBB1CCA036100509FB5 /* CarCollectionViewCell.h */,
+				DFA3CCBC1CCA036100509FB5 /* CarCollectionViewCell.m */,
+				DFA3CCBD1CCA036100509FB5 /* CarCollectionViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		DFB7A2511CB791D500F0BAB3 /* Frameworks */ = {
@@ -1760,6 +1776,7 @@
 				DF436E231CBB9D270058565C /* AMap.bundle in Resources */,
 				DFFDC1301CBF628200E3FBA5 /* banner.png in Resources */,
 				DFFDC1261CBF626F00E3FBA5 /* 箭头.png in Resources */,
+				DFA3CCBF1CCA036100509FB5 /* CarCollectionViewCell.xib in Resources */,
 				DFF790E81CC5DDEF00352D57 /* ziliao.png in Resources */,
 				DFF790DF1CC5CF1100352D57 /* DecripeCollectionViewCell.xib in Resources */,
 				DFFDC1271CBF626F00E3FBA5 /* 人工关节登记.png in Resources */,
@@ -1860,6 +1877,7 @@
 				DF3ED8CE1C7C32FE00597967 /* AFURLRequestSerialization.m in Sources */,
 				DF436E0B1CBB80C70058565C /* qrencode.c in Sources */,
 				DF3ED9291C7C5A7600597967 /* MJRefreshConst.m in Sources */,
+				DFA3CCBE1CCA036100509FB5 /* CarCollectionViewCell.m in Sources */,
 				DF3ED8E61C7C36D300597967 /* OneTableViewCell.m in Sources */,
 				DFF7913C1CC6076000352D57 /* LookViewController.m in Sources */,
 				DF3ED8761C7C0CFB00597967 /* OneInterFaceViewController.m in Sources */,

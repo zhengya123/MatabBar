@@ -28,7 +28,8 @@
 #define BASE @""
 #define ZHONGJIAN @""
 #define ONEINTERFACE_TABLEVIEW @"http://api.haodou.com/index.php?appid=2&appkey=9ef269eec4f7a9d07c73952d06b5413f&format=json&sessionid=1445340718396&vc=76&vn=5.3.0&loguid=0&deviceid=haodou865267025865048&uuid=c8fcd4d1ecbc62186735d141cab8e833&channel=huawei_v530&method=Topic.index&virtual=&signmethod=md5&v=2&timestamp=1445343714&nonce=0.41124150521148695&appsign=9ad9da9bf43517383b0bebf5dbe35093"
-
+#define FENGHUANG_BASE @"http://api.tool.chexun.com/"
+#define FENGHUANG_GETBUTCAR @"mobile/buyCarCompare.do"
 
 
 //高度

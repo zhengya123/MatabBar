@@ -25,6 +25,7 @@
     if(self.navigationController.childViewControllers.count == 1)
     {
        self.tabBarController.tabBar.hidden = NO;
+        
     }else{
     
     

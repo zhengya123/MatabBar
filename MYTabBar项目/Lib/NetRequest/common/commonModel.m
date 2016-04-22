@@ -32,11 +32,19 @@
 -(void)getTheDataWithUrl:(NSString *)url getPath:(NSString *)path parameters:(NSDictionary *)parameters
 {
     NSURL* baseUrl = [NSURL URLWithString:url];
-    AFHTTPSessionManager* sessionManager = [[AFHTTPSessionManager manager] initWithBaseURL:baseUrl];
-
-    [sessionManager GET:path parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    
+//    AFHTTPSessionManager* sessionManager = [[AFHTTPSessionManager manager] initWithBaseURL:baseUrl];
+//
+//    [sessionManager GET:path parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+//        [self handleResponse:responseObject];
+//    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+//        [self handleError:error];
+//    }];
+    AFHTTPRequestOperationManager * manager = [[AFHTTPRequestOperationManager manager]initWithBaseURL:baseUrl];
+    manager.responseSerializer=[AFHTTPResponseSerializer serializer];
+    [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         [self handleResponse:responseObject];
-    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         [self handleError:error];
     }];
 }
@@ -71,25 +79,14 @@
     [self getTheDataWithUrl:_baseUrl getPath:_basePath parameters:parameters];
 }
 
--(void)handleResponse:(id _Nonnull) responseObject {
-    if ([[responseObject objectForKey:@"Data"] isKindOfClass:[NSNull class]]) {
-        NSData *errorData = [[responseObject objectForKey:@"ResponseInstance"] dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *errorDic = [NSJSONSerialization JSONObjectWithData:errorData options:NSJSONReadingMutableContainers error:nil];
-        NSString *errorMessage=[[NSString alloc]init];
-        if ([[errorDic objectForKey:@"BusinessExceptionInstance"] isKindOfClass:[NSNull class]]) {
-            errorMessage = @"";
-        }
-        else
-        {
-            errorMessage = [[errorDic objectForKey:@"BusinessExceptionInstance"] objectForKey:@"Message"];
-        }
-        
-        [self.delegate gotTheErrorMessage:errorMessage and:self];
-    }else{
-        NSData *data = [[responseObject objectForKey:@"Data"] dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        [self.delegate gotTheData:dataDic and:self];
+-(void)handleResponse:(NSData *) responseObject {
+    //NSLog(@"%@",responseObject);
+    if (responseObject == nil) {
+        return;
     }
+        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        [self.delegate gotTheData:dataDic and:self];
+   // }
 }
 
 -(void)handleError:(NSError* _Nonnull) error {
