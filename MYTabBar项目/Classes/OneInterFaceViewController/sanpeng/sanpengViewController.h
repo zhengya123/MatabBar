@@ -5,10 +5,10 @@
 //  Created by dqong on 16/4/22.
 //  Copyright © 2016年 dqong. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import "TWOBASEViewController.h"
 
-@interface sanpengViewController : TWOBASEViewController
-@property (weak, nonatomic) IBOutlet UIView *titleBaseView;
+@interface sanpengViewController : UIViewController
+
 
 @end

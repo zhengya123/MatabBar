@@ -21,6 +21,7 @@
 #import "ADViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import "sanpengViewController.h"
+#import "CarViewController.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -341,9 +342,11 @@
 }
 -(void)buttontwo{
      NSLog(@"竞价交易");
-    OtherViewController * other = [[OtherViewController alloc]init];
-    other.titles = @"竞价交易";
-    [self.navigationController pushViewController:other animated:YES];
+    CarViewController * carVC = [CarViewController new];
+    [self.navigationController pushViewController:carVC animated:YES];
+//    OtherViewController * other = [[OtherViewController alloc]init];
+//    other.titles = @"竞价交易";
+//    [self.navigationController pushViewController:other animated:YES];
 }
 -(void)buttonthree{
      NSLog(@"闪拍交易");

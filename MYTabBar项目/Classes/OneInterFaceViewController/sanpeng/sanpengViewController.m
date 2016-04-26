@@ -11,11 +11,13 @@
 #import "commonModel.h"
 #import "SDCycleScrollView.h"
 #import "CarCollectionViewCell.h"
+#import "Masonry.h"
 @interface sanpengViewController ()<
 commonConnectDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout>
 
+//@property(nonatomic,strong)UIView *titleBaseView;
 @end
 
 @implementation sanpengViewController
@@ -24,6 +26,8 @@ UICollectionViewDelegateFlowLayout>
     UIView * navBaseView;
     commonModel * requestData;
      UICollectionView *_collectionView;
+    UIView *BaseView;
+    
     
 }
 - (void)viewDidLoad {
@@ -64,6 +68,7 @@ UICollectionViewDelegateFlowLayout>
     navBaseView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_W/4, 0, SCREEN_W/2, 40)];
     navBaseView.backgroundColor = [UIColor yellowColor];
     self.navigationItem.titleView = navBaseView;
+    
 
     //segment
     NSArray * segarray = @[@"隐藏相同",@"显示全部"];
@@ -78,6 +83,41 @@ UICollectionViewDelegateFlowLayout>
 }
 -(void)createUI{
 
+    BaseView = [UIView new];
+    BaseView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:BaseView];
+    
+    [BaseView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.top.equalTo(@69);
+        make.width.equalTo(@(SCREEN_W));
+        make.height.equalTo(@100);
+    }];
+    
+    
+    UILabel * label = [UILabel new];
+    label.text = @"车型";
+    label.textColor = [UIColor blackColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [BaseView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@30);
+        make.left.equalTo(@10);
+        make.width.equalTo(@(SCREEN_W/6));
+        make.height.equalTo(@20);
+    } ];
+    
+    UILabel * label2 = [UILabel new];
+    label2.text = @"配置表";
+    label2.textColor = [UIColor blackColor];
+    label2.textAlignment = NSTextAlignmentCenter;
+    [BaseView addSubview:label2];
+    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(label.mas_bottom).offset(5);
+        make.centerX.equalTo(label.mas_centerX);
+        make.left.and.right.equalTo(label);
+    } ];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     UICollectionViewFlowLayout  *flow = [[UICollectionViewFlowLayout alloc] init];
     //设置集合视图滚动的方向
@@ -86,15 +126,24 @@ UICollectionViewDelegateFlowLayout>
     flow.minimumLineSpacing = 20 * PROPORTION;
     //设置cell纵向最小间隔
     flow.minimumInteritemSpacing =0;
+   
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(SCREEN_W/4 - 25 * PROPORTION,25, (SCREEN_W-(SCREEN_W/4-25))*PROPORTION ,self.titleBaseView.frame.size.height - 50) collectionViewLayout:flow];
+    //_collectionView = [[UICollectionView alloc]init];
+    //_collectionView.collectionViewLayout= flow;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.backgroundColor = [UIColor clearColor];
     _collectionView.showsHorizontalScrollIndicator = NO;
     _collectionView.pagingEnabled = YES;
-    [self.titleBaseView addSubview:_collectionView];
+    [BaseView addSubview:_collectionView];
 
+    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(@10);
+    make.left.equalTo(label2.mas_right).offset(10);
+    make.width.equalTo(@((SCREEN_W/6) * 5-10));
+    make.height.equalTo(@80);
+}];
 
     [_collectionView registerNib:[UINib nibWithNibName:@"CarCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 
@@ -114,6 +163,7 @@ UICollectionViewDelegateFlowLayout>
     CarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
     
     cell.titless.text = @"1.6L 手动时尚型";
+   // cell.titless.font = [UIFont systemFontOfSize:<#(CGFloat)#>]
     cell.backgroundColor = [UIColor yellowColor];
     return cell;
 }
@@ -128,11 +178,11 @@ UICollectionViewDelegateFlowLayout>
 //在集合视图中，每一个cell叫做item
 //设置每个cell(item)的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(152,130);
+    return CGSizeMake(_collectionView.frame.size.width /2 -20,80);
 }
 //描述的是所有cell最外边组成的视图与collectionView上、左、下、右的间隔
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(10,10, 10, 30);
+    return UIEdgeInsetsMake(10,0, 10, 30);
 }
 
 -(void)segnmentClick:(UISegmentedControl *)seg{

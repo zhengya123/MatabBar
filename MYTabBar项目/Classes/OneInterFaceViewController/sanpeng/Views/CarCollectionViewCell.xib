@@ -8,20 +8,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CarCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="152" height="57"/>
+            <rect key="frame" x="0.0" y="0.0" width="116" height="57"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="152" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="116" height="57"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtR-1N-051">
-                        <rect key="frame" x="0.0" y="8" width="152" height="28"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="8" width="116" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="152" height="57"/>
+            <size key="customSize" width="116" height="57"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
                     <color key="value" red="0.74655741661041131" green="0.91095386125654454" blue="0.87939205977368518" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +30,7 @@
             <connections>
                 <outlet property="titless" destination="wtR-1N-051" id="MhU-T4-tnv"/>
             </connections>
-            <point key="canvasLocation" x="498" y="411.5"/>
+            <point key="canvasLocation" x="516" y="411.5"/>
         </collectionViewCell>
     </objects>
 </document>

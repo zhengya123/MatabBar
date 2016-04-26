@@ -1,3 +1,2 @@
-:pod 'MBProgressHUD'
 
-
+pod 'Masonry'
