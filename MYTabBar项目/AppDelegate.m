@@ -180,7 +180,7 @@
 
 -(void)loadRootViewController{
 
-    if ([[NSUserDefaults standardUserDefaults]stringForKey:@"zhanghaoo"].length == 0) {
+    if ([[NSUserDefaults standardUserDefaults]stringForKey:@"mimao"].length == 0) {
         LoginViewController * login = [[LoginViewController alloc]init];
         RootNavigationController * nav = [[RootNavigationController alloc]initWithRootViewController:login];
         self.window.rootViewController = nav;

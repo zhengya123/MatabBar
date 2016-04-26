@@ -13,6 +13,7 @@
 #import "FourInterFaceViewController.h"
 #import "RootTabBarController.h"
 #import "RootNavigationController.h"
+#import "API.h"
 @interface LoginViewController ()<UITextFieldDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *zhanghao;
 @property (weak, nonatomic) IBOutlet UITextField *mima;
@@ -24,6 +25,7 @@
 {
     UITabBarController * tabBarController;
     CATransition *animations;
+    UIView * warningView;//登陆底下提示密码的View
 
 
 }
@@ -65,6 +67,27 @@
     
     
 }
+//密码提示按钮
+- (void)tishis{
+    
+    
+    NSLog(@"%f",warningView.frame.origin.y);
+    NSLog(@"%f",SCREEN_H-50);
+    if (warningView.frame.origin.y <= SCREEN_H-50) {
+        self.tishi.selected = NO;
+    }else{
+        self.tishi.selected = YES;
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:2.0f];
+        CGPoint point = warningView.center;
+        point.y +=-50;
+        [warningView setCenter:point];
+        [UIView commitAnimations];
+    }
+    
+    
+}
+
 -(void)createUI{
     NSString * zh = [[NSUserDefaults standardUserDefaults]objectForKey:@"zhanghaoo"];
     NSString * mm = [[NSUserDefaults standardUserDefaults]objectForKey:@"mima"];
@@ -83,6 +106,45 @@
     animations = [CATransition animation];
     animations.duration = 1.0;
     animations.timingFunction = UIViewAnimationCurveEaseInOut;
+    
+    warningView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_H-50, SCREEN_W, 50)];
+    warningView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:warningView];
+    
+    //提示密码按钮
+    [self.tishi addTarget:self action:@selector(tishis) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(SCREEN_W-40, 5, 40, 40);
+    [button setTitle:@"X" forState:UIControlStateNormal];
+     button.titleLabel.font = [UIFont systemFontOfSize:25];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(clickssss) forControlEvents:UIControlEventTouchUpInside];
+    [warningView addSubview:button];
+    
+    UILabel * label = [UILabel new];
+    label.frame = CGRectMake(5, 5, SCREEN_W-50, 40);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"账号与密码相同";
+    label.textColor = [UIColor blackColor];
+    [warningView addSubview:label];
+    
+   NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"UUID == %@",idfv);
+    
+}
+//View上面的X的点击事件
+-(void)clickssss{
+
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:2.0f];
+    CGPoint point = warningView.center;
+    point.y +=50;
+    [warningView setCenter:point];
+    [UIView commitAnimations];
+
 }
 -(UITabBarController *)createTabBarController{
     //初始化四个视图

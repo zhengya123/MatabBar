@@ -52,7 +52,7 @@
 -(void)initUI{
     self.automaticallyAdjustsScrollViewInsets=NO;
     [self createNAV];
-    _webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-49)];
+    _webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
     _webView.delegate=self;
     _webView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_webView];

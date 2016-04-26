@@ -53,11 +53,29 @@
      [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     [self createNAV];
     [self initData];
-    [self createplace];
+    //[self createplace];
     [self gotoRequest];
-    [self createUI];
+    
     
     // Do any additional setup after loading the view from its nib.
+}
+//判断屏幕方向
+- (void)viewWillLayoutSubviews
+{
+    
+    [self _shouldRotateToOrientation:(UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation];
+    
+}
+
+-(void)_shouldRotateToOrientation:(UIDeviceOrientation)orientation {
+    if (orientation == UIDeviceOrientationPortrait ||orientation ==
+        UIDeviceOrientationPortraitUpsideDown) { // 竖屏
+        [self createUI];
+        [_tableView reloadData];
+    } else { // 横屏
+        [self createUI2];
+        [_tableView reloadData];
+    }
 }
 -(void)createplace{
     _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_W/2-50, SCREEN_H/2-50-69, 100, 100)];
@@ -124,13 +142,46 @@
     
     [headerView addSubview:_scrollView];
     
-    _tableView.tableHeaderView=headerView;
+     _tableView.tableHeaderView=headerView;
     
-    [self createplace];
+    //[self createplace];
     [self addHeaderMJRefresh];
     [self addFooterMJRefresh];
 
 }
+-(void)createUI2{
+   
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_H, SCREEN_H-49) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource= self;
+    [self.view addSubview:_tableView];
+    
+    [_tableView registerNib:[UINib nibWithNibName:@"OneTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    [_tableView registerNib:[UINib nibWithNibName:@"SecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"SecondCell"];
+    
+    
+    //滚动广告页
+    UIView * headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_H, 280)];
+    _scrollView =[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_H, 280) imageURLStringsGroup:nil];
+    [_scrollView setPlaceholderImage:[UIImage imageNamed:@"3"]];
+    _scrollView.infiniteLoop = YES;
+    _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    _scrollView.delegate = self;
+    _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    _scrollView.autoScrollTimeInterval = 3.5;
+    
+    [headerView addSubview:_scrollView];
+    
+    _tableView.tableHeaderView=headerView;
+    
+    //[self createplace];
+    [self addHeaderMJRefresh];
+    [self addFooterMJRefresh];
+    
+}
+
 -(void)addHeaderMJRefresh{
     //下拉刷新
     
@@ -313,10 +364,10 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section == 1) {
-        return 105;
+        return 105*PROPORTION;
     }else{
     
-        return 88;
+        return 88 * PROPORTION;
     }
     
 

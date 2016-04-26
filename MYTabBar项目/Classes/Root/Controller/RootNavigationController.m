@@ -50,7 +50,12 @@ UIGestureRecognizerDelegate>
     [item setTitleTextAttributes:textAttrs forState:UIControlStateHighlighted];
     [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
 }
-
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    [super pushViewController:viewController animated:animated];
+}
 //返回状态栏风格
 //- (UIStatusBarStyle)preferredStatusBarStyle
 //{

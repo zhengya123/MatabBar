@@ -296,7 +296,8 @@ CLLocationManagerDelegate>
 
 }
 -(void)tuichudenglu{
-
+   //将密码置为空
+    [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"mimao"];
     LoginViewController * login = [[LoginViewController alloc]init];
     AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
     RootNavigationController * nav = [[RootNavigationController alloc]initWithRootViewController:login];
