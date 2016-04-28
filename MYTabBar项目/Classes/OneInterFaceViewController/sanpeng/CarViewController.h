@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CarViewController : UIViewController
-
+@property(nonatomic,strong)UIWebView * webView;
 @end

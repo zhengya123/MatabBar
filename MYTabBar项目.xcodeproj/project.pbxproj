@@ -42,6 +42,8 @@
 		DF26886D1CC87D0F00334D9D /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688601CC87D0F00334D9D /* NSObject+MJKeyValue.m */; };
 		DF26886E1CC87D0F00334D9D /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688621CC87D0F00334D9D /* NSObject+MJProperty.m */; };
 		DF26886F1CC87D0F00334D9D /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688641CC87D0F00334D9D /* NSString+MJExtension.m */; };
+		DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */; };
+		DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */; };
 		DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4731CC48C0E00775A7E /* BaseViewController.m */; };
 		DF3DA4761CC48C0E00775A7E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF3DA4741CC48C0E00775A7E /* BaseViewController.xib */; };
 		DF3DA47A1CC4B81200775A7E /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4791CC4B81200775A7E /* UINavigationController+FDFullscreenPopGesture.m */; };
@@ -348,6 +350,9 @@
 		DF2688621CC87D0F00334D9D /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		DF2688631CC87D0F00334D9D /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		DF2688641CC87D0F00334D9D /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		DF2B4B8C1CD1A1F6005A4B1F /* tableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableTableViewCell.h; path = sanpeng/Views/tableTableViewCell.h; sourceTree = "<group>"; };
+		DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableTableViewCell.m; path = sanpeng/Views/tableTableViewCell.m; sourceTree = "<group>"; };
+		DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = tableTableViewCell.xib; path = sanpeng/Views/tableTableViewCell.xib; sourceTree = "<group>"; };
 		DF3DA4721CC48C0E00775A7E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		DF3DA4731CC48C0E00775A7E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		DF3DA4741CC48C0E00775A7E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
@@ -1566,6 +1571,9 @@
 				DFA3CCBB1CCA036100509FB5 /* CarCollectionViewCell.h */,
 				DFA3CCBC1CCA036100509FB5 /* CarCollectionViewCell.m */,
 				DFA3CCBD1CCA036100509FB5 /* CarCollectionViewCell.xib */,
+				DF2B4B8C1CD1A1F6005A4B1F /* tableTableViewCell.h */,
+				DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */,
+				DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1811,6 +1819,7 @@
 				DFF3A7D41CB4A6E000EC911F /* qishituViewController.xib in Resources */,
 				DF42D6E21CB363A2008DD4E0 /* ifree_load_04@2x.png in Resources */,
 				DFF790E61CC5DDE800352D57 /* miaoshu.png in Resources */,
+				DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */,
 				DF42D6E91CB36ADA008DD4E0 /* 进入符.png in Resources */,
 				DFFDC1201CBF625800E3FBA5 /* 二维码.png in Resources */,
 				DF45F9FB1C7EED34008DA1A7 /* NAV.png in Resources */,
@@ -2062,6 +2071,7 @@
 				DF26886B1CC87D0F00334D9D /* NSObject+MJClass.m in Sources */,
 				DF3ED8DA1C7C32FE00597967 /* commonModel.m in Sources */,
 				DF436E0F1CBB80C70058565C /* split.c in Sources */,
+				DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */,
 				DF3DA47E1CC4BBC900775A7E /* TWOBASEViewController.m in Sources */,
 				DFFDC13B1CBF697D00E3FBA5 /* MySecondTableViewCell.m in Sources */,
 				DF3ED8571C7C0B5E00597967 /* ZYTabBarButton.m in Sources */,

@@ -43,6 +43,7 @@
     BOOL _isLoadMore;
     UIImageView * _imageView;
     commonModel * requestData;
+    CATransition *animation;
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
@@ -120,6 +121,12 @@
 
 }
 -(void)createUI{
+    //跳转动画
+    animation = [CATransition animation];
+    animation.duration = 1.0;
+    animation.timingFunction = UIViewAnimationCurveEaseInOut;
+    
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-49) style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -342,8 +349,12 @@
 }
 -(void)buttontwo{
      NSLog(@"竞价交易");
+    animation.type = @"rippleEffect";//滴水效果
+    animation.subtype = kCATransitionFromTop;
     CarViewController * carVC = [CarViewController new];
-    [self.navigationController pushViewController:carVC animated:YES];
+    [self.view.window.layer addAnimation:animation forKey:nil];
+    [self presentModalViewController:carVC animated:YES];
+    //[self.navigationController pushViewController:carVC animated:YES];
 //    OtherViewController * other = [[OtherViewController alloc]init];
 //    other.titles = @"竞价交易";
 //    [self.navigationController pushViewController:other animated:YES];
