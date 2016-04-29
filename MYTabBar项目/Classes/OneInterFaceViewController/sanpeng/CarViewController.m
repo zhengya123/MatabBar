@@ -9,6 +9,8 @@
 #import "CarViewController.h"
 #import "Masonry.h"
 #import "API.h"
+
+#import "BUIView.h"
 @interface CarViewController ()
 
 @end
@@ -18,6 +20,7 @@
     UIWebView * _webView;
     NSOperationQueue * queue;
      CATransition *animation;
+    UIView * infoView;
 
 }
 - (void)viewDidLoad {
@@ -27,6 +30,8 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(void)createUI{
+    
+   
     
     animation = [CATransition animation];
     animation.duration = 1.0;
@@ -56,7 +61,7 @@
     [self.view addSubview:button];
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view.mas_centerX);
+        make.left.equalTo(@15);
         make.top.equalTo(@(SCREEN_H -55));
         make.width.equalTo(@50);
         make.height.equalTo(@50);
@@ -86,7 +91,7 @@
     queue=[[NSOperationQueue alloc]init];
     [queue addOperation:opration];
 
-
+    
 
 
 }
@@ -96,8 +101,49 @@
     [self.view.window.layer addAnimation:animation forKey:nil];
     [self dismissModalViewControllerAnimated:YES];
 
+    
 
+}
 
+- (void)setInfoViewFrame:(BOOL)isDown{
+    if(isDown == NO)
+    {
+        [UIView animateWithDuration:0.1
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             [infoView setFrame:CGRectMake(0, 300+60, 320, 90)];
+                         }
+                         completion:^(BOOL finished) {
+                             [UIView animateWithDuration:0.1
+                                                   delay:0.0
+                                                 options:UIViewAnimationCurveEaseIn
+                                              animations:^{
+                                                  [infoView setFrame:CGRectMake(0, 300, 320, 90)];
+                                              }
+                                              completion:^(BOOL finished) {
+                                              }];
+                         }];
+        
+    }else
+    {
+        [UIView animateWithDuration:0.1
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             [infoView setFrame:CGRectMake(0, 300-90+16, 320, 90)];
+                         }
+                         completion:^(BOOL finished) {
+                             [UIView animateWithDuration:0.1
+                                                   delay:0.0
+                                                 options:UIViewAnimationCurveEaseIn
+                                              animations:^{
+                                                  [infoView setFrame:CGRectMake(0, 300-90, 320, 90)];
+                                              }
+                                              completion:^(BOOL finished) {
+                                              }];
+                         }];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

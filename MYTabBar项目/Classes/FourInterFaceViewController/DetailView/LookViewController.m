@@ -105,7 +105,23 @@
     
     //10.开始扫描
     [_captureSession startRunning];
+    //[self jump];
     return YES;
+    
+    
+}
+-(void)jump{
+    if ([self.lblStadus.text hasPrefix:@"http://"]||[self.lblStadus.text hasPrefix:@"https://"]) {
+       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_lblStadus.text]];
+    }
+
+    
+
+   // if ([metadataObj.stringValue hasPrefix:@"http://"]||[metadataObj.stringValue hasPrefix:@"https://"]) {
+        //                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_lblStadus.text]];
+        //                NSLog(@"%@",_lblStadus.text);
+
+
 }
 /**
  *  定时器方法
@@ -125,6 +141,8 @@
 }
 
 -(void)stopReading{
+    
+    [self jump];
     [_captureSession stopRunning];
     _captureSession = nil;
     [_scanLayer removeFromSuperlayer];
@@ -144,11 +162,11 @@
             /**
              *  判断二维码链接，跳到浏览器里打开
              */
-            if ([metadataObj.stringValue hasPrefix:@"http://"]||[metadataObj.stringValue hasPrefix:@"https://"]) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_lblStadus.text]];
-                NSLog(@"%@",_lblStadus.text);
-                
-            }
+//            if ([metadataObj.stringValue hasPrefix:@"http://"]||[metadataObj.stringValue hasPrefix:@"https://"]) {
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_lblStadus.text]];
+//                NSLog(@"%@",_lblStadus.text);
+            
+ //           }
 
         }
     }

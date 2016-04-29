@@ -22,6 +22,7 @@
 #import "UINavigationBar+Awesome.h"
 #import "sanpengViewController.h"
 #import "CarViewController.h"
+#import "LPCTools.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -367,9 +368,10 @@
 }
 -(void)buttonfour{
      NSLog(@"拍品预告");
-    OtherViewController * other = [[OtherViewController alloc]init];
-    other.titles = @"拍品预告";
-    [self.navigationController pushViewController:other animated:YES];
+//    OtherViewController * other = [[OtherViewController alloc]init];
+//    other.titles = @"拍品预告";
+//    [self.navigationController pushViewController:other animated:YES];
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     

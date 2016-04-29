@@ -11,6 +11,7 @@
 #import "TwoInterFaceViewController.h"
 #import "ThreeInterFaceViewController.h"
 #import "FourInterFaceViewController.h"
+#import "FourstViewController.h"
 #import "RootTabBarController.h"
 #import "RootNavigationController.h"
 #import "LoginViewController.h"
@@ -199,8 +200,8 @@
     OneInterFaceViewController * oneVC=[[OneInterFaceViewController alloc]init];
     TwoInterFaceViewController * twoVC=[[TwoInterFaceViewController alloc]init];
     ThreeInterFaceViewController * threeVC=[[ThreeInterFaceViewController alloc]init];
-    FourInterFaceViewController * fourVC=[[FourInterFaceViewController alloc]init];
-    
+    //FourInterFaceViewController * fourVC=[[FourInterFaceViewController alloc]init];
+    FourstViewController * fourVC = [[FourstViewController alloc]init];
     //初始化对应的导航栏
     RootNavigationController * oneNav=[[RootNavigationController alloc]initWithRootViewController:oneVC];
     RootNavigationController * twoNav=[[RootNavigationController alloc]initWithRootViewController:twoVC];

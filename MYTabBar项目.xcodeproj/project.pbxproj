@@ -42,6 +42,16 @@
 		DF26886D1CC87D0F00334D9D /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688601CC87D0F00334D9D /* NSObject+MJKeyValue.m */; };
 		DF26886E1CC87D0F00334D9D /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688621CC87D0F00334D9D /* NSObject+MJProperty.m */; };
 		DF26886F1CC87D0F00334D9D /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688641CC87D0F00334D9D /* NSString+MJExtension.m */; };
+		DF2695D81CD34BE300223B3B /* loveway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF2695D71CD34BE300223B3B /* loveway.ttf */; };
+		DF2695DC1CD34C5200223B3B /* UILabel+FontChange.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695DB1CD34C5200223B3B /* UILabel+FontChange.m */; };
+		DF2695E01CD34E4F00223B3B /* FourstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695DE1CD34E4F00223B3B /* FourstViewController.m */; };
+		DF2695E11CD34E4F00223B3B /* FourstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2695DF1CD34E4F00223B3B /* FourstViewController.xib */; };
+		DF2695F11CD34E7B00223B3B /* WMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695E51CD34E7B00223B3B /* WMSettingViewController.m */; };
+		DF2695F21CD34E7B00223B3B /* ImageSetting.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF2695E61CD34E7B00223B3B /* ImageSetting.bundle */; };
+		DF2695F31CD34E7B00223B3B /* WMSettingCheckGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695E91CD34E7B00223B3B /* WMSettingCheckGroup.m */; };
+		DF2695F41CD34E7B00223B3B /* WMSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695EB1CD34E7B00223B3B /* WMSettingGroup.m */; };
+		DF2695F51CD34E7B00223B3B /* WMSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695ED1CD34E7B00223B3B /* WMSettingItem.m */; };
+		DF2695F61CD34E7B00223B3B /* WMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695F01CD34E7B00223B3B /* WMSettingCell.m */; };
 		DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */; };
 		DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */; };
 		DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4731CC48C0E00775A7E /* BaseViewController.m */; };
@@ -350,6 +360,23 @@
 		DF2688621CC87D0F00334D9D /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		DF2688631CC87D0F00334D9D /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		DF2688641CC87D0F00334D9D /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		DF2695D71CD34BE300223B3B /* loveway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loveway.ttf; sourceTree = "<group>"; };
+		DF2695DA1CD34C5200223B3B /* UILabel+FontChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FontChange.h"; sourceTree = "<group>"; };
+		DF2695DB1CD34C5200223B3B /* UILabel+FontChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FontChange.m"; sourceTree = "<group>"; };
+		DF2695DD1CD34E4F00223B3B /* FourstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourstViewController.h; sourceTree = "<group>"; };
+		DF2695DE1CD34E4F00223B3B /* FourstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourstViewController.m; sourceTree = "<group>"; };
+		DF2695DF1CD34E4F00223B3B /* FourstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourstViewController.xib; sourceTree = "<group>"; };
+		DF2695E41CD34E7B00223B3B /* WMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingViewController.h; sourceTree = "<group>"; };
+		DF2695E51CD34E7B00223B3B /* WMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingViewController.m; sourceTree = "<group>"; };
+		DF2695E61CD34E7B00223B3B /* ImageSetting.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageSetting.bundle; sourceTree = "<group>"; };
+		DF2695E81CD34E7B00223B3B /* WMSettingCheckGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingCheckGroup.h; sourceTree = "<group>"; };
+		DF2695E91CD34E7B00223B3B /* WMSettingCheckGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingCheckGroup.m; sourceTree = "<group>"; };
+		DF2695EA1CD34E7B00223B3B /* WMSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingGroup.h; sourceTree = "<group>"; };
+		DF2695EB1CD34E7B00223B3B /* WMSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingGroup.m; sourceTree = "<group>"; };
+		DF2695EC1CD34E7B00223B3B /* WMSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingItem.h; sourceTree = "<group>"; };
+		DF2695ED1CD34E7B00223B3B /* WMSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingItem.m; sourceTree = "<group>"; };
+		DF2695EF1CD34E7B00223B3B /* WMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingCell.h; sourceTree = "<group>"; };
+		DF2695F01CD34E7B00223B3B /* WMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingCell.m; sourceTree = "<group>"; };
 		DF2B4B8C1CD1A1F6005A4B1F /* tableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableTableViewCell.h; path = sanpeng/Views/tableTableViewCell.h; sourceTree = "<group>"; };
 		DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableTableViewCell.m; path = sanpeng/Views/tableTableViewCell.m; sourceTree = "<group>"; };
 		DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = tableTableViewCell.xib; path = sanpeng/Views/tableTableViewCell.xib; sourceTree = "<group>"; };
@@ -895,6 +922,57 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		DF2695D91CD34C5200223B3B /* UILabel+FontChange */ = {
+			isa = PBXGroup;
+			children = (
+				DF2695DA1CD34C5200223B3B /* UILabel+FontChange.h */,
+				DF2695DB1CD34C5200223B3B /* UILabel+FontChange.m */,
+			);
+			path = "UILabel+FontChange";
+			sourceTree = "<group>";
+		};
+		DF2695E21CD34E7B00223B3B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DF2695E31CD34E7B00223B3B /* Controller */,
+				DF2695E61CD34E7B00223B3B /* ImageSetting.bundle */,
+				DF2695E71CD34E7B00223B3B /* Model */,
+				DF2695EE1CD34E7B00223B3B /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		DF2695E31CD34E7B00223B3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF2695E41CD34E7B00223B3B /* WMSettingViewController.h */,
+				DF2695E51CD34E7B00223B3B /* WMSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF2695E71CD34E7B00223B3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF2695E81CD34E7B00223B3B /* WMSettingCheckGroup.h */,
+				DF2695E91CD34E7B00223B3B /* WMSettingCheckGroup.m */,
+				DF2695EA1CD34E7B00223B3B /* WMSettingGroup.h */,
+				DF2695EB1CD34E7B00223B3B /* WMSettingGroup.m */,
+				DF2695EC1CD34E7B00223B3B /* WMSettingItem.h */,
+				DF2695ED1CD34E7B00223B3B /* WMSettingItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF2695EE1CD34E7B00223B3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF2695EF1CD34E7B00223B3B /* WMSettingCell.h */,
+				DF2695F01CD34E7B00223B3B /* WMSettingCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DF3DA4771CC4B81200775A7E /* FDFullscreenPopGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1095,9 @@
 		DF3ED8461C7C0AC100597967 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DF2695E21CD34E7B00223B3B /* Setting */,
+				DF2695D91CD34C5200223B3B /* UILabel+FontChange */,
+				DF2695D71CD34BE300223B3B /* loveway.ttf */,
 				DF26884D1CC87D0F00334D9D /* MJExtension */,
 				DFF791301CC606F400352D57 /* BuView */,
 				DFF7912C1CC5E56100352D57 /* TouchImage */,
@@ -1171,6 +1252,9 @@
 				DF3ED8871C7C0D7C00597967 /* FourInterFaceViewController.h */,
 				DF3ED8881C7C0D7C00597967 /* FourInterFaceViewController.m */,
 				DF3ED8891C7C0D7C00597967 /* FourInterFaceViewController.xib */,
+				DF2695DD1CD34E4F00223B3B /* FourstViewController.h */,
+				DF2695DE1CD34E4F00223B3B /* FourstViewController.m */,
+				DF2695DF1CD34E4F00223B3B /* FourstViewController.xib */,
 			);
 			path = FourInterFaceViewController;
 			sourceTree = "<group>";
@@ -1839,6 +1923,7 @@
 				DF42D7941CB3AB91008DD4E0 /* Bargainingdeal@3x.png in Resources */,
 				DF42D6DE1CB363A2008DD4E0 /* ifree_load_012@2x.png in Resources */,
 				DF3ED8EC1C7C50ED00597967 /* DetailViewController.xib in Resources */,
+				DF2695D81CD34BE300223B3B /* loveway.ttf in Resources */,
 				DFFDC1441CBF810F00E3FBA5 /* MyFirst1TableViewCell.xib in Resources */,
 				DF3ED8691C7C0B7F00597967 /* tab_3_2.png in Resources */,
 				DF3ED8541C7C0B5E00597967 /* RootNavigationController.xib in Resources */,
@@ -1852,6 +1937,7 @@
 				DF3ED86A1C7C0B7F00597967 /* tab_c0.png in Resources */,
 				DF3ED9281C7C5A7600597967 /* MJRefresh.bundle in Resources */,
 				DF45FA011C7EF284008DA1A7 /* LoginViewController.xib in Resources */,
+				DF2695F21CD34E7B00223B3B /* ImageSetting.bundle in Resources */,
 				DF42D7991CB3AB91008DD4E0 /* trailer@2x.png in Resources */,
 				DFFDC12F1CBF628200E3FBA5 /* 咨询消息.png in Resources */,
 				DF26884C1CC87C3500334D9D /* goods.json in Resources */,
@@ -1865,6 +1951,7 @@
 				DFFDC1491CBF89F200E3FBA5 /* MyThreeTableViewCell.xib in Resources */,
 				DF42D7961CB3AB91008DD4E0 /* Biddingtransaction@3x.png in Resources */,
 				DF42D6E51CB363A2008DD4E0 /* ifree_load_07@2x.png in Resources */,
+				DF2695E11CD34E4F00223B3B /* FourstViewController.xib in Resources */,
 				DF3ED8651C7C0B7F00597967 /* tab_0.png in Resources */,
 				DF42D7971CB3AB91008DD4E0 /* Flashontrading@2x.png in Resources */,
 				DF202A7D1CC0D4940081B23E /* FMGVideoPlayView.xib in Resources */,
@@ -1973,6 +2060,7 @@
 				DF3ED9271C7C5A7600597967 /* MJRefreshStateHeader.m in Sources */,
 				DF3ED8CC1C7C32FE00597967 /* AFSecurityPolicy.m in Sources */,
 				DF3ED9261C7C5A7600597967 /* MJRefreshNormalHeader.m in Sources */,
+				DF2695F61CD34E7B00223B3B /* WMSettingCell.m in Sources */,
 				DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */,
 				DFFDC1481CBF89F200E3FBA5 /* MyThreeTableViewCell.m in Sources */,
 				DF202A541CC08D3F0081B23E /* TwoInterDetailViewController.m in Sources */,
@@ -1991,6 +2079,7 @@
 				DF3ED8161C7C09E300597967 /* AppDelegate.m in Sources */,
 				DF3ED8CB1C7C32FE00597967 /* AFNetworkReachabilityManager.m in Sources */,
 				DF3ED8801C7C0D3500597967 /* ThreeInterFaceViewController.m in Sources */,
+				DF2695F41CD34E7B00223B3B /* WMSettingGroup.m in Sources */,
 				DF436E211CBB9BE30058565C /* BaseMapViewController.m in Sources */,
 				DF42D6AC1CB35D89008DD4E0 /* SDWebImageCompat.m in Sources */,
 				DF436E0C1CBB80C70058565C /* qrinput.c in Sources */,
@@ -2002,6 +2091,7 @@
 				DF42D6AE1CB35D89008DD4E0 /* SDWebImageDownloader.m in Sources */,
 				DF42D6AA1CB35D89008DD4E0 /* NSData+ImageContentType.m in Sources */,
 				DFAFBC9D1CBE47910033F57C /* ADViewController.m in Sources */,
+				DF2695F31CD34E7B00223B3B /* WMSettingCheckGroup.m in Sources */,
 				DF3ED8D11C7C32FE00597967 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DF3ED91F1C7C5A7600597967 /* MJRefreshAutoGifFooter.m in Sources */,
 				DF3ED91B1C7C5A7600597967 /* MJRefreshBackFooter.m in Sources */,
@@ -2022,6 +2112,7 @@
 				DF42D6CC1CB35DE4008DD4E0 /* SDCollectionViewCell.m in Sources */,
 				DF42D6B61CB35D89008DD4E0 /* UIImageView+WebCache.m in Sources */,
 				DFF790DE1CC5CF1100352D57 /* DecripeCollectionViewCell.m in Sources */,
+				DF2695F51CD34E7B00223B3B /* WMSettingItem.m in Sources */,
 				DFF791421CC60CB200352D57 /* NewsViewController.m in Sources */,
 				DF202A7C1CC0D4940081B23E /* FMGVideoPlayView.m in Sources */,
 				DF42D6CD1CB35DE4008DD4E0 /* SDCycleScrollView.m in Sources */,
@@ -2083,6 +2174,7 @@
 				DF26886A1CC87D0F00334D9D /* MJPropertyType.m in Sources */,
 				DFF3A7D31CB4A6E000EC911F /* qishituViewController.m in Sources */,
 				DFE23DD61CCF5FD30074836A /* View+MASAdditions.m in Sources */,
+				DF2695F11CD34E7B00223B3B /* WMSettingViewController.m in Sources */,
 				DF3ED87B1C7C0D1200597967 /* TwoInterFaceViewController.m in Sources */,
 				DF3ED8531C7C0B5E00597967 /* RootNavigationController.m in Sources */,
 				DF26886E1CC87D0F00334D9D /* NSObject+MJProperty.m in Sources */,
@@ -2096,9 +2188,11 @@
 				DF202A681CC097CD0081B23E /* VideoViewController.m in Sources */,
 				DF3ED8D71C7C32FE00597967 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DFE23DB21CCF5E130074836A /* CarViewController.m in Sources */,
+				DF2695E01CD34E4F00223B3B /* FourstViewController.m in Sources */,
 				DF26886C1CC87D0F00334D9D /* NSObject+MJCoding.m in Sources */,
 				DFE23DD01CCF5FD30074836A /* MASConstraintMaker.m in Sources */,
 				DF436E0A1CBB80C70058565C /* QRCodeGenerator.m in Sources */,
+				DF2695DC1CD34C5200223B3B /* UILabel+FontChange.m in Sources */,
 				DF3ED8D91C7C32FE00597967 /* API.m in Sources */,
 				DFFDC1431CBF810F00E3FBA5 /* MyFirst1TableViewCell.m in Sources */,
 				DF3ED9221C7C5A7600597967 /* MJRefreshBackGifFooter.m in Sources */,

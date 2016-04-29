@@ -32,7 +32,8 @@
 #define FENGHUANG_GETBUTCAR @"mobile/buyCarCompare.do"
 
 //商品列表登陆接口
-#define SHANGPIN_LOGIN @"http://i.hiamily.com/login"
+//#define SHANGPIN_LOGIN @"http://i.hiamily.com/login"
+#define SHANGPIN_LOGIN @"http://i.hiamily.com/beijing/"
 
 //高度
 #define NAVIGATIONITEM_HIGH 0

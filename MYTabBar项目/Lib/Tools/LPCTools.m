@@ -40,4 +40,33 @@
     return label ;
 }
 
+
++(UIView * )View:(CGRect)frame {
+
+    UIView *  View = [[UIView alloc]initWithFrame:frame];
+    View.backgroundColor = [UIColor redColor];
+    
+    
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-40, 5, 40, 40);
+    [button setTitle:@"X" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:25];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
+   // [button addTarget:self action:@selector(clickssss) forControlEvents:UIControlEventTouchUpInside];
+    [View addSubview:button];
+    
+    UILabel * label = [UILabel new];
+    label.frame = CGRectMake(5, 5, [UIScreen mainScreen].bounds.size.width-50, 40);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"账号与密码相同";
+    label.textColor = [UIColor blackColor];
+    [View addSubview:label];
+    
+    return View;
+
+}
+//View上面的X的点击事件
+
+
 @end
