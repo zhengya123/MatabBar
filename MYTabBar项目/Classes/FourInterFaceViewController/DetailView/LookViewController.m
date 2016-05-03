@@ -28,22 +28,27 @@
     animation.timingFunction = UIViewAnimationCurveEaseInOut;
     animation.type = @"rippleEffect";
     [self startReading];
+    //把开始按钮隐藏
     _kaishis.hidden = YES;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)kaishi:(id)sender {
-    if (!_isReading) {
-        if ([self startReading]) {
-            // [ setTitle:@"Stop" forState:UIControlStateNormal];
-            [_lblStadus setText:@"Scanning for QR Code"];
-        
-        }
-    }
-    else{
-        [self stopReading];
-        //[_startBtn setTitle:@"Start!" forState:UIControlStateNormal];
-    }
-    _isReading = !_isReading;
+//    if (!_isReading) {
+//        if ([self startReading]) {
+//            // [ setTitle:@"Stop" forState:UIControlStateNormal];
+//            [_lblStadus setText:@"Scanning for QR Code"];
+//        
+//        }
+//    }
+//    else{
+//        [self stopReading];
+//        //[_startBtn setTitle:@"Start!" forState:UIControlStateNormal];
+//    }
+//    _isReading = !_isReading;
+    //因为使用了字体库，所以导致引用系统相册是时候出现崩溃
+     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:nil];
     
 }
 - (IBAction)qixiao:(id)sender {
@@ -172,6 +177,44 @@
     }
 }
 
+/**
+ *  调取相册照片，扫描本地二维码图片
+ */
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    //NSData *data;
+    //[Utils showWaiting:picker.view];
+    if ([mediaType isEqualToString:@"public.image"]){
+        
+        //切忌不可直接使用originImage，因为这是没有经过格式化的图片数据，可能会导致选择的图片颠倒或是失真等现象的发生，从UIImagePickerControllerOriginalImage中的Origin可以看出，很原始，哈哈
+        UIImage *originImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage *scaleImage = [self scaleImage:originImage toScale:1];
+        NSData *data = UIImageJPEGRepresentation(scaleImage, 1);
+        UIImage *image = [UIImage imageWithData:data];
+        //将图片传递给截取界面进行截取并设置回调方法（协议）
+        [_captureSession startRunning];
+        //captureView.delegate = self;
+        
+        //隐藏UIImagePickerController本身的导航栏
+        
+        
+        
+    }
+}
+
+-(UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize
+{
+    UIGraphicsBeginImageContext(CGSizeMake(image.size.width*scaleSize,image.size.height*scaleSize));
+    [image drawInRect:CGRectMake(0, 0, image.size.width * scaleSize, image.size.height *scaleSize)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

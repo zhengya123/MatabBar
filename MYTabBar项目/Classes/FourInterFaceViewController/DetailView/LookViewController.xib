@@ -20,18 +20,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KER-1e-shV">
-                    <rect key="frame" x="8" y="148" width="304" height="241"/>
+                    <rect key="frame" x="8" y="238" width="304" height="241"/>
                     <color key="backgroundColor" red="1" green="0.30274376120000002" blue="0.35457761069999999" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctS-rF-cnd">
-                    <rect key="frame" x="8" y="38" width="299" height="89"/>
-                    <color key="backgroundColor" red="0.5507328697945264" green="0.96789103403141363" blue="0.5511548844673726" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEI-u8-UcR">
-                    <rect key="frame" x="8" y="455" width="64" height="30"/>
+                    <rect key="frame" x="8" y="509" width="64" height="30"/>
                     <color key="backgroundColor" red="1" green="0.30274376120000002" blue="0.35457761069999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="64" id="sEL-kd-8Hw"/>
@@ -47,12 +40,12 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZr-ar-CLH">
-                    <rect key="frame" x="243" y="455" width="64" height="30"/>
+                    <rect key="frame" x="243" y="509" width="64" height="30"/>
                     <color key="backgroundColor" red="0.36669979670000002" green="0.8931609948" blue="0.66258517859999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="64" id="0e4-Me-DQZ"/>
                     </constraints>
-                    <state key="normal" title="开始"/>
+                    <state key="normal" title="扫描本地"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="10"/>
@@ -62,21 +55,30 @@
                         <action selector="kaishi:" destination="-1" eventType="touchUpInside" id="Ppm-ay-twW"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctS-rF-cnd">
+                    <rect key="frame" x="11" y="141" width="299" height="89"/>
+                    <color key="backgroundColor" red="0.5507328697945264" green="0.96789103403141363" blue="0.5511548844673726" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="89" id="rIc-XO-2Bn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.92439054319371727" green="0.92439054319371727" blue="0.92439054319371727" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ctS-rF-cnd" secondAttribute="trailing" constant="13" id="31f-oP-BOP"/>
-                <constraint firstItem="ctS-rF-cnd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="HP6-Um-bwi"/>
-                <constraint firstItem="wZr-ar-CLH" firstAttribute="top" secondItem="KER-1e-shV" secondAttribute="bottom" constant="66" id="Ppb-IT-wLy"/>
-                <constraint firstItem="PEI-u8-UcR" firstAttribute="leading" secondItem="KER-1e-shV" secondAttribute="leading" id="Qys-YD-SEM"/>
+                <constraint firstItem="wZr-ar-CLH" firstAttribute="top" secondItem="KER-1e-shV" secondAttribute="bottom" constant="30" id="3hQ-vZ-Rtf"/>
+                <constraint firstItem="ctS-rF-cnd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="76o-r8-INK"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="ctS-rF-cnd" secondAttribute="bottom" constant="8" symbolic="YES" id="ABZ-Gv-jpJ"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="238" id="CqO-hP-Hwc"/>
+                <constraint firstItem="ctS-rF-cnd" firstAttribute="centerX" secondItem="KER-1e-shV" secondAttribute="centerX" id="OpG-bA-pa1"/>
                 <constraint firstItem="wZr-ar-CLH" firstAttribute="baseline" secondItem="PEI-u8-UcR" secondAttribute="baseline" id="WnS-AX-QJh"/>
-                <constraint firstItem="wZr-ar-CLH" firstAttribute="trailing" secondItem="ctS-rF-cnd" secondAttribute="trailing" id="YND-87-8QX"/>
-                <constraint firstItem="KER-1e-shV" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="h5m-GH-ghJ"/>
-                <constraint firstItem="PEI-u8-UcR" firstAttribute="leading" secondItem="ctS-rF-cnd" secondAttribute="leading" id="hso-Bq-vGr"/>
-                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="ctS-rF-cnd" secondAttribute="bottom" constant="21" id="l3k-jD-jaa"/>
-                <constraint firstItem="KER-1e-shV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="148" id="rb3-FZ-xWa"/>
-                <constraint firstItem="ctS-rF-cnd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="tJw-qT-U6v"/>
-                <constraint firstAttribute="bottom" secondItem="wZr-ar-CLH" secondAttribute="bottom" constant="83" id="ttd-q9-sRG"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="leading" secondItem="PEI-u8-UcR" secondAttribute="leading" id="iWd-AD-XI0"/>
+                <constraint firstAttribute="trailing" secondItem="wZr-ar-CLH" secondAttribute="trailing" constant="13" id="k1s-xU-NS3"/>
+                <constraint firstAttribute="bottom" secondItem="PEI-u8-UcR" secondAttribute="bottom" constant="29" id="qZh-y6-fjH"/>
+                <constraint firstItem="KER-1e-shV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="v5q-pb-4fR"/>
+                <constraint firstItem="ctS-rF-cnd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="11" id="wgr-lV-hm4"/>
             </constraints>
             <point key="canvasLocation" x="407" y="453"/>
         </view>

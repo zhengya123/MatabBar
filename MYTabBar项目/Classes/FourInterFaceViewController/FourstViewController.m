@@ -24,8 +24,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+   // self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
     [super.navigationController setNavigationBarHidden:YES];
+     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     _imageView.image=[UIImage imageNamed:@"fengmian.png"];
     

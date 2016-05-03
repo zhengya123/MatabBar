@@ -277,7 +277,7 @@
        
     }
     _scrollView.imageURLStringsGroup =imageArray;
-    NSLog(@"%@",imageArray);
+    NSLog(@"imageArray==%@",imageArray);
     [_imageView stopAnimating];
     
     
@@ -422,11 +422,11 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar lt_reset];
+   // [self.navigationController.navigationBar lt_reset];
 }
 -(void)viewDidDisappear:(BOOL)animated{
 
-    [imageArray removeAllObjects];
+   // [imageArray removeAllObjects];
 
 }
 - (void)didReceiveMemoryWarning {
