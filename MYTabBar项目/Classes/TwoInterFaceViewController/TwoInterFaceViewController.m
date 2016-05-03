@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self createData];
     [self createUI];
     // Do any additional setup after loading the view from its nib.
@@ -142,7 +143,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 199 * PROPORTION;
+        return 200 ;
     }else if(indexPath.section ==1){
     
         return 111 * PROPORTION;
