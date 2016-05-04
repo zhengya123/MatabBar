@@ -108,19 +108,21 @@
 -(void)setupGroup3{
      WMSettingGroup *group = [self addGroup];
     WMSettingLabelItem *qq = [WMSettingLabelItem
-                              itemWithIcon:@"personal_btn_qq"
+                              itemWithIcon:@"qq1"
                               title:@"版本信息"
                               destVcClass:NSClassFromString(@"NewsViewController")];
     
     WMSettingLabelItem *weiChat = [WMSettingLabelItem
-                                   itemWithIcon:@"photo_icon_wechat"
+                                   itemWithIcon:@"qq2"
                                    title:@"关于我们"
                                    destVcClass:NSClassFromString(@"NewsViewController")];
     
-    WMSettingLabelItem *quwei = [WMSettingLabelItem
-                                 itemWithIcon:@"photo_icon_wechat"
-                                 title:@"推出登陆"
-                                 destVcClass:NSClassFromString(@"NewsViewController")];
+//    WMSettingLabelItem *quwei = [WMSettingLabelItem
+//                                 itemWithIcon:@"photo_icon_wechat"
+//                                 title:@"退出登陆"
+//                                 destVcClass:NSClassFromString(@"FourstViewController")];
+    WMSettingSwitchItem * tuichu = [WMSettingSwitchItem itemWithTitle:@"退出登录" destVcClass:nil];
+    
     
     qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
         // descVC.sourceItem = item;
@@ -128,12 +130,18 @@
     weiChat.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
         // descVC.sourceItem = item;
     };
-    quwei.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
-        //descVC.sourceItem = item;
+    tuichu.readyForDestVc = ^(WMSettingSwitchItem *item, NewsViewController *descVC){
+    
+        [self create];
     };
+    group.items = @[qq, weiChat,tuichu];
     
-    group.items = @[qq, weiChat,quwei];
-    
+}
+-(void)create{
+    NSLog(@"退出登录了");
+
+
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

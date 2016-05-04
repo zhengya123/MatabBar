@@ -20,7 +20,7 @@
 //创建标签
 + (UILabel *)createLabel:(CGRect)frame text:(NSString *)text textAlignment:(NSTextAlignment)textAlignment textColor:(UIColor *)textColor bgColor:(UIColor *)bgColor tag:(NSInteger)tag;
 
-+(UIView * )View:(CGRect)frame ;
++(UIView * )View:(CGRect)frame tag:(NSUInteger)tag ;
 
 
 

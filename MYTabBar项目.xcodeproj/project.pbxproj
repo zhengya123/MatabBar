@@ -18,6 +18,8 @@
 		DF202A7E1CC0D4940081B23E /* FullView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A781CC0D4940081B23E /* FullView.m */; };
 		DF202A7F1CC0D4940081B23E /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A7A1CC0D4940081B23E /* FullViewController.m */; };
 		DF202A831CC0D9BA0081B23E /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */; };
+		DF25A52A1CD9AACA0035D6A2 /* qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A5291CD9AACA0035D6A2 /* qq1.png */; };
+		DF25A52C1CD9AAD20035D6A2 /* qq2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A52B1CD9AAD20035D6A2 /* qq2.png */; };
 		DF26883F1CC87C2300334D9D /* ZXShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688271CC87C2300334D9D /* ZXShopCartViewController.m */; };
 		DF2688401CC87C2300334D9D /* GoodsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = DF26882A1CC87C2300334D9D /* GoodsCategory.m */; };
 		DF2688411CC87C2300334D9D /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF26882C1CC87C2300334D9D /* GoodsModel.m */; };
@@ -314,6 +316,8 @@
 		DF202A7A1CC0D4940081B23E /* FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullViewController.m; sourceTree = "<group>"; };
 		DF202A811CC0D9BA0081B23E /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		DF25A5291CD9AACA0035D6A2 /* qq1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq1.png; sourceTree = "<group>"; };
+		DF25A52B1CD9AAD20035D6A2 /* qq2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq2.png; sourceTree = "<group>"; };
 		DF2688261CC87C2300334D9D /* ZXShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShopCartViewController.h; sourceTree = "<group>"; };
 		DF2688271CC87C2300334D9D /* ZXShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShopCartViewController.m; sourceTree = "<group>"; };
 		DF2688291CC87C2300334D9D /* GoodsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCategory.h; sourceTree = "<group>"; };
@@ -1142,6 +1146,8 @@
 				DFFDC1351CBF650C00E3FBA5 /* navigationbar@3x.png */,
 				DFF790E51CC5DDE800352D57 /* miaoshu.png */,
 				DFF790E71CC5DDEF00352D57 /* ziliao.png */,
+				DF25A5291CD9AACA0035D6A2 /* qq1.png */,
+				DF25A52B1CD9AAD20035D6A2 /* qq2.png */,
 				DF3ED8581C7C0B7F00597967 /* 标签栏控制器素材 */,
 			);
 			path = Resource;
@@ -1914,6 +1920,7 @@
 				DF42D6E61CB363A2008DD4E0 /* ifree_load_08@2x.png in Resources */,
 				DF202A691CC097CD0081B23E /* VideoViewController.xib in Resources */,
 				DF42D6E71CB363A2008DD4E0 /* ifree_load_09@2x.png in Resources */,
+				DF25A52C1CD9AAD20035D6A2 /* qq2.png in Resources */,
 				DF42D6DD1CB363A2008DD4E0 /* ifree_load_011@2x.png in Resources */,
 				DF42D6E11CB363A2008DD4E0 /* ifree_load_03@2x.png in Resources */,
 				DF2688451CC87C2300334D9D /* DetailListCell.xib in Resources */,
@@ -1930,6 +1937,7 @@
 				DF42D6E41CB363A2008DD4E0 /* ifree_load_06@2x.png in Resources */,
 				DF3ED86B1C7C0B7F00597967 /* tab_c1.png in Resources */,
 				DF42D7981CB3AB91008DD4E0 /* Flashontrading@3x.png in Resources */,
+				DF25A52A1CD9AACA0035D6A2 /* qq1.png in Resources */,
 				DF42D7841CB3A2B6008DD4E0 /* SecondTableViewCell.xib in Resources */,
 				DF3DA4761CC48C0E00775A7E /* BaseViewController.xib in Resources */,
 				DF202A551CC08D3F0081B23E /* TwoInterDetailViewController.xib in Resources */,

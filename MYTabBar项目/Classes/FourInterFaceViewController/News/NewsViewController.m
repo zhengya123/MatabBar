@@ -7,19 +7,33 @@
 //
 
 #import "NewsViewController.h"
-
+#import "LPCTools.h"
 @interface NewsViewController ()
 
 @end
 
 @implementation NewsViewController
+{
+    UIView * Vieww;
 
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"新闻";
+    [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
+-(void)createUI{
+    Vieww =[LPCTools View:CGRectMake(0, 150, 320, 50) tag:111];
+    [self.view addSubview:Vieww];
+
+
+
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

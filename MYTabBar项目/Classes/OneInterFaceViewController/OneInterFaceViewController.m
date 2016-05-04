@@ -58,6 +58,7 @@
     [self initData];
     //[self createplace];
     [self gotoRequest];
+    [self createUI];
     
     
     // Do any additional setup after loading the view from its nib.
@@ -66,7 +67,7 @@
 - (void)viewWillLayoutSubviews
 {
     
-    [self _shouldRotateToOrientation:(UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation];
+   // [self _shouldRotateToOrientation:(UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation];
     
 }
 
@@ -76,8 +77,8 @@
         [self createUI];
         [_tableView reloadData];
     } else { // 横屏
-        [self createUI2];
-        [_tableView reloadData];
+       // [self createUI2];
+       // [_tableView reloadData];
     }
 }
 -(void)createplace{
@@ -142,7 +143,7 @@
     //滚动广告页
     UIView * headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 280)];
     _scrollView =[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_W, 280) imageURLStringsGroup:nil];
-    [_scrollView setPlaceholderImage:[UIImage imageNamed:@"3"]];
+    //[_scrollView setPlaceholderImage:[UIImage imageNamed:@"3"]];
     _scrollView.infiniteLoop = YES;
     _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _scrollView.delegate = self;

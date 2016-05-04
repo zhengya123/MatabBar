@@ -41,7 +41,7 @@
 }
 
 
-+(UIView * )View:(CGRect)frame {
++(UIView * )View:(CGRect)frame tag:(NSUInteger)tag {
 
     UIView *  View = [[UIView alloc]initWithFrame:frame];
     View.backgroundColor = [UIColor redColor];
@@ -53,7 +53,8 @@
     button.titleLabel.font = [UIFont systemFontOfSize:25];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
-   // [button addTarget:self action:@selector(clickssss) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(clickssss:) forControlEvents:UIControlEventTouchUpInside];
+    button.tag = tag;
     [View addSubview:button];
     
     UILabel * label = [UILabel new];
@@ -64,6 +65,13 @@
     [View addSubview:label];
     
     return View;
+
+}
+-(void)clickssss:(UIButton *)button{
+    if (button.tag == 111) {
+         NSLog(@"点击了View的X号");
+    }
+   
 
 }
 //View上面的X的点击事件
