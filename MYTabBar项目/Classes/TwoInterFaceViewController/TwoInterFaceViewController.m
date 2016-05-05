@@ -15,8 +15,9 @@
 #import "VideoViewController.h"
 #import "DescripeViewController.h"
 #import "ZXShopCartViewController.h"
+#import "HFStretchableTableHeaderView.h"
 @interface TwoInterFaceViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@property (nonatomic,strong)HFStretchableTableHeaderView *stretchHeaderView;
 @end
 
 @implementation TwoInterFaceViewController
@@ -43,13 +44,14 @@
 
 }
 -(void)createUI{
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0, 200, 44)];
-    titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"首页";
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0, 200, 44)];
+//    titleLabel.font = [UIFont boldSystemFontOfSize:20];
+//    titleLabel.textColor = [UIColor whiteColor];
+//    titleLabel.textAlignment = NSTextAlignmentCenter;
+//    titleLabel.text = @"首页";
     self.navigationItem.title = @"首页";
     
+   // self.automaticallyAdjustsScrollViewInsets = YES;
     UIButton * left = [UIButton buttonWithType:UIButtonTypeCustom];
     [left setImage:[UIImage imageNamed:@"Bargainingdeal@3x"] forState:UIControlStateNormal];
     left.frame = CGRectMake(0, 0, 30, 30);
@@ -65,12 +67,12 @@
     [self.navigationItem setRightBarButtonItem:buIm];
     
     
-   // [self.view addSubview:self.BaseView];
+   
     
-    BaseV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 180)];
+    BaseV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 249)];
     BaseV.image = [UIImage imageNamed:@"banner"];
     
-    _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H - 63) style:UITableViewStyleGrouped];
+    _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H - 49) style:UITableViewStyleGrouped];
     _tableView.delegate=self;
     _tableView.dataSource=self;
     _tableView.showsHorizontalScrollIndicator = NO;
@@ -81,8 +83,12 @@
     [_tableView registerNib:[UINib nibWithNibName:@"MyFirst1TableViewCell" bundle:nil] forCellReuseIdentifier:@"firstnameCell"];
     
     [_tableView registerNib:[UINib nibWithNibName:@"MyThreeTableViewCell" bundle:nil] forCellReuseIdentifier:@"threenameCell"];
-    _tableView.tableHeaderView = BaseV;
+    //_tableView.tableHeaderView = BaseV;
     [self.view addSubview:_tableView];
+    
+    
+    self.stretchHeaderView = [HFStretchableTableHeaderView new];
+    [self.stretchHeaderView stretchHeaderForTableView:_tableView withView:BaseV subViews:self.view];
 }
 
 #pragma mark - UITableViewDelegate
@@ -279,6 +285,55 @@
     [self.navigationController pushViewController:twoDetail animated:YES];
 
 
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    /**
+     *  方案一
+     */
+//    CGFloat y = scrollView.contentOffset.y;//如果有导航栏，则应该加上导航栏的高度
+//    if(y < 180){
+//        CGRect frame = BaseV.frame;
+//        frame.origin.y = y;
+//        frame.size.height = -y;
+//        BaseV.frame = frame;
+//    
+//    
+//    
+//    }
+
+    /**
+     *  方案二
+     */
+    
+    
+    CGFloat width = self.view.frame.size.width; // 图片宽度
+    
+    CGFloat yOffset = scrollView.contentOffset.y; // 偏移的y值
+    
+    if (yOffset < 0) {
+        
+        CGFloat totalOffset = 249 + ABS(yOffset);
+        BaseV.frame =CGRectMake(0, yOffset, width, totalOffset); //拉伸后的图片的frame应该是同比例缩放。
+        
+    }
+    NSLog(@"偏移量==%f",yOffset);
+    /**
+     * 方案三
+     */
+    
+      //  [self.stretchHeaderView scrollViewDidScroll:scrollView];
+  
+    /**
+     * 方案四
+     */
+
+
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [self.stretchHeaderView resizeView];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

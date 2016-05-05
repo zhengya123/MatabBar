@@ -11,6 +11,10 @@
 #import "ErweimaViewController.h"
 #import "LookViewController.h"
 #import "FourInterFaceViewController.h"
+#import "LoginViewController.h"
+#import "AppDelegate.h"
+#import "RootNavigationController.h"
+#import "ZYtoappstore.h"
 @interface FourstViewController ()
 
 @end
@@ -41,25 +45,25 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(void)setupGroup1{
-    WMSettingGroup *group = [self addGroup];
-    WMSettingLabelItem *qq = [WMSettingLabelItem
-                              itemWithIcon:@"personal_btn_qq"
-                              title:@"新闻热点"
-                              destVcClass:NSClassFromString(@"NewsViewController")];
+    WMSettingGroup *group       = [self addGroup];
+    WMSettingLabelItem *qq      = [WMSettingLabelItem
+                                   itemWithIcon:@"personal_btn_qq"
+                                   title:@"新闻热点"
+                                   destVcClass:NSClassFromString(@"NewsViewController")];
 
     WMSettingLabelItem *weiChat = [WMSettingLabelItem
                                    itemWithIcon:@"photo_icon_wechat"
                                    title:@"娱乐杂志"
                                    destVcClass:NSClassFromString(@"NewsViewController")];
-    
-    WMSettingLabelItem *quwei = [WMSettingLabelItem
+
+    WMSettingLabelItem *quwei   = [WMSettingLabelItem
                                    itemWithIcon:@"photo_icon_wechat"
                                    title:@"趣味笑话"
                                    destVcClass:NSClassFromString(@"NewsViewController")];
-    WMSettingLabelItem *weibo = [WMSettingLabelItem
-                                 itemWithIcon:@"photo_icon_weibo"
-                                 title:@"分享"
-                                 destVcClass:NSClassFromString(@"NewsViewController")];
+    WMSettingLabelItem *weibo   = [WMSettingLabelItem
+                                   itemWithIcon:@"photo_icon_weibo"
+                                   title:@"分享"
+                                   destVcClass:NSClassFromString(@"NewsViewController")];
     
     qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
        // descVC.sourceItem = item;
@@ -76,73 +80,84 @@
     group.items = @[qq, weiChat,quwei, weibo];
 }
 -(void)setupGroup2{
-     WMSettingGroup *group = [self addGroup];
-    
-    WMSettingLabelItem *qq = [WMSettingLabelItem
-                              itemWithIcon:@"personal_btn_qq"
-                              title:@"我的二维码"
-                              destVcClass:NSClassFromString(@"ErweimaViewController")];
-    
+    WMSettingGroup *group       = [self addGroup];
+
+    WMSettingLabelItem *qq      = [WMSettingLabelItem
+                                  itemWithIcon:@"personal_btn_qq"
+                                  title:@"我的二维码"
+                                  destVcClass:NSClassFromString(@"ErweimaViewController")];
+
     WMSettingLabelItem *weiChat = [WMSettingLabelItem
                                    itemWithIcon:@"photo_icon_wechat"
                                    title:@"扫一扫"
                                    destVcClass:NSClassFromString(@"LookViewController")];
-    
-    WMSettingLabelItem *quwei = [WMSettingLabelItem
-                                 itemWithIcon:@"photo_icon_wechat"
-                                 title:@"旧版本入口"
-                                 destVcClass:NSClassFromString(@"FourInterFaceViewController")];
-   
-    qq.readyForDestVc = ^(WMSettingLabelItem *item, ErweimaViewController *descVC) {
+
+    WMSettingLabelItem *quwei   = [WMSettingLabelItem
+                                  itemWithIcon:@"photo_icon_wechat"
+                                  title:@"旧版本入口"
+                                  destVcClass:NSClassFromString(@"FourInterFaceViewController")];
+
+    qq.readyForDestVc           = ^(WMSettingLabelItem *item, ErweimaViewController *descVC) {
         // descVC.sourceItem = item;
     };
-    weiChat.readyForDestVc = ^(WMSettingLabelItem *item, LookViewController *descVC) {
+    weiChat.readyForDestVc      = ^(WMSettingLabelItem *item, LookViewController *descVC) {
         // descVC.sourceItem = item;
     };
-    quwei.readyForDestVc = ^(WMSettingLabelItem *item, FourInterFaceViewController *descVC) {
+    quwei.readyForDestVc        = ^(WMSettingLabelItem *item, FourInterFaceViewController *descVC) {
         //descVC.sourceItem = item;
     };
- 
-    group.items = @[qq, weiChat,quwei];
+
+    group.items                 = @[qq, weiChat,quwei];
 }
 -(void)setupGroup3{
-     WMSettingGroup *group = [self addGroup];
-    WMSettingLabelItem *qq = [WMSettingLabelItem
+    WMSettingGroup *group     = [self addGroup];
+    /**
+     * 点击了执行跳转操作
+     */
+    WMSettingLabelItem *qq    = [WMSettingLabelItem
                               itemWithIcon:@"qq1"
                               title:@"版本信息"
                               destVcClass:NSClassFromString(@"NewsViewController")];
+    /**
+     *  appstore评论功能
+     */
+    WMSettingItem * items     = [WMSettingItem itemWithIcon:@"photo_icon_wechat" title:@"评论"];
+
+    items.operation           = ^(WMSettingItem * item){
+
+        NSLog(@"点击了评论");
+    ZYtoappstore * toappStore = [[ZYtoappstore alloc]init];
+    toappStore.myAppID        = @"1055238193";
+       
+    [toappStore showGotoAppStore:self];
+
+
+    };
+    /**
+     *  点击了不跳转，直接进行操作
+     */
+    WMSettingItem * item = [WMSettingItem itemWithIcon:@"photo_icon_wechat" title:@"退出登录"];
     
-    WMSettingLabelItem *weiChat = [WMSettingLabelItem
-                                   itemWithIcon:@"qq2"
-                                   title:@"关于我们"
-                                   destVcClass:NSClassFromString(@"NewsViewController")];
+    item.operation = ^(WMSettingItem * item){
     
-//    WMSettingLabelItem *quwei = [WMSettingLabelItem
-//                                 itemWithIcon:@"photo_icon_wechat"
-//                                 title:@"退出登陆"
-//                                 destVcClass:NSClassFromString(@"FourstViewController")];
-    WMSettingSwitchItem * tuichu = [WMSettingSwitchItem itemWithTitle:@"退出登录" destVcClass:nil];
+        NSLog(@"点击了退出登录");
+        //将密码置为空
+        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"mimao"];
+        LoginViewController * login = [[LoginViewController alloc]init];
+        AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+        RootNavigationController * nav = [[RootNavigationController alloc]initWithRootViewController:login];
+        appdelegate.window.rootViewController = nav;
     
-    
+    };
     qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
         // descVC.sourceItem = item;
     };
-    weiChat.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
-        // descVC.sourceItem = item;
-    };
-    tuichu.readyForDestVc = ^(WMSettingSwitchItem *item, NewsViewController *descVC){
     
-        [self create];
-    };
-    group.items = @[qq, weiChat,tuichu];
+    
+    group.items = @[qq, items,item];
     
 }
--(void)create{
-    NSLog(@"退出登录了");
 
-
-
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

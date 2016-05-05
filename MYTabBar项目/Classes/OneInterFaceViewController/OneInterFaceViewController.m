@@ -133,6 +133,8 @@
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-49) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource= self;
+    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
 
     [_tableView registerNib:[UINib nibWithNibName:@"OneTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
@@ -159,39 +161,6 @@
     [self addFooterMJRefresh];
 
 }
--(void)createUI2{
-   
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_H, SCREEN_H-49) style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.dataSource= self;
-    [self.view addSubview:_tableView];
-    
-    [_tableView registerNib:[UINib nibWithNibName:@"OneTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
-    
-    [_tableView registerNib:[UINib nibWithNibName:@"SecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"SecondCell"];
-    
-    
-    //滚动广告页
-    UIView * headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_H, 280)];
-    _scrollView =[SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_H, 280) imageURLStringsGroup:nil];
-    [_scrollView setPlaceholderImage:[UIImage imageNamed:@"3"]];
-    _scrollView.infiniteLoop = YES;
-    _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    _scrollView.delegate = self;
-    _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    _scrollView.autoScrollTimeInterval = 3.5;
-    
-    [headerView addSubview:_scrollView];
-    
-    _tableView.tableHeaderView=headerView;
-    
-    //[self createplace];
-    [self addHeaderMJRefresh];
-    [self addFooterMJRefresh];
-    
-}
-
 -(void)addHeaderMJRefresh{
     //下拉刷新
     

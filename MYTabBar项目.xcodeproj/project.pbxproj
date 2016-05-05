@@ -20,6 +20,7 @@
 		DF202A831CC0D9BA0081B23E /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */; };
 		DF25A52A1CD9AACA0035D6A2 /* qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A5291CD9AACA0035D6A2 /* qq1.png */; };
 		DF25A52C1CD9AAD20035D6A2 /* qq2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A52B1CD9AAD20035D6A2 /* qq2.png */; };
+		DF25A5311CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF25A5301CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m */; };
 		DF26883F1CC87C2300334D9D /* ZXShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2688271CC87C2300334D9D /* ZXShopCartViewController.m */; };
 		DF2688401CC87C2300334D9D /* GoodsCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = DF26882A1CC87C2300334D9D /* GoodsCategory.m */; };
 		DF2688411CC87C2300334D9D /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF26882C1CC87C2300334D9D /* GoodsModel.m */; };
@@ -261,6 +262,7 @@
 		DFF7913D1CC6076000352D57 /* LookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF791391CC6076000352D57 /* LookViewController.xib */; };
 		DFF791421CC60CB200352D57 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF791401CC60CB200352D57 /* NewsViewController.m */; };
 		DFF791431CC60CB200352D57 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF791411CC60CB200352D57 /* NewsViewController.xib */; };
+		DFF839941CDAF2A300BB84FE /* ZYtoappstore.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF839931CDAF2A300BB84FE /* ZYtoappstore.m */; };
 		DFFDC1201CBF625800E3FBA5 /* 二维码.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFDC11F1CBF625800E3FBA5 /* 二维码.png */; };
 		DFFDC1251CBF626F00E3FBA5 /* 技术帮.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFDC1211CBF626F00E3FBA5 /* 技术帮.png */; };
 		DFFDC1261CBF626F00E3FBA5 /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = DFFDC1221CBF626F00E3FBA5 /* 箭头.png */; };
@@ -318,6 +320,8 @@
 		DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		DF25A5291CD9AACA0035D6A2 /* qq1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq1.png; sourceTree = "<group>"; };
 		DF25A52B1CD9AAD20035D6A2 /* qq2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq2.png; sourceTree = "<group>"; };
+		DF25A52F1CD9F8A60035D6A2 /* HFStretchableTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFStretchableTableHeaderView.h; sourceTree = "<group>"; };
+		DF25A5301CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFStretchableTableHeaderView.m; sourceTree = "<group>"; };
 		DF2688261CC87C2300334D9D /* ZXShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXShopCartViewController.h; sourceTree = "<group>"; };
 		DF2688271CC87C2300334D9D /* ZXShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXShopCartViewController.m; sourceTree = "<group>"; };
 		DF2688291CC87C2300334D9D /* GoodsCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsCategory.h; sourceTree = "<group>"; };
@@ -720,6 +724,8 @@
 		DFF7913F1CC60CB200352D57 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = News/NewsViewController.h; sourceTree = "<group>"; };
 		DFF791401CC60CB200352D57 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = News/NewsViewController.m; sourceTree = "<group>"; };
 		DFF791411CC60CB200352D57 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = News/NewsViewController.xib; sourceTree = "<group>"; };
+		DFF839921CDAF2A300BB84FE /* ZYtoappstore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYtoappstore.h; sourceTree = "<group>"; };
+		DFF839931CDAF2A300BB84FE /* ZYtoappstore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYtoappstore.m; sourceTree = "<group>"; };
 		DFFDC11F1CBF625800E3FBA5 /* 二维码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "二维码.png"; sourceTree = "<group>"; };
 		DFFDC1211CBF626F00E3FBA5 /* 技术帮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "技术帮.png"; sourceTree = "<group>"; };
 		DFFDC1221CBF626F00E3FBA5 /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
@@ -833,6 +839,15 @@
 				DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */,
 			);
 			name = ZYNavigationBar;
+			sourceTree = "<group>";
+		};
+		DF25A52E1CD9F8A60035D6A2 /* stretchTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				DF25A52F1CD9F8A60035D6A2 /* HFStretchableTableHeaderView.h */,
+				DF25A5301CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m */,
+			);
+			path = stretchTableHeader;
 			sourceTree = "<group>";
 		};
 		DF2688241CC87C2300334D9D /* ZXShopCart */ = {
@@ -1099,6 +1114,7 @@
 		DF3ED8461C7C0AC100597967 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DF25A52E1CD9F8A60035D6A2 /* stretchTableHeader */,
 				DF2695E21CD34E7B00223B3B /* Setting */,
 				DF2695D91CD34C5200223B3B /* UILabel+FontChange */,
 				DF2695D71CD34BE300223B3B /* loveway.ttf */,
@@ -1736,6 +1752,8 @@
 			children = (
 				DFF790D81CC5BFBB00352D57 /* LPCTools.h */,
 				DFF790D91CC5BFBB00352D57 /* LPCTools.m */,
+				DFF839921CDAF2A300BB84FE /* ZYtoappstore.h */,
+				DFF839931CDAF2A300BB84FE /* ZYtoappstore.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2149,6 +2167,7 @@
 				DF3ED9251C7C5A7600597967 /* MJRefreshGifHeader.m in Sources */,
 				DF42D7831CB3A2B6008DD4E0 /* SecondTableViewCell.m in Sources */,
 				DF45FA001C7EF284008DA1A7 /* LoginViewController.m in Sources */,
+				DFF839941CDAF2A300BB84FE /* ZYtoappstore.m in Sources */,
 				DF3ED9241C7C5A7600597967 /* MJRefreshBackStateFooter.m in Sources */,
 				DF3ED8EB1C7C50ED00597967 /* DetailViewController.m in Sources */,
 				DF42D6B31CB35D89008DD4E0 /* UIImage+GIF.m in Sources */,
@@ -2162,6 +2181,7 @@
 				DF2688691CC87D0F00334D9D /* MJPropertyKey.m in Sources */,
 				DF42D6CB1CB35DE4008DD4E0 /* TAPageControl.m in Sources */,
 				DF3ED8D61C7C32FE00597967 /* UIProgressView+AFNetworking.m in Sources */,
+				DF25A5311CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m in Sources */,
 				DFF790DA1CC5BFBB00352D57 /* LPCTools.m in Sources */,
 				DF2688431CC87C2300334D9D /* BadgeView.m in Sources */,
 				DF2688651CC87D0F00334D9D /* MJDictionaryCache.m in Sources */,

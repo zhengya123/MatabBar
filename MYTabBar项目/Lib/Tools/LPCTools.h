@@ -19,9 +19,10 @@
 
 //创建标签
 + (UILabel *)createLabel:(CGRect)frame text:(NSString *)text textAlignment:(NSTextAlignment)textAlignment textColor:(UIColor *)textColor bgColor:(UIColor *)bgColor tag:(NSInteger)tag;
-
+/** View 慢慢往下滑的动画 **/
 +(UIView * )View:(CGRect)frame tag:(NSUInteger)tag ;
 
-
+/** UIKIt层的动画 **/
++(UIView *)View:(UIView * )view UIVieAnimation:(NSInteger )time number:(NSInteger)number;
 
 @end
