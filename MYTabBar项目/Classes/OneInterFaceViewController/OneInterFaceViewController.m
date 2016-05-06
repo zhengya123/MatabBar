@@ -23,6 +23,7 @@
 #import "sanpengViewController.h"
 #import "CarViewController.h"
 #import "LPCTools.h"
+#import "NoticeViewController.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -337,10 +338,9 @@
     [self.navigationController pushViewController:other animated:YES];
 }
 -(void)buttonfour{
-     NSLog(@"拍品预告");
-//    OtherViewController * other = [[OtherViewController alloc]init];
-//    other.titles = @"拍品预告";
-//    [self.navigationController pushViewController:other animated:YES];
+     NSLog(@"拍品公告");
+    NoticeViewController * noticeVC = [[NoticeViewController alloc]init];
+    [self.navigationController pushViewController:noticeVC animated:YES];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -352,8 +352,9 @@
     if (indexPath.section == 1) {
         return 105*PROPORTION;
     }else{
-    
-        return 88 * PROPORTION;
+        OneTableViewCell * cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+       // return 88 * PROPORTION;
+        return cell.frame.size.height;
     }
     
 

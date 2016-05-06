@@ -13,7 +13,29 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+-(id)initWithReuseIdentifier:(NSString *)reuseIdentifier{
+    
+    self =[super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self initLayout];
+    }
+    
+    return self;
+    
+}
+-(void)initLayout{
 
+
+
+
+}
+-(void)setIntroductionText:(NSString *)text{
+    CGRect frame = [self frame];
+    frame.size.height = _titleLabel.frame.origin.x + _name.frame.origin.y + _discribe.frame.origin.y;
+    self.frame = frame;
+
+
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

@@ -23,6 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"新闻";
     [self createUI];
+    [self setupUI];//绘图
     // Do any additional setup after loading the view from its nib.
 }
 -(void)createUI{
@@ -60,7 +61,33 @@
     keyAnimation.duration = 4;
     [blackPoint addAnimation:keyAnimation forKey:@"rectRunAnimation"];
 }
+-(void)setupUI{
+   
+    //圆的中心
+    CGPoint arcCenter = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 320);
+    //圆的半径
+    CGFloat radius = 40;
+    
+    CGFloat startAngle = 0.0;
+    CGFloat endAngle = M_PI * 2;
+    // 创建 UIBezierPath对象
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:arcCenter radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
+    // 创建CAShapeLayer对象
+    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+    layer.path = bezierPath.CGPath;
+    layer.fillColor = [UIColor clearColor].CGColor;
+    //线的颜色
+    layer.strokeColor = [UIColor blackColor].CGColor;
+    //线的宽度
+    layer.lineWidth = 2;
+    // 将CAShapeLayer对象添加到视图的layer中
+    [self.view.layer addSublayer:layer];
 
+
+
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

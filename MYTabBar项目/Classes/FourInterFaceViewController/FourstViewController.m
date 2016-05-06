@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "RootNavigationController.h"
 #import "ZYtoappstore.h"
+#import "AddressListViewController.h"
 @interface FourstViewController ()
 
 @end
@@ -62,8 +63,8 @@
                                    destVcClass:NSClassFromString(@"NewsViewController")];
     WMSettingLabelItem *weibo   = [WMSettingLabelItem
                                    itemWithIcon:@"photo_icon_weibo"
-                                   title:@"分享"
-                                   destVcClass:NSClassFromString(@"NewsViewController")];
+                                   title:@"访问通讯录"
+                                   destVcClass:NSClassFromString(@"AddressListViewController")];
     
     qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
        // descVC.sourceItem = item;
@@ -74,7 +75,7 @@
     quwei.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
         //descVC.sourceItem = item;
     };
-    weibo.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
+    weibo.readyForDestVc = ^(WMSettingLabelItem *item, AddressListViewController *descVC) {
         //descVC.sourceItem = item;
     };
     group.items = @[qq, weiChat,quwei, weibo];

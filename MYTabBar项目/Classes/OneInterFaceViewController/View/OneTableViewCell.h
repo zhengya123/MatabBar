@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *huifu;
 @property (weak, nonatomic) IBOutlet UILabel *discribe;
 
+
+-(void)setIntroductionText:(NSString * )text;
+-(NSString *)getText;
+-(id)initWithReuseIdentifier:(NSString * )reuseIdentifier;
 @end

@@ -18,6 +18,12 @@
 		DF202A7E1CC0D4940081B23E /* FullView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A781CC0D4940081B23E /* FullView.m */; };
 		DF202A7F1CC0D4940081B23E /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A7A1CC0D4940081B23E /* FullViewController.m */; };
 		DF202A831CC0D9BA0081B23E /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */; };
+		DF24CD5B1CDC2DF00061A68D /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF24CD591CDC2DF00061A68D /* AddressListViewController.m */; };
+		DF24CD5C1CDC2DF00061A68D /* AddressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF24CD5A1CDC2DF00061A68D /* AddressListViewController.xib */; };
+		DF24CD9C1CDC7A990061A68D /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF24CD9A1CDC7A990061A68D /* NoticeViewController.m */; };
+		DF24CD9D1CDC7A990061A68D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF24CD9B1CDC7A990061A68D /* NoticeViewController.xib */; };
+		DF24CDA11CDC7B6F0061A68D /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF24CD9F1CDC7B6F0061A68D /* NoticeTableViewCell.m */; };
+		DF24CDA21CDC7B6F0061A68D /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF24CDA01CDC7B6F0061A68D /* NoticeTableViewCell.xib */; };
 		DF25A52A1CD9AACA0035D6A2 /* qq1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A5291CD9AACA0035D6A2 /* qq1.png */; };
 		DF25A52C1CD9AAD20035D6A2 /* qq2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF25A52B1CD9AAD20035D6A2 /* qq2.png */; };
 		DF25A5311CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF25A5301CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m */; };
@@ -318,6 +324,15 @@
 		DF202A7A1CC0D4940081B23E /* FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullViewController.m; sourceTree = "<group>"; };
 		DF202A811CC0D9BA0081B23E /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		DF202A821CC0D9BA0081B23E /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		DF24CD581CDC2DF00061A68D /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressListViewController.h; path = "address List/AddressListViewController.h"; sourceTree = "<group>"; };
+		DF24CD591CDC2DF00061A68D /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressListViewController.m; path = "address List/AddressListViewController.m"; sourceTree = "<group>"; };
+		DF24CD5A1CDC2DF00061A68D /* AddressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressListViewController.xib; path = "address List/AddressListViewController.xib"; sourceTree = "<group>"; };
+		DF24CD991CDC7A990061A68D /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		DF24CD9A1CDC7A990061A68D /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		DF24CD9B1CDC7A990061A68D /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		DF24CD9E1CDC7B6F0061A68D /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = View/NoticeTableViewCell.h; sourceTree = "<group>"; };
+		DF24CD9F1CDC7B6F0061A68D /* NoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticeTableViewCell.m; path = View/NoticeTableViewCell.m; sourceTree = "<group>"; };
+		DF24CDA01CDC7B6F0061A68D /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeTableViewCell.xib; path = View/NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		DF25A5291CD9AACA0035D6A2 /* qq1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq1.png; sourceTree = "<group>"; };
 		DF25A52B1CD9AAD20035D6A2 /* qq2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq2.png; sourceTree = "<group>"; };
 		DF25A52F1CD9F8A60035D6A2 /* HFStretchableTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFStretchableTableHeaderView.h; sourceTree = "<group>"; };
@@ -841,6 +856,16 @@
 			name = ZYNavigationBar;
 			sourceTree = "<group>";
 		};
+		DF24CD571CDC2D9F0061A68D /* address List */ = {
+			isa = PBXGroup;
+			children = (
+				DF24CD581CDC2DF00061A68D /* AddressListViewController.h */,
+				DF24CD591CDC2DF00061A68D /* AddressListViewController.m */,
+				DF24CD5A1CDC2DF00061A68D /* AddressListViewController.xib */,
+			);
+			name = "address List";
+			sourceTree = "<group>";
+		};
 		DF25A52E1CD9F8A60035D6A2 /* stretchTableHeader */ = {
 			isa = PBXGroup;
 			children = (
@@ -1269,6 +1294,7 @@
 		DF3ED8721C7C0CCE00597967 /* FourInterFaceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DF24CD571CDC2D9F0061A68D /* address List */,
 				DFF7913E1CC60C8A00352D57 /* News */,
 				DF3DA48A1CC4D22000775A7E /* DetailView */,
 				DF3ED8871C7C0D7C00597967 /* FourInterFaceViewController.h */,
@@ -1378,6 +1404,9 @@
 				DF42D7801CB3A2B6008DD4E0 /* SecondTableViewCell.h */,
 				DF42D7811CB3A2B6008DD4E0 /* SecondTableViewCell.m */,
 				DF42D7821CB3A2B6008DD4E0 /* SecondTableViewCell.xib */,
+				DF24CD9E1CDC7B6F0061A68D /* NoticeTableViewCell.h */,
+				DF24CD9F1CDC7B6F0061A68D /* NoticeTableViewCell.m */,
+				DF24CDA01CDC7B6F0061A68D /* NoticeTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1397,6 +1426,9 @@
 				DFAFBC9A1CBE47910033F57C /* ADViewController.h */,
 				DFAFBC9B1CBE47910033F57C /* ADViewController.m */,
 				DFAFBC9C1CBE47910033F57C /* ADViewController.xib */,
+				DF24CD991CDC7A990061A68D /* NoticeViewController.h */,
+				DF24CD9A1CDC7A990061A68D /* NoticeViewController.m */,
+				DF24CD9B1CDC7A990061A68D /* NoticeViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1927,6 +1959,7 @@
 				DFF3A7D41CB4A6E000EC911F /* qishituViewController.xib in Resources */,
 				DF42D6E21CB363A2008DD4E0 /* ifree_load_04@2x.png in Resources */,
 				DFF790E61CC5DDE800352D57 /* miaoshu.png in Resources */,
+				DF24CD9D1CDC7A990061A68D /* NoticeViewController.xib in Resources */,
 				DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */,
 				DF42D6E91CB36ADA008DD4E0 /* 进入符.png in Resources */,
 				DFFDC1201CBF625800E3FBA5 /* 二维码.png in Resources */,
@@ -1945,6 +1978,7 @@
 				DF3ED8DC1C7C32FE00597967 /* commonNavigation.xib in Resources */,
 				DF3ED86C1C7C0B7F00597967 /* tab_c2.png in Resources */,
 				DFAFBC9E1CBE47910033F57C /* ADViewController.xib in Resources */,
+				DF24CDA21CDC7B6F0061A68D /* NoticeTableViewCell.xib in Resources */,
 				DF42D7941CB3AB91008DD4E0 /* Bargainingdeal@3x.png in Resources */,
 				DF42D6DE1CB363A2008DD4E0 /* ifree_load_012@2x.png in Resources */,
 				DF3ED8EC1C7C50ED00597967 /* DetailViewController.xib in Resources */,
@@ -1980,6 +2014,7 @@
 				DF2695E11CD34E4F00223B3B /* FourstViewController.xib in Resources */,
 				DF3ED8651C7C0B7F00597967 /* tab_0.png in Resources */,
 				DF42D7971CB3AB91008DD4E0 /* Flashontrading@2x.png in Resources */,
+				DF24CD5C1CDC2DF00061A68D /* AddressListViewController.xib in Resources */,
 				DF202A7D1CC0D4940081B23E /* FMGVideoPlayView.xib in Resources */,
 				DF3ED86E1C7C0B7F00597967 /* tabbg.png in Resources */,
 				DF3DA4951CC4E69700775A7E /* DescripeViewController.xib in Resources */,
@@ -2098,6 +2133,7 @@
 				DF42D6C91CB35DE4008DD4E0 /* TAAnimatedDotView.m in Sources */,
 				DFE23DD31CCF5FD30074836A /* MASViewConstraint.m in Sources */,
 				DF2688671CC87D0F00334D9D /* MJFoundation.m in Sources */,
+				DF24CD9C1CDC7A990061A68D /* NoticeViewController.m in Sources */,
 				DF42D6B51CB35D89008DD4E0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DF42D6AF1CB35D89008DD4E0 /* SDWebImageDownloaderOperation.m in Sources */,
 				DF42D6B21CB35D89008DD4E0 /* UIButton+WebCache.m in Sources */,
@@ -2124,6 +2160,7 @@
 				DF3ED8D51C7C32FE00597967 /* UIImageView+AFNetworking.m in Sources */,
 				DF9449251C7D407C003744F4 /* SVProgressHUD.m in Sources */,
 				DF436E0E1CBB80C70058565C /* rscode.c in Sources */,
+				DF24CDA11CDC7B6F0061A68D /* NoticeTableViewCell.m in Sources */,
 				DF3ED8CD1C7C32FE00597967 /* AFURLConnectionOperation.m in Sources */,
 				DF3ED8D21C7C32FE00597967 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DF42D6CA1CB35DE4008DD4E0 /* TADotView.m in Sources */,
@@ -2233,6 +2270,7 @@
 				DF202A7E1CC0D4940081B23E /* FullView.m in Sources */,
 				DF2688681CC87D0F00334D9D /* MJProperty.m in Sources */,
 				DFF791331CC606F400352D57 /* BUIView.m in Sources */,
+				DF24CD5B1CDC2DF00061A68D /* AddressListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,14 +44,8 @@
 
 }
 -(void)createUI{
-//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0, 200, 44)];
-//    titleLabel.font = [UIFont boldSystemFontOfSize:20];
-//    titleLabel.textColor = [UIColor whiteColor];
-//    titleLabel.textAlignment = NSTextAlignmentCenter;
-//    titleLabel.text = @"首页";
     self.navigationItem.title = @"首页";
-    
-   // self.automaticallyAdjustsScrollViewInsets = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     UIButton * left = [UIButton buttonWithType:UIButtonTypeCustom];
     [left setImage:[UIImage imageNamed:@"Bargainingdeal@3x"] forState:UIControlStateNormal];
     left.frame = CGRectMake(0, 0, 30, 30);
