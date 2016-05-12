@@ -10,7 +10,7 @@
 #import "NoticeTableViewCell.h"
 #import "Masonry.h"
 #import "API.h"
-@interface NoticeViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface NoticeViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 @end
 
@@ -20,14 +20,24 @@
     
     UITableView * _tableView;
     NSArray * array;
+    UISearchBar * searchBar;
 
 
 
 }
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    searchController.active = true;
+//
+//
+//
+//
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
     [self createData];
+    [self createNAV];
     [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
@@ -44,7 +54,32 @@
     [_tableView reloadData];
 
 }
+/**
+ *  导航栏搜索框
+ */
+-(void)createNAV{
+
+    UIView * titleview = [[UIView alloc]initWithFrame:CGRectMake(50, 20, SCREEN_W-100, 30)];
+    titleview.backgroundColor = [UIColor whiteColor];
+    
+    searchBar = [[UISearchBar alloc]init];
+    searchBar.delegate = self;
+    searchBar.frame = CGRectMake(0, 0, SCREEN_W-100, 30);
+    searchBar.backgroundColor = [UIColor yellowColor];
+    searchBar.keyboardType = UIReturnKeyDefault;
+    searchBar.placeholder = @"请输入、、、";
+    searchBar.layer.cornerRadius = 15;
+    searchBar.layer.masksToBounds = YES;
+    [titleview addSubview:searchBar];
+    
+    self.navigationItem.titleView = titleview;
+
+
+
+
+}
 -(void)createUI{
+    
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -105,6 +140,19 @@
     NSLog(@"%f",size.height);
     return size.height +30 ;
     
+}
+
+#pragma mark - SearchBarDelegate
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+//
+//    [searchBar resignFirstResponder];
+//
+//
+//}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+    [searchBar resignFirstResponder];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

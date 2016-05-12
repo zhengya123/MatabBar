@@ -155,14 +155,19 @@
         AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
         RootNavigationController * nav = [[RootNavigationController alloc]initWithRootViewController:login];
         appdelegate.window.rootViewController = nav;
+        
     
     };
-    qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
-        // descVC.sourceItem = item;
+    /**
+     *  点击退出APP
+     */
+    WMSettingItem * back = [WMSettingItem itemWithIcon:@"photo_icon_wechat" title:@"退出APP"];
+    back.operation = ^(WMSettingItem * item){
+        NSLog(@"点击了退出APP");
+        [[UIApplication sharedApplication]performSelector:@selector(suspend)];
+        
     };
-    
-    
-    group.items = @[qq, items,item];
+    group.items = @[qq, items,item,back];
     
 }
 

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface NoticeViewController : UIViewController
+{
 
+   // UISearchController * searchController;
+
+
+}
 
 @end
