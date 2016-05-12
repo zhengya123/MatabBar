@@ -57,6 +57,7 @@
     [button setImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(clickssss:) forControlEvents:UIControlEventTouchUpInside];
     button.tag = tag;
+    
     [View addSubview:button];
     
     UILabel * label = [UILabel new];
@@ -72,6 +73,7 @@
 -(void)clickssss:(UIButton *)button{
     if (button.tag == 111) {
          NSLog(@"点击了View的X号");
+        
     }
    
 

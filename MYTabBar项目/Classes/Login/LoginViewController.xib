@@ -44,7 +44,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
+                    <color key="highlightedColor" red="0.93159960381774087" green="0.72924765554900151" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svW-Cf-SYz">
                     <rect key="frame" x="229" y="353" width="67" height="30"/>

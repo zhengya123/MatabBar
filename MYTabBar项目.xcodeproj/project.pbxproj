@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6BF0718FF95DB3E9BCCCB2F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F87A5B7BDC4F536C76977A /* libPods.a */; };
+		DF037A931CE322EA00A21AA4 /* BanbenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF037A911CE322EA00A21AA4 /* BanbenViewController.m */; };
+		DF037A941CE322EA00A21AA4 /* BanbenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF037A921CE322EA00A21AA4 /* BanbenViewController.xib */; };
 		DF202A541CC08D3F0081B23E /* TwoInterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A521CC08D3F0081B23E /* TwoInterDetailViewController.m */; };
 		DF202A551CC08D3F0081B23E /* TwoInterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF202A531CC08D3F0081B23E /* TwoInterDetailViewController.xib */; };
 		DF202A681CC097CD0081B23E /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF202A661CC097CD0081B23E /* VideoViewController.m */; };
@@ -308,6 +310,9 @@
 		1959612FFD93351252072D13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9797E49154D796E13A9C5C6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		97F87A5B7BDC4F536C76977A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF037A901CE322EA00A21AA4 /* BanbenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BanbenViewController.h; path = "版本/BanbenViewController.h"; sourceTree = "<group>"; };
+		DF037A911CE322EA00A21AA4 /* BanbenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BanbenViewController.m; path = "版本/BanbenViewController.m"; sourceTree = "<group>"; };
+		DF037A921CE322EA00A21AA4 /* BanbenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BanbenViewController.xib; path = "版本/BanbenViewController.xib"; sourceTree = "<group>"; };
 		DF202A511CC08D3F0081B23E /* TwoInterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoInterDetailViewController.h; sourceTree = "<group>"; };
 		DF202A521CC08D3F0081B23E /* TwoInterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoInterDetailViewController.m; sourceTree = "<group>"; };
 		DF202A531CC08D3F0081B23E /* TwoInterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoInterDetailViewController.xib; sourceTree = "<group>"; };
@@ -822,6 +827,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF037A8F1CE322B500A21AA4 /* 版本 */ = {
+			isa = PBXGroup;
+			children = (
+				DF037A901CE322EA00A21AA4 /* BanbenViewController.h */,
+				DF037A911CE322EA00A21AA4 /* BanbenViewController.m */,
+				DF037A921CE322EA00A21AA4 /* BanbenViewController.xib */,
+			);
+			name = "版本";
+			sourceTree = "<group>";
+		};
 		DF202A641CC097B10081B23E /* VideoPlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -1294,6 +1309,7 @@
 		DF3ED8721C7C0CCE00597967 /* FourInterFaceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DF037A8F1CE322B500A21AA4 /* 版本 */,
 				DF24CD571CDC2D9F0061A68D /* address List */,
 				DFF7913E1CC60C8A00352D57 /* News */,
 				DF3DA48A1CC4D22000775A7E /* DetailView */,
@@ -1970,6 +1986,7 @@
 				DF3ED8E71C7C36D300597967 /* OneTableViewCell.xib in Resources */,
 				DF42D6E61CB363A2008DD4E0 /* ifree_load_08@2x.png in Resources */,
 				DF202A691CC097CD0081B23E /* VideoViewController.xib in Resources */,
+				DF037A941CE322EA00A21AA4 /* BanbenViewController.xib in Resources */,
 				DF42D6E71CB363A2008DD4E0 /* ifree_load_09@2x.png in Resources */,
 				DF25A52C1CD9AAD20035D6A2 /* qq2.png in Resources */,
 				DF42D6DD1CB363A2008DD4E0 /* ifree_load_011@2x.png in Resources */,
@@ -2245,6 +2262,7 @@
 				DF26886E1CC87D0F00334D9D /* NSObject+MJProperty.m in Sources */,
 				DFE23DD11CCF5FD30074836A /* MASLayoutConstraint.m in Sources */,
 				DF3ED92B1C7C5A7600597967 /* UIScrollView+MJRefresh.m in Sources */,
+				DF037A931CE322EA00A21AA4 /* BanbenViewController.m in Sources */,
 				DF3ED91E1C7C5A7600597967 /* MJRefreshHeader.m in Sources */,
 				DF42D7881CB3A89D008DD4E0 /* OtherViewController.m in Sources */,
 				DF2688461CC87C2300334D9D /* MenuItemCell.m in Sources */,

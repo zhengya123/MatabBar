@@ -1,2 +1,1 @@
-
-pod 'Masonry'
+pod 'PDTSimpleCalendar'

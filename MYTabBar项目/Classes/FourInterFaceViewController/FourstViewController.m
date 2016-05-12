@@ -16,6 +16,7 @@
 #import "RootNavigationController.h"
 #import "ZYtoappstore.h"
 #import "AddressListViewController.h"
+#import "BanbenViewController.h"
 @interface FourstViewController ()
 
 @end
@@ -118,7 +119,13 @@
     WMSettingLabelItem *qq    = [WMSettingLabelItem
                               itemWithIcon:@"qq1"
                               title:@"版本信息"
-                              destVcClass:NSClassFromString(@"NewsViewController")];
+                              destVcClass:NSClassFromString(@"BanbenViewController")];
+    
+    qq.readyForDestVc           = ^(WMSettingLabelItem *item, BanbenViewController *descVC) {
+        descVC.titleName = @"版本信息";
+    };
+
+    
     /**
      *  appstore评论功能
      */

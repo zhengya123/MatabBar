@@ -40,7 +40,7 @@
 @protocol commonConnectDelegate <NSObject>
 
 @optional
--(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect;
+-(void)gotTheData:(NSArray *)dataDic and:(commonModel *)connect;
 -(void)gotTheDataWX:(NSDictionary *)dataDic and:(commonModel *)connect;
 -(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect;
 

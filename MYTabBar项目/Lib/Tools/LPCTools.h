@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@protocol ButtonDelegate <NSObject>
+
+-(void)clickssss:(UIButton *)button;
+
+@end
 @interface LPCTools : NSObject
 
 //工厂模式
@@ -25,4 +30,6 @@
 /** UIKIt层的动画 **/
 +(UIView *)View:(UIView * )view UIVieAnimation:(NSInteger )time number:(NSInteger)number;
 
+
+@property(nonatomic,assign) id<ButtonDelegate>delegate;
 @end

@@ -18,7 +18,8 @@ commonConnectDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout,
 UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+UIActionSheetDelegate>
 
 //@property(nonatomic,strong)UIView *titleBaseView;
 @end
@@ -31,16 +32,28 @@ UITableViewDataSource>
     UICollectionView *_collectionView;
     UIView *BaseView;
     UITableView * _tableView;
-    
+    NSMutableArray * paramitems;
+    NSMutableArray * valueitems;
+    NSMutableArray * arrays;
+    UILongPressGestureRecognizer* longPress;
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self NAV];
+    [self createData];
     [self createUI];
-    [self request];
+   // [self request];
     // Do any additional setup after loading the view from its nib.
+}
+-(void)createData{
+
+    paramitems = [[NSMutableArray alloc]init];
+    valueitems = [[NSMutableArray alloc]init];
+    arrays = [[NSMutableArray alloc]init];
+
+
 }
 -(void)request{
     NSDictionary * partment = @{@"seriesId":@107};
@@ -51,8 +64,33 @@ UITableViewDataSource>
 
 
 }
--(void)gotTheData:(NSDictionary *)dataDic and:(commonModel *)connect{
+-(void)gotTheData:(NSArray *)dataDic and:(commonModel *)connect{
    // NSLog(@"%@",dataDic);
+//    NSDictionary * dic = dataDic[0] ;
+//    NSLog(@"%@",dic);
+    
+//    NSArray * array = [[dataDic[0] objectForKey:@"result"] objectForKey:@"paramtypeitems"];
+//    NSDictionary * dict = [[NSDictionary alloc]init];
+//    
+//    for ( dict in array) {
+//        
+//        [paramitems addObject:[dict objectForKey:@"paramitems"]];
+//        
+//        NSDictionary * dict2 = [[NSDictionary alloc]init];
+//       // NSMutableArray * arra = [[NSMutableArray alloc]init];
+//        for (dict2 in paramitems) {
+//            
+//            [arrays addObject:dict2];
+//            NSLog(@"%@",arrays[0]);
+//             NSLog(@"== %@",[array[0] objectForKey:@"valueitems"]);
+//            [valueitems addObject:[array[0] objectForKey:@"id"]];
+//            
+//        }
+//    }
+//   
+//    NSLog(@"collectionView == %@",paramitems);
+//    [_collectionView reloadData];
+    
 
 }
 -(void)gotTheErrorMessage:(NSString *)errorMessage and:(commonModel *)connect{
@@ -169,6 +207,7 @@ UITableViewDataSource>
 
     
     
+   
     
 
 }
@@ -195,9 +234,26 @@ UITableViewDataSource>
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-tableTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cells" forIndexPath:indexPath];
-
+    tableTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cells" forIndexPath:indexPath];
+    longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPresss:)];
+    [cell addGestureRecognizer:longPress];
     return cell;
+
+}
+- (void)longPresss:(UILongPressGestureRecognizer*)longPress{
+    NSLog(@"长按了cell");
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"改变背景颜色" delegate:self cancelButtonTitle:@"保持原样" destructiveButtonTitle:@"取消" otherButtonTitles:@"变为红色",@"变为蓝色",@"变为紫色", nil];
+    /*
+     UIActionSheetStyleAutomatic        = -1,       // take appearance from toolbar style otherwise uses 'default'
+     UIActionSheetStyleDefault          = UIBarStyleDefault,
+     UIActionSheetStyleBlackTranslucent = UIBarStyleBlackTranslucent,
+     UIActionSheetStyleBlackOpaque
+     
+     */
+    sheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+    //提示框不需要设置显示位置和大小 在底部
+    [sheet showInView:self.view];
+
 
 }
 #pragma mark - dataSource
@@ -205,15 +261,14 @@ tableTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cells
     return 1;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 13;
+    return valueitems.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     //要与注册时、xib中填写的值一致
     static NSString *cellIde = @"cell";
     //如果从重用队列中取不到cell对象,集合视图会根据注册的信息自动创建cell
     CarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
-    
-    cell.titless.text = @"1.6L 手动时尚型";
+    cell.titless.text = @"1.6L手动挡";
     cell.titless.font = [UIFont systemFontOfSize:14];
     cell.backgroundColor = [UIColor yellowColor];
     return cell;

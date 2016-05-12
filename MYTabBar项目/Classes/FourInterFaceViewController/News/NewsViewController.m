@@ -8,13 +8,14 @@
 
 #import "NewsViewController.h"
 #import "LPCTools.h"
-@interface NewsViewController ()
+@interface NewsViewController ()<ButtonDelegate>
 
 @end
 
 @implementation NewsViewController
 {
     UIView * Vieww;
+    LPCTools * viewDele;
 
 
 }
@@ -24,6 +25,7 @@
     self.navigationItem.title = @"新闻";
     [self createUI];
     [self setupUI];//绘图
+    [self createBU];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)createUI{
@@ -86,6 +88,27 @@
 
 
 
+
+}
+-(void)createBU{
+  
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 400, 100, 100);
+    button.backgroundColor = [UIColor purpleColor];
+    [button addTarget:self action:@selector(classsss) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+
+    
+  
+    
+
+
+}
+
+-(void)classsss{
+   
+    
+    
 
 }
 - (void)didReceiveMemoryWarning {

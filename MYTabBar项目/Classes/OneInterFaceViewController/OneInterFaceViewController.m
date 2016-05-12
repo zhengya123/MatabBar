@@ -350,7 +350,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section == 1) {
-        return 105*PROPORTION;
+        return 105;
     }else{
         OneTableViewCell * cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
        // return 88 * PROPORTION;
