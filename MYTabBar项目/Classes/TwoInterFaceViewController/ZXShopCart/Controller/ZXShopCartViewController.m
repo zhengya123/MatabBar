@@ -77,7 +77,7 @@ static NSString * const ListCellID = @"DetailListCell";
     }
     return _orderArray;
 }
-
+//左边tableView
 - (UITableView *)leftTableView {
     if (nil == _leftTableView) {
         _leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width * 0.25, self.view.frame.size.height - 50)];
@@ -90,7 +90,7 @@ static NSString * const ListCellID = @"DetailListCell";
     return _leftTableView;
     
 }
-
+//右边tableView
 - (UITableView *)rightTableView {
     if (nil == _rightTableView) {
         _rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.size.width * 0.25, 0, self.view.frame.size.width * 0.75, self.view.frame.size.height - 50)];
@@ -104,6 +104,7 @@ static NSString * const ListCellID = @"DetailListCell";
     return _rightTableView;
 }
 
+//购物车View
 - (ShopCartView *)shopCartView {
     if (!_shopCartView) {
         _shopCartView = [[ShopCartView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 50, CGRectGetWidth(self.view.bounds), 50) inView:self.view];

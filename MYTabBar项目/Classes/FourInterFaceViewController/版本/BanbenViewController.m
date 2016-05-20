@@ -9,16 +9,21 @@
 #import "BanbenViewController.h"
 #import "API.h"
 #import "Masonry.h"
+#import "HIKLoadView.h"
 @interface BanbenViewController ()
 
+
+@property (nonatomic, strong) HIKLoadView *loadingView;
 @end
 
 @implementation BanbenViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = self.titleName;
+    
+    //[self.view insertSubview:_loadingView aboveSubview:self.playerView];
     [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
@@ -71,6 +76,24 @@
     label22.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     label22.textAlignment = NSTextAlignmentRight;
     [baseView2 addSubview:label22];
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, SCREEN_H -100, SCREEN_W, 50);
+    button.backgroundColor = [UIColor redColor];
+    [button addTarget:self action:@selector(clicksss) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+    if(!_loadingView)
+        _loadingView = [[HIKLoadView alloc] initWithHIKLoadViewStyle:HIKLoadViewStyleSqureClockWise];
+    _loadingView.frame = CGRectMake(SCREEN_W/2-50, 300, 100, 100);
+    [self.view addSubview:_loadingView];
+    // [self.view insertSubview:_loadingView aboveSubview:self.view];
+    [_loadingView stopSquareClockwiseAnimation];
+
+
+}
+-(void)clicksss{
+    NSLog(@"点击了");
+    [self.loadingView startSquareClcokwiseAnimation];
 
 
 }
