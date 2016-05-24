@@ -24,13 +24,18 @@
 #import "CarViewController.h"
 #import "LPCTools.h"
 #import "NoticeViewController.h"
+#import "XTPopView.h"
+#import "LookViewController.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
       commonConnectDelegate,
       UITableViewDelegate,
-      UITableViewDataSource>
+      UITableViewDataSource,
+      selectIndexPathDelegate>
 
+
+@property (nonatomic, strong) UIButton *right;
 @end
 
 @implementation OneInterFaceViewController
@@ -46,6 +51,7 @@
     UIImageView * _imageView;
     commonModel * requestData;
     CATransition *animation;
+    XTPopView *view1;
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
@@ -113,6 +119,13 @@
 //    titleLabel.textAlignment = NSTextAlignmentCenter;
 //    titleLabel.text = @"首页";
     self.navigationItem.title = @"首页";
+    
+    _right = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_right setImage:[UIImage imageNamed:@"二维码"] forState:UIControlStateNormal];
+    _right.frame = CGRectMake(0, 0, 30, 30);
+    [_right addTarget:self action:@selector(erweimas:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * buIm = [[UIBarButtonItem alloc]initWithCustomView:_right];
+    [self.navigationItem setRightBarButtonItem:buIm];
 
 }
 -(void)initData{
@@ -269,6 +282,74 @@
     [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
     [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
 }
+
+-(void)erweimas:(UIButton *)button{
+    NSLog(@"二维码点击了");
+    
+    /**
+     XTTypeOfUpLeft,     // 上左
+     XTTypeOfUpCenter,   // 上中
+     XTTypeOfUpRight,    // 上右
+     
+     XTTypeOfDownLeft,   // 下左
+     XTTypeOfDownCenter, // 下中
+     XTTypeOfDownRight,  // 下右
+     
+     XTTypeOfLeftUp,     // 左上
+     XTTypeOfLeftCenter, // 左中
+     XTTypeOfLeftDown,   // 左下
+     
+     XTTypeOfRightUp,    // 右上
+     XTTypeOfRightCenter,// 右中
+     XTTypeOfRightDown,  // 右下
+     */
+    CGPoint point = CGPointMake(_right.center.x,_right.frame.origin.y + 64);
+    view1 = [[XTPopView alloc] initWithOrigin:point Width:130 Height:40 * 4 Type:XTTypeOfUpRight Color:[UIColor colorWithRed:0.2737 green:0.2737 blue:0.2737 alpha:1.0]];
+    view1.dataArray = @[@"发起群聊",@"添加朋友", @"扫一扫", @"收付款"];
+    view1.images = @[@"发起群聊",@"添加朋友", @"扫一扫", @"付款"];
+    view1.fontSize = 13;
+    view1.row_height = 40;
+    view1.titleTextColor = [UIColor whiteColor];
+    view1.delegate = self;
+    [view1 popView];
+    
+    
+    
+    
+}
+
+- (void)selectIndexPathRow:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+        {
+            NSLog(@"Click 0 ......");
+        }
+            break;
+        case 1:
+        {
+            NSLog(@"Clikc 1 ......");
+        }
+            break;
+        case 2:
+        {
+            NSLog(@"Clikc 2 ......");
+            LookViewController * looklook = [[LookViewController alloc]init];
+            [self.navigationController pushViewController:looklook animated:YES];
+            [view1 dismiss];
+            
+        }
+            break;
+        case 3:
+        {
+            NSLog(@"Clikc 3 ......");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     

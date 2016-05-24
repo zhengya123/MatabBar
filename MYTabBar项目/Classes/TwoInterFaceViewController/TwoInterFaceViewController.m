@@ -16,8 +16,10 @@
 #import "DescripeViewController.h"
 #import "ZXShopCartViewController.h"
 #import "HFStretchableTableHeaderView.h"
-@interface TwoInterFaceViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "XTPopView.h"
+@interface TwoInterFaceViewController ()<UITableViewDataSource,UITableViewDelegate,selectIndexPathDelegate>
 @property (nonatomic,strong)HFStretchableTableHeaderView *stretchHeaderView;
+@property (nonatomic, strong) UIButton *right;
 @end
 
 @implementation TwoInterFaceViewController
@@ -49,15 +51,15 @@
     UIButton * left = [UIButton buttonWithType:UIButtonTypeCustom];
     [left setImage:[UIImage imageNamed:@"Bargainingdeal@3x"] forState:UIControlStateNormal];
     left.frame = CGRectMake(0, 0, 30, 30);
-    [left addTarget:self action:@selector(right) forControlEvents:UIControlEventTouchUpInside];
+    [left addTarget:self action:@selector(left:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem * buImleft = [[UIBarButtonItem alloc]initWithCustomView:left];
     [self.navigationItem setLeftBarButtonItem:buImleft];
    
-    UIButton * bar = [UIButton buttonWithType:UIButtonTypeCustom];
-    [bar setImage:[UIImage imageNamed:@"二维码"] forState:UIControlStateNormal];
-    bar.frame = CGRectMake(0, 0, 30, 30);
-    [bar addTarget:self action:@selector(erweima) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem * buIm = [[UIBarButtonItem alloc]initWithCustomView:bar];
+    _right = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_right setImage:[UIImage imageNamed:@"二维码"] forState:UIControlStateNormal];
+    _right.frame = CGRectMake(0, 0, 30, 30);
+    [_right addTarget:self action:@selector(erweima:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * buIm = [[UIBarButtonItem alloc]initWithCustomView:_right];
     [self.navigationItem setRightBarButtonItem:buIm];
     
     
@@ -219,17 +221,74 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
--(void)right{
+-(void)left:(UIButton *)button{
     NSLog(@"左侧点击了");
 
 
 }
--(void)erweima{
+-(void)erweima:(UIButton *)button{
     NSLog(@"二维码点击了");
+    
+    /**
+     XTTypeOfUpLeft,     // 上左
+     XTTypeOfUpCenter,   // 上中
+     XTTypeOfUpRight,    // 上右
+     
+     XTTypeOfDownLeft,   // 下左
+     XTTypeOfDownCenter, // 下中
+     XTTypeOfDownRight,  // 下右
+     
+     XTTypeOfLeftUp,     // 左上
+     XTTypeOfLeftCenter, // 左中
+     XTTypeOfLeftDown,   // 左下
+     
+     XTTypeOfRightUp,    // 右上
+     XTTypeOfRightCenter,// 右中
+     XTTypeOfRightDown,  // 右下
+     */
+    CGPoint point = CGPointMake(_right.center.x,_right.frame.origin.y + 64);
+    XTPopView *view1 = [[XTPopView alloc] initWithOrigin:point Width:130 Height:40 * 4 Type:XTTypeOfUpRight Color:[UIColor colorWithRed:0.2737 green:0.2737 blue:0.2737 alpha:1.0]];
+    view1.dataArray = @[@"发起群聊",@"添加朋友", @"扫一扫", @"收付款"];
+    view1.images = @[@"发起群聊",@"添加朋友", @"扫一扫", @"付款"];
+    view1.fontSize = 13;
+    view1.row_height = 40;
+    view1.titleTextColor = [UIColor whiteColor];
+    view1.delegate = self;
+    [view1 popView];
+
 
 
 
 }
+
+- (void)selectIndexPathRow:(NSInteger)index
+{
+    switch (index) {
+        case 0:
+        {
+            NSLog(@"Click 0 ......");
+        }
+            break;
+        case 1:
+        {
+            NSLog(@"Clikc 1 ......");
+        }
+            break;
+        case 2:
+        {
+            NSLog(@"Clikc 2 ......");
+        }
+            break;
+        case 3:
+        {
+            NSLog(@"Clikc 3 ......");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)zixunhuizhen{
    
 //    TwoInterDetailViewController * twoDetail = [[TwoInterDetailViewController alloc]init];
