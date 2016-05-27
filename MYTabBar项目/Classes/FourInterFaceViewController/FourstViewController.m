@@ -17,6 +17,8 @@
 #import "ZYtoappstore.h"
 #import "AddressListViewController.h"
 #import "BanbenViewController.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+#include <SystemConfiguration/CaptiveNetwork.h>
 @interface FourstViewController ()
 
 @end
@@ -34,15 +36,31 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
     [super.navigationController setNavigationBarHidden:YES];
-     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     _imageView.image=[UIImage imageNamed:@"fengmian.png"];
     
     //[self.view addSubview:_imageView];
     [self setupGroup1];
     [self setupGroup2];
-    [self setupGroup3];
+    [self setupGroup3];//此组可以不跳转界面进行其他动作
     
+    /**
+     *  获取当前WIFI信息
+     */
+    NSArray * ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    id info = nil;
+    for(NSString * ifnam in ifs){
+    
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        NSLog(@"%@  => %@",ifnam,info);
+        
+        if (info && [info count]) {
+            break;
+        }
+    
+    
+    }
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -69,6 +87,7 @@
     
     qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
        // descVC.sourceItem = item;
+        
     };
     weiChat.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
        // descVC.sourceItem = item;
@@ -134,10 +153,10 @@
     items.operation           = ^(WMSettingItem * item){
 
         NSLog(@"点击了评论");
-    ZYtoappstore * toappStore = [[ZYtoappstore alloc]init];
-    toappStore.myAppID        = @"1055238193";
-       
-    [toappStore showGotoAppStore:self];
+
+        
+        [self evaluateAuthenticate];//指纹验证
+       // [self authentication];//密码验证 (不支持)
 
 
     };
@@ -169,6 +188,236 @@
     };
     group.items = @[qq, items,item,back];
     
+}
+
+/**
+ * 指纹验证
+ */
+- (void)evaluateAuthenticate
+{
+    //创建LAContext
+    LAContext* context = [[LAContext alloc] init];
+    NSError* error = nil;
+    NSString* result = @"请验证已有指纹";
+    
+    
+    
+    //首先使用canEvaluatePolicy 判断设备支持状态
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+        //支持指纹验证
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:result reply:^(BOOL success, NSError *error) {
+            if (success) {
+                    ZYtoappstore * toappStore = [[ZYtoappstore alloc]init];
+                    toappStore.myAppID        = @"1055238193";
+                
+                    [toappStore showGotoAppStore:self];
+                NSLog(@"验证成功，主线程处理UI");
+            }
+            else
+            {
+                NSLog(@"%@",error.localizedDescription);
+                switch (error.code) {
+                    case LAErrorSystemCancel:
+                    {
+                        
+                        NSLog(@"系统取消授权，如其他APP切入");
+                        break;
+                    }
+                    case LAErrorUserCancel:
+                    {
+                        
+                        NSLog(@"用户取消验证Touch ID");
+                        break;
+                    }
+                    case LAErrorAuthenticationFailed:
+                    {
+                       
+                        NSLog(@"授权失败");
+                        break;
+                    }
+                    case LAErrorPasscodeNotSet:
+                    {
+                        
+                        NSLog(@"系统未设置密码");
+                        break;
+                    }
+                    case LAErrorTouchIDNotAvailable:
+                    {
+                        
+                        NSLog(@"设备Touch ID不可用，例如未打开");
+                        break;
+                    }
+                    case LAErrorTouchIDNotEnrolled:
+                    {
+                        
+                        NSLog(@"设备Touch ID不可用，用户未录入");
+                        break;
+                    }
+                    case LAErrorUserFallback:
+                    {
+                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                            
+                            NSLog(@"用户选择输入密码，切换主线程处理");
+                           // [self  authentication];
+                        }];
+                        break;
+                    }
+                    default:
+                    {
+                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                            
+                            
+                            NSLog(@"其他情况，切换主线程处理");
+                        }];
+                        break;
+                    }
+                }
+            }
+        }];
+    }
+    else
+    {
+        //不支持指纹识别，LOG出错误详情
+        NSLog(@"不支持指纹识别");
+        
+        switch (error.code) {
+            case LAErrorTouchIDNotEnrolled:
+            {
+                NSLog(@"TouchID is not enrolled");
+                break;
+            }
+            case LAErrorPasscodeNotSet:
+            {
+                NSLog(@"A passcode has not been set");
+                break;
+            }
+            default:
+            {
+                NSLog(@"TouchID not available");
+                break;
+            }
+        }
+        
+        NSLog(@"%@",error.localizedDescription);
+    }
+}
+
+
+/**
+ *  密码验证
+ */
+
+- (void)authentication
+{
+    //创建LAContext
+    LAContext* context = [[LAContext alloc] init];
+    NSError* error = nil;
+    NSString* result = @"请验证已有指纹";
+    
+    
+    
+    //首先使用canEvaluatePolicy 判断设备支持状态
+    BOOL can = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error];
+    
+    NSLog(@"BOOL == %d",can);
+    
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&error]) {
+        //支持指纹验证
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:result reply:^(BOOL success, NSError *error) {
+            if (success) {
+                ZYtoappstore * toappStore = [[ZYtoappstore alloc]init];
+                toappStore.myAppID        = @"1055238193";
+                
+                [toappStore showGotoAppStore:self];
+                NSLog(@"验证成功，主线程处理UI");
+            }
+            else
+            {
+                NSLog(@"%@",error.localizedDescription);
+//                switch (error.code) {
+//                    case LAErrorSystemCancel:
+//                    {
+//                        
+//                        NSLog(@"系统取消授权，如其他APP切入");
+//                        break;
+//                    }
+//                    case LAErrorUserCancel:
+//                    {
+//                        
+//                        NSLog(@"用户取消验证Touch ID");
+//                        break;
+//                    }
+//                    case LAErrorAuthenticationFailed:
+//                    {
+//                        
+//                        NSLog(@"授权失败");
+//                        break;
+//                    }
+//                    case LAErrorPasscodeNotSet:
+//                    {
+//                        
+//                        NSLog(@"系统未设置密码");
+//                        break;
+//                    }
+//                    case LAErrorTouchIDNotAvailable:
+//                    {
+//                        
+//                        NSLog(@"设备Touch ID不可用，例如未打开");
+//                        break;
+//                    }
+//                    case LAErrorTouchIDNotEnrolled:
+//                    {
+//                        
+//                        NSLog(@"设备Touch ID不可用，用户未录入");
+//                        break;
+//                    }
+//                    case LAErrorUserFallback:
+//                    {
+//                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                            
+//                            NSLog(@"用户选择输入密码，切换主线程处理");
+//                            
+//                        }];
+//                        break;
+//                    }
+//                    default:
+//                    {
+//                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                            
+//                            
+//                            NSLog(@"其他情况，切换主线程处理");
+//                        }];
+//                        break;
+//                    }
+//                }
+            }
+        }];
+    }
+    else
+    {
+        //不支持指纹识别，LOG出错误详情
+        NSLog(@"不支持指纹识别");
+        
+        switch (error.code) {
+            case LAErrorTouchIDNotEnrolled:
+            {
+                NSLog(@"TouchID is not enrolled");
+                break;
+            }
+            case LAErrorPasscodeNotSet:
+            {
+                NSLog(@"A passcode has not been set");
+                break;
+            }
+            default:
+            {
+                NSLog(@"TouchID not available");
+                break;
+            }
+        }
+        
+        NSLog(@"%@",error.localizedDescription);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

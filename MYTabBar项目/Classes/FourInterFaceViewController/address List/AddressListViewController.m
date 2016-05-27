@@ -33,6 +33,7 @@
     if ([CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts] == CNAuthorizationStatusNotDetermined) {
         //首次访问通讯录会调用
         [contactStore requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            NSLog(@"%d  --  %@",granted, error);
             if (error) return;
             if (granted) {//允许
                 NSLog(@"授权访问通讯录");

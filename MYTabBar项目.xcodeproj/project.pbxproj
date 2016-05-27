@@ -95,6 +95,7 @@
 		DF2695F41CD34E7B00223B3B /* WMSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695EB1CD34E7B00223B3B /* WMSettingGroup.m */; };
 		DF2695F51CD34E7B00223B3B /* WMSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695ED1CD34E7B00223B3B /* WMSettingItem.m */; };
 		DF2695F61CD34E7B00223B3B /* WMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2695F01CD34E7B00223B3B /* WMSettingCell.m */; };
+		DF2930621CF7FAC200D87139 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2930611CF7FAC200D87139 /* LocalAuthentication.framework */; };
 		DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */; };
 		DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */; };
 		DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4731CC48C0E00775A7E /* BaseViewController.m */; };
@@ -491,6 +492,7 @@
 		DF2695ED1CD34E7B00223B3B /* WMSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingItem.m; sourceTree = "<group>"; };
 		DF2695EF1CD34E7B00223B3B /* WMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMSettingCell.h; sourceTree = "<group>"; };
 		DF2695F01CD34E7B00223B3B /* WMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMSettingCell.m; sourceTree = "<group>"; };
+		DF2930611CF7FAC200D87139 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		DF2B4B8C1CD1A1F6005A4B1F /* tableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableTableViewCell.h; path = sanpeng/Views/tableTableViewCell.h; sourceTree = "<group>"; };
 		DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableTableViewCell.m; path = sanpeng/Views/tableTableViewCell.m; sourceTree = "<group>"; };
 		DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = tableTableViewCell.xib; path = sanpeng/Views/tableTableViewCell.xib; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2930621CF7FAC200D87139 /* LocalAuthentication.framework in Frameworks */,
 				DFB7A2501CB791BD00F0BAB3 /* libz.tbd in Frameworks */,
 				DF436E181CBB97050058565C /* CoreLocation.framework in Frameworks */,
 				DF436E161CBB96F90058565C /* SystemConfiguration.framework in Frameworks */,
@@ -908,6 +911,7 @@
 		8BBF7FAE97F3F917FA965D28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF2930611CF7FAC200D87139 /* LocalAuthentication.framework */,
 				97F87A5B7BDC4F536C76977A /* libPods.a */,
 			);
 			name = Frameworks;

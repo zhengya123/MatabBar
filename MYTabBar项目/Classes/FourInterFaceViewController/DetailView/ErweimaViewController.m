@@ -37,7 +37,7 @@
 }
 -(void)createUI{
 
-    NSString * uRL = @"http://weixin.qq.com/r/FInw6PnEJKRbrb2L99wG";
+    NSString * uRL = @"http://7xsa4k.com1.z0.glb.clouddn.com/CaterUnitQRCode.html";
     UIImage * image = [QRCodeGenerator qrImageForString:uRL imageSize:300];
     _backImage.image = image;
 

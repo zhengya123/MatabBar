@@ -106,12 +106,15 @@
             
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }];
+        UIAlertAction *back = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action){
+            NSLog(@"点击了取消");
         
+        }];
         
         [alertController addAction:refuseAction];
         [alertController addAction:okAction];
         [alertController addAction:showAction];
-        
+        [alertController addAction:back];
         //        NSLog(@"%@",[userDefaults objectForKey:@"appVersion"]);
         //        NSLog(@"%@",[userDefaults objectForKey:@"userOptChoose"]);
         //        NSLog(@"%@",[userDefaults objectForKey:@"theDays"]);
