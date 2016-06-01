@@ -45,6 +45,7 @@
 #define IOS7_OR_LATER (([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0) ? YES:NO)
 //适配比例
 #define PROPORTION [UIScreen mainScreen].bounds.size.width/320
+#define PROPORTION_HEIGHT [UIScreen mainScreen].bounds.size.height/568
 
 //触感动画
 #define TOUCH_COLOR [UIColor greenColor]
