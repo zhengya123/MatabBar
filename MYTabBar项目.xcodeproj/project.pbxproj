@@ -98,6 +98,8 @@
 		DF2930621CF7FAC200D87139 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2930611CF7FAC200D87139 /* LocalAuthentication.framework */; };
 		DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */; };
 		DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */; };
+		DF35037A1CFD273C00BB1AB0 /* ZYView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3503791CFD273C00BB1AB0 /* ZYView.m */; };
+		DF3503801CFD30FB00BB1AB0 /* notInternet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF35037F1CFD30FB00BB1AB0 /* notInternet.png */; };
 		DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4731CC48C0E00775A7E /* BaseViewController.m */; };
 		DF3DA4761CC48C0E00775A7E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF3DA4741CC48C0E00775A7E /* BaseViewController.xib */; };
 		DF3DA47A1CC4B81200775A7E /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3DA4791CC4B81200775A7E /* UINavigationController+FDFullscreenPopGesture.m */; };
@@ -496,6 +498,9 @@
 		DF2B4B8C1CD1A1F6005A4B1F /* tableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableTableViewCell.h; path = sanpeng/Views/tableTableViewCell.h; sourceTree = "<group>"; };
 		DF2B4B8D1CD1A1F6005A4B1F /* tableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableTableViewCell.m; path = sanpeng/Views/tableTableViewCell.m; sourceTree = "<group>"; };
 		DF2B4B8E1CD1A1F6005A4B1F /* tableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = tableTableViewCell.xib; path = sanpeng/Views/tableTableViewCell.xib; sourceTree = "<group>"; };
+		DF3503781CFD273C00BB1AB0 /* ZYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYView.h; path = InternetView/ZYView.h; sourceTree = "<group>"; };
+		DF3503791CFD273C00BB1AB0 /* ZYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYView.m; path = InternetView/ZYView.m; sourceTree = "<group>"; };
+		DF35037F1CFD30FB00BB1AB0 /* notInternet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notInternet.png; path = InternetView/notInternet.png; sourceTree = "<group>"; };
 		DF3DA4721CC48C0E00775A7E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		DF3DA4731CC48C0E00775A7E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		DF3DA4741CC48C0E00775A7E /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
@@ -1366,6 +1371,7 @@
 		DF3ED8461C7C0AC100597967 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DF8B45EE1CFBE709002FC057 /* InternetView */,
 				DF21E4CF1CF43BDF00642691 /* XTPopView */,
 				DF1F07BC1CED5D9000BF27EF /* Loading */,
 				DF04B3F91CE4713800F99F2E /* IQKeyboardManager */,
@@ -1912,6 +1918,16 @@
 			name = LoginViewController;
 			sourceTree = "<group>";
 		};
+		DF8B45EE1CFBE709002FC057 /* InternetView */ = {
+			isa = PBXGroup;
+			children = (
+				DF35037F1CFD30FB00BB1AB0 /* notInternet.png */,
+				DF3503781CFD273C00BB1AB0 /* ZYView.h */,
+				DF3503791CFD273C00BB1AB0 /* ZYView.m */,
+			);
+			name = InternetView;
+			sourceTree = "<group>";
+		};
 		DF9449201C7D407C003744F4 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -2236,6 +2252,7 @@
 				DF21E4DA1CF442AE00642691 /* 扫一扫.png in Resources */,
 				DF3DA4761CC48C0E00775A7E /* BaseViewController.xib in Resources */,
 				DF202A551CC08D3F0081B23E /* TwoInterDetailViewController.xib in Resources */,
+				DF3503801CFD30FB00BB1AB0 /* notInternet.png in Resources */,
 				DF2688471CC87C2300334D9D /* MenuItemCell.xib in Resources */,
 				DF21E4D81CF442AE00642691 /* 发起群聊.png in Resources */,
 				DF3ED86A1C7C0B7F00597967 /* tab_c0.png in Resources */,
@@ -2476,6 +2493,7 @@
 				DF3ED9201C7C5A7600597967 /* MJRefreshAutoNormalFooter.m in Sources */,
 				DFF3A7D81CB4A78100EC911F /* KSGuideManager.m in Sources */,
 				DF2688691CC87D0F00334D9D /* MJPropertyKey.m in Sources */,
+				DF35037A1CFD273C00BB1AB0 /* ZYView.m in Sources */,
 				DF42D6CB1CB35DE4008DD4E0 /* TAPageControl.m in Sources */,
 				DF3ED8D61C7C32FE00597967 /* UIProgressView+AFNetworking.m in Sources */,
 				DF25A5311CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m in Sources */,

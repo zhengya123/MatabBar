@@ -10,6 +10,7 @@
 #import "API.h"
 #import "Masonry.h"
 #import "HIKLoadView.h"
+#import "ZYView.h"
 @interface BanbenViewController ()
 
 
@@ -17,7 +18,12 @@
 @end
 
 @implementation BanbenViewController
+{
 
+    ZYView * zyView;
+
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -93,7 +99,18 @@
 }
 -(void)clicksss{
     NSLog(@"点击了");
-    [self.loadingView startSquareClcokwiseAnimation];
+   // [self.loadingView startSquareClcokwiseAnimation];
+    
+    
+    if(zyView == nil){
+    
+        zyView = [[ZYView alloc]init];
+        zyView.frame = CGRectMake(0, SCREEN_W/2, SCREEN_W, SCREEN_W/2);
+        [self.view addSubview:zyView];
+    
+    
+    }
+   
 
 
 }

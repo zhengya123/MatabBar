@@ -371,10 +371,34 @@
     if (indexPath.section == 1) {
         OneTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         //cell.titleImage.image = [UIImage imageNamed:@"king2"];
+        
+        
+        
+        /**
+         *  下划线（标题）
+         */
         cell.titleLabel.text = [_arrayDS[indexPath.row]objectForKey:@"Title"];
+        NSDictionary *attribtDic = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+        NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:[_arrayDS[indexPath.row]objectForKey:@"Title"] attributes:attribtDic];
+        cell.titleLabel.attributedText = attribtStr;
+        
+        
+        /**
+         *  中划线（回复）
+         */
         cell.name.text = [_arrayDS [indexPath.row]objectForKey:@"Collection"];
+        NSDictionary *attribtDics = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+        NSMutableAttributedString *attribtStrs = [[NSMutableAttributedString alloc]initWithString:[_arrayDS[indexPath.row]objectForKey:@"Collection"] attributes:attribtDics];
+        cell.name.attributedText = attribtStrs;
+        
+        
+        
+        /**
+         *  描述的文字
+         */
         cell.discribe.text = [_arrayDS[indexPath.row]objectForKey:@"PreviewContent"];
         [cell.titleImage setImageWithURL:[NSURL URLWithString:[_arrayDS[indexPath.row]objectForKey:@"Img"]]];
+        
         return cell;
     }else{
     
