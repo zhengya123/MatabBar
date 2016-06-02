@@ -104,10 +104,11 @@
     
     if(zyView == nil){
     
-        zyView = [[ZYView alloc]initWithFrame:CGRectMake(0, SCREEN_W/2, SCREEN_W, SCREEN_W/2)];
+        zyView = [[ZYView alloc]initWithFrame:CGRectMake(0, SCREEN_W/2, SCREEN_W, 240)];
+        zyView.backgroundColor = [UIColor greenColor];
         zyView.delegate = self;
 
-        zyView.userInteractionEnabled = YES;
+
         [self.view addSubview:zyView];
     
     

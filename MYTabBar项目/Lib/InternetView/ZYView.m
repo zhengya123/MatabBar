@@ -60,7 +60,6 @@
         [btn setTitle:@"重新加载" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor redColor];
         [btn addTarget:self action:@selector(rebackClick:) forControlEvents:UIControlEventTouchUpInside];
         self.rebackButton = btn;
         [self addSubview:btn];
@@ -90,9 +89,9 @@
      *  文字的位置坐标
      */
     CGFloat nameLabelX = 0;
-    CGFloat nameLabelY = iconImageViewH;
+    CGFloat nameLabelY = 150;
     CGFloat nameLabelW = self.bounds.size.width;
-    CGFloat nameLabelH = self.bounds.size.height - iconImageViewH;
+    CGFloat nameLabelH = 50;
     self.nameLabel.frame = CGRectMake(nameLabelX, nameLabelY, nameLabelW, nameLabelH);
 
 
@@ -114,21 +113,13 @@
  */
 -(void)rebackClick:(UIButton *)button{
 
-//    [self.delegate rebackInternetAgain];
-
     if([self.delegate respondsToSelector:@selector(rebackInternetAgain)]){
     
         [self.delegate rebackInternetAgain];
-    
     
     }
 
 
 }
-//-(void)rebackInternetAgain{
-//
-//    NSLog(@"在代理方法里点击了");
-//
-//
-//}
+
 @end
