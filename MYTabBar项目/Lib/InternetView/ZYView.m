@@ -22,6 +22,12 @@
  */
 @property (nonatomic,weak) UILabel * nameLabel;
 
+
+/**
+ *  重新加载的按钮
+ */
+@property (nonatomic,weak) UIButton * rebackButton;
+
 @end
 
 @implementation ZYView
@@ -49,6 +55,16 @@
         nameLabel.text = @"网络好像没有了，请检查网络";
         self.nameLabel = nameLabel;
         [self addSubview:nameLabel];
+        
+        UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:@"重新加载" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor redColor];
+        [btn addTarget:self action:@selector(rebackClick:) forControlEvents:UIControlEventTouchUpInside];
+        self.rebackButton = btn;
+        [self addSubview:btn];
+        
     }
 
     return self;
@@ -58,6 +74,8 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    
+    
     /**
      *  图片的位置坐标
      */
@@ -66,7 +84,6 @@
     CGFloat iconImageViewW = self.bounds.size.width/2;
     CGFloat iconImageViewH = 150;
     self.iconImageView.frame = CGRectMake(iconImageViewX, iconImageViewY, iconImageViewW, iconImageViewH);
-
 
 
     /**
@@ -79,5 +96,39 @@
     self.nameLabel.frame = CGRectMake(nameLabelX, nameLabelY, nameLabelW, nameLabelH);
 
 
+    /**
+     *  重新加载的按钮的位置
+     */
+    
+    CGFloat rebackButtonX = 0;
+    CGFloat rebackButtonY = 180;
+    CGFloat rebackButtonW = self.bounds.size.width;
+    CGFloat rebackButtonH = 50;
+    self.rebackButton.frame = CGRectMake(rebackButtonX, rebackButtonY, rebackButtonW, rebackButtonH);
+    
+    
 }
+
+/**
+ *  按钮的点击方法
+ */
+-(void)rebackClick:(UIButton *)button{
+
+//    [self.delegate rebackInternetAgain];
+
+    if([self.delegate respondsToSelector:@selector(rebackInternetAgain)]){
+    
+        [self.delegate rebackInternetAgain];
+    
+    
+    }
+
+
+}
+//-(void)rebackInternetAgain{
+//
+//    NSLog(@"在代理方法里点击了");
+//
+//
+//}
 @end

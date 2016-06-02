@@ -11,7 +11,7 @@
 #import "Masonry.h"
 #import "HIKLoadView.h"
 #import "ZYView.h"
-@interface BanbenViewController ()
+@interface BanbenViewController ()<ZYView_rebackDelegate>
 
 
 @property (nonatomic, strong) HIKLoadView *loadingView;
@@ -104,13 +104,21 @@
     
     if(zyView == nil){
     
-        zyView = [[ZYView alloc]init];
-        zyView.frame = CGRectMake(0, SCREEN_W/2, SCREEN_W, SCREEN_W/2);
+        zyView = [[ZYView alloc]initWithFrame:CGRectMake(0, SCREEN_W/2, SCREEN_W, SCREEN_W/2)];
+        zyView.delegate = self;
+
+        zyView.userInteractionEnabled = YES;
         [self.view addSubview:zyView];
     
     
     }
    
+
+
+}
+-(void)rebackInternetAgain{
+
+    NSLog(@"重新加载网络了222");
 
 
 }

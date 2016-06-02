@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
+@protocol ZYView_rebackDelegate <NSObject>
+
+-(void)rebackInternetAgain;
+
+
+@end
+
 @interface ZYView : UIView
 
+@property (nonatomic,assign) id<ZYView_rebackDelegate>delegate;
 
 @end
