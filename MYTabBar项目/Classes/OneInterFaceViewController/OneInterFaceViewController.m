@@ -26,6 +26,7 @@
 #import "NoticeViewController.h"
 #import "XTPopView.h"
 #import "LookViewController.h"
+
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -323,6 +324,7 @@
     switch (index) {
         case 0:
         {
+            
             NSLog(@"Click 0 ......");
         }
             break;
@@ -409,6 +411,40 @@
         [cell.buttonfour addTarget:self action:@selector(buttonfour) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     
+    }
+    
+
+
+
+}
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //第二个section里面的动画
+    if (indexPath.section == 1) {
+     
+        NSArray * array = tableView.indexPathsForVisibleRows;
+        NSIndexPath * firstIndexPath = array[0];
+        
+        
+        //设置anchorPoint
+        cell.layer.anchorPoint = CGPointMake(0, 0.5);
+        //为了防止cell视图移动，重新把cell放回原来的位置
+        cell.layer.position = CGPointMake(0, cell.layer.position.y);
+        
+        //设置cell 按照z轴旋转90度，注意是弧度
+        if (firstIndexPath.row < indexPath.row) {
+            cell.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 0, 1.0);
+        }else{
+            cell.layer.transform = CATransform3DMakeRotation(- M_PI_2, 0, 0, 1.0);
+        }
+        
+        cell.alpha = 0.0;
+        
+        [UIView animateWithDuration:1 animations:^{
+            cell.layer.transform = CATransform3DIdentity;
+            cell.alpha = 1.0;
+        }];
+  
     }
     
 

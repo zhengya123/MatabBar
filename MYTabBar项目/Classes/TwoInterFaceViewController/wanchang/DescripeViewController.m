@@ -205,6 +205,30 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(30,30, 20, 30);
 }
+//collection动画
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row % 2 != 0) {
+        cell.transform = CGAffineTransformTranslate(cell.transform, SCREEN_W/2, 0);
+    }else{
+        cell.transform = CGAffineTransformTranslate(cell.transform, -SCREEN_W/2, 0);
+    }
+    cell.alpha = 0.0;
+    [UIView animateWithDuration:0.7 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+        cell.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
