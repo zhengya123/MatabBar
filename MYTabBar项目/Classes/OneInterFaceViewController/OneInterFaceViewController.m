@@ -414,8 +414,6 @@
     }
     
 
-
-
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -423,7 +421,7 @@
     if (indexPath.section == 1) {
      
         NSArray * array = tableView.indexPathsForVisibleRows;
-        NSIndexPath * firstIndexPath = array[0];
+        NSIndexPath * firstIndexPath = array[1];
         
         
         //设置anchorPoint

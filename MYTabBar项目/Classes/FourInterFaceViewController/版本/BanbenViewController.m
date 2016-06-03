@@ -21,6 +21,8 @@
 {
 
     ZYView * zyView;
+    UIButton * button;
+    int select;
 
 
 }
@@ -82,10 +84,11 @@
     label22.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     label22.textAlignment = NSTextAlignmentRight;
     [baseView2 addSubview:label22];
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, SCREEN_H -100, SCREEN_W, 50);
     button.backgroundColor = [UIColor redColor];
     [button addTarget:self action:@selector(clicksss) forControlEvents:UIControlEventTouchUpInside];
+    select = 1;
     [self.view addSubview:button];
     
     if(!_loadingView)
@@ -99,21 +102,31 @@
 }
 -(void)clicksss{
     NSLog(@"点击了");
+    
    // [self.loadingView startSquareClcokwiseAnimation];
-    
-    
-    if(zyView == nil){
-    
-        zyView = [[ZYView alloc]initWithFrame:CGRectMake(0, SCREEN_W/2, SCREEN_W, 240)];
-        zyView.backgroundColor = [UIColor greenColor];
-        zyView.delegate = self;
+    if (select ==1) {
+        if(zyView == nil){
+            
+            zyView = [[ZYView alloc]initWithFrame:CGRectMake(0, SCREEN_W/2, SCREEN_W, 240)];
+            zyView.backgroundColor = [UIColor greenColor];
+            zyView.delegate = self;
+            [self.view addSubview:zyView];
+            
+            
+        }
+        select =0;
+        zyView.hidden = NO;
+        
 
-
-        [self.view addSubview:zyView];
+    }else{
     
+    
+        zyView.hidden = YES;
+        select = 1;
     
     }
-   
+    
+    
 
 
 }

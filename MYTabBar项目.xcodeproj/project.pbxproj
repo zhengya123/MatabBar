@@ -25,6 +25,11 @@
 		DF04B42B1CE4713800F99F2E /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DF04B4191CE4713800F99F2E /* IQToolbar.m */; };
 		DF04B42C1CE4713800F99F2E /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DF04B41B1CE4713800F99F2E /* IQUIView+IQKeyboardToolbar.m */; };
 		DF04B42D1CE4713800F99F2E /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF04B41E1CE4713800F99F2E /* IQKeyboardManager.bundle */; };
+		DF19D5C41D01353B00A0CBD9 /* star_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF19D5C01D01353B00A0CBD9 /* star_gray@2x.png */; };
+		DF19D5C51D01353B00A0CBD9 /* star_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF19D5C11D01353B00A0CBD9 /* star_yellow@2x.png */; };
+		DF19D5C61D01353B00A0CBD9 /* YYStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF19D5C31D01353B00A0CBD9 /* YYStarView.m */; };
+		DF19D5CC1D0135CF00A0CBD9 /* GradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF19D5CA1D0135CF00A0CBD9 /* GradeViewController.m */; };
+		DF19D5CD1D0135CF00A0CBD9 /* GradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF19D5CB1D0135CF00A0CBD9 /* GradeViewController.xib */; };
 		DF1F07C51CED5D9100BF27EF /* HIKLoadPercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F07BE1CED5D9100BF27EF /* HIKLoadPercentView.m */; };
 		DF1F07C61CED5D9100BF27EF /* HIKLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F07C01CED5D9100BF27EF /* HIKLoadView.m */; };
 		DF1F07C71CED5D9100BF27EF /* HIKLoadViewItem+configPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F07C21CED5D9100BF27EF /* HIKLoadViewItem+configPath.m */; };
@@ -380,6 +385,13 @@
 		DF04B41B1CE4713800F99F2E /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		DF04B41C1CE4713800F99F2E /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		DF04B41E1CE4713800F99F2E /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		DF19D5C01D01353B00A0CBD9 /* star_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_gray@2x.png"; sourceTree = "<group>"; };
+		DF19D5C11D01353B00A0CBD9 /* star_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_yellow@2x.png"; sourceTree = "<group>"; };
+		DF19D5C21D01353B00A0CBD9 /* YYStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYStarView.h; sourceTree = "<group>"; };
+		DF19D5C31D01353B00A0CBD9 /* YYStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYStarView.m; sourceTree = "<group>"; };
+		DF19D5C91D0135CF00A0CBD9 /* GradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradeViewController.h; path = "五星评分/GradeViewController.h"; sourceTree = "<group>"; };
+		DF19D5CA1D0135CF00A0CBD9 /* GradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradeViewController.m; path = "五星评分/GradeViewController.m"; sourceTree = "<group>"; };
+		DF19D5CB1D0135CF00A0CBD9 /* GradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GradeViewController.xib; path = "五星评分/GradeViewController.xib"; sourceTree = "<group>"; };
 		DF1F07BD1CED5D9100BF27EF /* HIKLoadPercentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKLoadPercentView.h; sourceTree = "<group>"; };
 		DF1F07BE1CED5D9100BF27EF /* HIKLoadPercentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIKLoadPercentView.m; sourceTree = "<group>"; };
 		DF1F07BF1CED5D9100BF27EF /* HIKLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIKLoadView.h; sourceTree = "<group>"; };
@@ -1011,6 +1023,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DF19D5BF1D01353B00A0CBD9 /* YYStarView */ = {
+			isa = PBXGroup;
+			children = (
+				DF19D5C01D01353B00A0CBD9 /* star_gray@2x.png */,
+				DF19D5C11D01353B00A0CBD9 /* star_yellow@2x.png */,
+				DF19D5C21D01353B00A0CBD9 /* YYStarView.h */,
+				DF19D5C31D01353B00A0CBD9 /* YYStarView.m */,
+			);
+			path = YYStarView;
+			sourceTree = "<group>";
+		};
+		DF19D5C81D01356B00A0CBD9 /* 五星评分 */ = {
+			isa = PBXGroup;
+			children = (
+				DF19D5C91D0135CF00A0CBD9 /* GradeViewController.h */,
+				DF19D5CA1D0135CF00A0CBD9 /* GradeViewController.m */,
+				DF19D5CB1D0135CF00A0CBD9 /* GradeViewController.xib */,
+			);
+			name = "五星评分";
+			sourceTree = "<group>";
+		};
 		DF1F07BC1CED5D9000BF27EF /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -1371,6 +1404,7 @@
 		DF3ED8461C7C0AC100597967 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DF19D5BF1D01353B00A0CBD9 /* YYStarView */,
 				DF8B45EE1CFBE709002FC057 /* InternetView */,
 				DF21E4CF1CF43BDF00642691 /* XTPopView */,
 				DF1F07BC1CED5D9000BF27EF /* Loading */,
@@ -1531,6 +1565,7 @@
 		DF3ED8721C7C0CCE00597967 /* FourInterFaceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DF19D5C81D01356B00A0CBD9 /* 五星评分 */,
 				DF037A8F1CE322B500A21AA4 /* 版本 */,
 				DF24CD571CDC2D9F0061A68D /* address List */,
 				DFF7913E1CC60C8A00352D57 /* News */,
@@ -2242,6 +2277,7 @@
 				DF21E4DB1CF442AE00642691 /* 添加朋友.png in Resources */,
 				DFFDC1441CBF810F00E3FBA5 /* MyFirst1TableViewCell.xib in Resources */,
 				DF3ED8691C7C0B7F00597967 /* tab_3_2.png in Resources */,
+				DF19D5C41D01353B00A0CBD9 /* star_gray@2x.png in Resources */,
 				DF3ED8541C7C0B5E00597967 /* RootNavigationController.xib in Resources */,
 				DF1F07D71CED60C400BF27EF /* logo_loading_4.png in Resources */,
 				DF42D6E41CB363A2008DD4E0 /* ifree_load_06@2x.png in Resources */,
@@ -2272,6 +2308,7 @@
 				DFFDC1491CBF89F200E3FBA5 /* MyThreeTableViewCell.xib in Resources */,
 				DF42D7961CB3AB91008DD4E0 /* Biddingtransaction@3x.png in Resources */,
 				DF42D6E51CB363A2008DD4E0 /* ifree_load_07@2x.png in Resources */,
+				DF19D5C51D01353B00A0CBD9 /* star_yellow@2x.png in Resources */,
 				DF1F07D01CED60AD00BF27EF /* logo_loading_2@2x.png in Resources */,
 				DF2695E11CD34E4F00223B3B /* FourstViewController.xib in Resources */,
 				DF3ED8651C7C0B7F00597967 /* tab_0.png in Resources */,
@@ -2291,6 +2328,7 @@
 				DF42D6E01CB363A2008DD4E0 /* ifree_load_02@2x.png in Resources */,
 				DF42D7951CB3AB91008DD4E0 /* Biddingtransaction@2x.png in Resources */,
 				DFF3A7DD1CB4A7B300EC911F /* 1.jpg in Resources */,
+				DF19D5CD1D0135CF00A0CBD9 /* GradeViewController.xib in Resources */,
 				DF3ED81C1C7C09E300597967 /* Main.storyboard in Resources */,
 				DF3ED8671C7C0B7F00597967 /* tab_2.png in Resources */,
 				DF436E231CBB9D270058565C /* AMap.bundle in Resources */,
@@ -2386,6 +2424,7 @@
 				DF3ED9261C7C5A7600597967 /* MJRefreshNormalHeader.m in Sources */,
 				DF2695F61CD34E7B00223B3B /* WMSettingCell.m in Sources */,
 				DF3DA4751CC48C0E00775A7E /* BaseViewController.m in Sources */,
+				DF19D5CC1D0135CF00A0CBD9 /* GradeViewController.m in Sources */,
 				DFFDC1481CBF89F200E3FBA5 /* MyThreeTableViewCell.m in Sources */,
 				DF202A541CC08D3F0081B23E /* TwoInterDetailViewController.m in Sources */,
 				DF26883F1CC87C2300334D9D /* ZXShopCartViewController.m in Sources */,
@@ -2498,6 +2537,7 @@
 				DF3ED8D61C7C32FE00597967 /* UIProgressView+AFNetworking.m in Sources */,
 				DF25A5311CD9F8A60035D6A2 /* HFStretchableTableHeaderView.m in Sources */,
 				DFF790DA1CC5BFBB00352D57 /* LPCTools.m in Sources */,
+				DF19D5C61D01353B00A0CBD9 /* YYStarView.m in Sources */,
 				DF04B42B1CE4713800F99F2E /* IQToolbar.m in Sources */,
 				DF2688431CC87C2300334D9D /* BadgeView.m in Sources */,
 				DF2688651CC87D0F00334D9D /* MJDictionaryCache.m in Sources */,

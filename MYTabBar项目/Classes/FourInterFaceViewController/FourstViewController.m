@@ -19,6 +19,7 @@
 #import "BanbenViewController.h"
 #import <LocalAuthentication/LocalAuthentication.h>
 #include <SystemConfiguration/CaptiveNetwork.h>
+#import "GradeViewController.h"
 @interface FourstViewController ()
 
 @end
@@ -33,13 +34,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.navigationItem.title = @"设置";
+    //self.view.backgroundColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
-    [super.navigationController setNavigationBarHidden:YES];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    _imageView.image=[UIImage imageNamed:@"fengmian.png"];
+    //[super.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
+    
+//    _imageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+//    _imageView.image=[UIImage imageNamed:@"fengmian.png"];
     //[self.view addSubview:_imageView];
     [self setupGroup1];
     [self setupGroup2];
@@ -68,8 +71,8 @@
     WMSettingGroup *group       = [self addGroup];
     WMSettingLabelItem *qq      = [WMSettingLabelItem
                                    itemWithIcon:@"personal_btn_qq"
-                                   title:@"新闻热点"
-                                   destVcClass:NSClassFromString(@"NewsViewController")];
+                                   title:@"五星评级"
+                                   destVcClass:NSClassFromString(@"GradeViewController")];
 
     WMSettingLabelItem *weiChat = [WMSettingLabelItem
                                    itemWithIcon:@"photo_icon_wechat"
@@ -85,7 +88,7 @@
                                    title:@"访问通讯录"
                                    destVcClass:NSClassFromString(@"AddressListViewController")];
     
-    qq.readyForDestVc = ^(WMSettingLabelItem *item, NewsViewController *descVC) {
+    qq.readyForDestVc = ^(WMSettingLabelItem *item, GradeViewController *descVC) {
        // descVC.sourceItem = item;
         
     };
@@ -136,7 +139,7 @@
      * 点击了执行跳转操作
      */
     WMSettingLabelItem *qq    = [WMSettingLabelItem
-                              itemWithIcon:@"qq1"
+                              itemWithIcon:@"qq2"
                               title:@"版本信息"
                               destVcClass:NSClassFromString(@"BanbenViewController")];
     

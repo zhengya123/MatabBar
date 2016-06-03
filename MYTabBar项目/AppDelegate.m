@@ -40,6 +40,7 @@
 
 @implementation AppDelegate
 {
+    UIButton * button;//启动页倒计时的button
     NSMutableArray  * array;
     NSString * str;
     NSString * str2;
@@ -70,7 +71,7 @@
      * UIView
      */
     _lunchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
-   // [self.window addSubview:_lunchView];
+    [self.window addSubview:_lunchView];
     /**
      *UIScrollView
      */
@@ -79,7 +80,7 @@
     _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _scrollView.delegate = self;
     _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    _scrollView.autoScrollTimeInterval = 3.5;
+    _scrollView.autoScrollTimeInterval = 3;
      _scrollView.imageURLStringsGroup =array;
     [_lunchView addSubview:_scrollView];
     NSLog(@"%ld",array.count);
@@ -91,7 +92,7 @@
 //    [_imageView sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"3"]];
    // [_lunchView addSubview:_imageView];
     
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(SCREEN_W/2 + 80, 40, 60, 40);
     [button setTitle:@"跳过" forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor yellowColor]];
@@ -101,10 +102,43 @@
     [button addTarget:self action:@selector(jump) forControlEvents:UIControlEventTouchUpInside];
     [_lunchView addSubview:button];
     
-   // time = [NSTimer scheduledTimerWithTimeInterval:array.count * 3.5 target:self selector:@selector(removeAdImageView) userInfo:nil repeats:YES];
-   // [self performSelector:@selector(removeAdImageView) withObject:nil afterDelay:array.count * 3.5];
+    __block int timeout=array.count * 3.0; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+//                [button setTitle:@"0秒" forState:UIControlStateNormal];
+//                button.enabled = YES;
+//                button.userInteractionEnabled = YES;
+                [self jump];
+            });
+        }else{
+            //            int minutes = timeout / 60;
+            int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                NSLog(@"____%@",strTime);
+                [button setTitle:[NSString stringWithFormat:@"%@秒",strTime] forState:UIControlStateNormal];
+                
+                button.userInteractionEnabled = YES;
+                
+            });
+            timeout--;
+            
+        }
+    });
+    dispatch_resume(_timer);
+
+    
+//    time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(time_Button:) userInfo:nil repeats:YES];
+    [self performSelector:@selector(removeAdImageView) withObject:nil afterDelay:array.count * 3.5];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self loadRootViewController];
+   // [self loadRootViewController];
     [self.window makeKeyAndVisible];
     //[self window];
     [self c];
@@ -115,7 +149,9 @@
 -(void)jump{
     NSLog(@"跳过广告了");
     
-    [UIView animateWithDuration:0.3f animations:^{
+   
+    
+    [UIView animateWithDuration:0.1f animations:^{
         _lunchView.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
         _lunchView.alpha = 0.f;
     } completion:^(BOOL finished) {
@@ -126,6 +162,7 @@
 
 
 }
+
 -(void)removeAdImageView{
     [UIView animateWithDuration:0.3f animations:^{
         _lunchView.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
@@ -140,21 +177,21 @@
 
 }
 //触感动画
-- (COSTouchVisualizerWindow *)window
-{
-    static COSTouchVisualizerWindow *customWindow = nil;
-    if (!customWindow) {
-        customWindow = [[COSTouchVisualizerWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        [customWindow setFillColor:TOUCH_COLOR];
-        [customWindow setStrokeColor:[UIColor clearColor]];
-        [customWindow setTouchAlpha:0.4];
-        
-        [customWindow setRippleFillColor:TOUCH_COLOR];
-        [customWindow setRippleStrokeColor:[UIColor clearColor]];
-        [customWindow setRippleAlpha:0.1];
-    }
-    return customWindow;
-}
+//- (COSTouchVisualizerWindow *)window
+//{
+//    static COSTouchVisualizerWindow *customWindow = nil;
+//    if (!customWindow) {
+//        customWindow = [[COSTouchVisualizerWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//        [customWindow setFillColor:TOUCH_COLOR];
+//        [customWindow setStrokeColor:[UIColor clearColor]];
+//        [customWindow setTouchAlpha:0.4];
+//        
+//        [customWindow setRippleFillColor:TOUCH_COLOR];
+//        [customWindow setRippleStrokeColor:[UIColor clearColor]];
+//        [customWindow setRippleAlpha:0.1];
+//    }
+//    return customWindow;
+//}
 
 - (void)c
 {

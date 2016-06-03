@@ -40,7 +40,7 @@
     self.settingTableView                = settingTableView;
     self.settingTableView.rowHeight = 44;
     [self.view addSubview:settingTableView];
-        UIEdgeInsets distance = UIEdgeInsetsMake(-69, 0, 0, 0);
+        UIEdgeInsets distance = UIEdgeInsetsMake(-20, 0, 0, 0);
     [settingTableView mas_makeConstraints:^(MASConstraintMaker *make) {
        // make.top.equalTo(@69);
         make.edges.equalTo(self.view).insets(distance);
