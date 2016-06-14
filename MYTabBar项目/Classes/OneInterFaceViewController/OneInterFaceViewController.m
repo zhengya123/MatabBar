@@ -26,7 +26,8 @@
 #import "NoticeViewController.h"
 #import "XTPopView.h"
 #import "LookViewController.h"
-
+#import "accountManager.h"
+#import "UITableView+HeightCache.h"//动态计算tableView的高度
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -150,6 +151,7 @@
     _tableView.dataSource= self;
     _tableView.showsHorizontalScrollIndicator = NO;
     _tableView.showsVerticalScrollIndicator = NO;
+    [_tableView setSeparatorInset:UIEdgeInsetsZero];//cell分割线取消内距
     [self.view addSubview:_tableView];
 
     [_tableView registerNib:[UINib nibWithNibName:@"OneTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
@@ -269,19 +271,19 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > NAVBAR_CHANGE_POINT) {
-        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-    } else {
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-    }
+//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > NAVBAR_CHANGE_POINT) {
+//        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+//    } else {
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+//    }
 }
 - (void)setNavigationBarTransformProgress:(CGFloat)progress
 {
-    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
-    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
+//    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
+//    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
 }
 
 -(void)erweimas:(UIButton *)button{
@@ -372,6 +374,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         OneTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+        [cell setLayoutMargins:UIEdgeInsetsZero];//cell取消内距，联合对其cell的分割线
         //cell.titleImage.image = [UIImage imageNamed:@"king2"];
         
         
@@ -399,6 +402,10 @@
          *  描述的文字
          */
         cell.discribe.text = [_arrayDS[indexPath.row]objectForKey:@"PreviewContent"];
+        
+        /**
+         *  图片
+         */
         [cell.titleImage setImageWithURL:[NSURL URLWithString:[_arrayDS[indexPath.row]objectForKey:@"Img"]]];
         
         return cell;
@@ -472,8 +479,8 @@
 }
 -(void)buttonthree{
      NSLog(@"闪拍交易");
-    OtherViewController * other = [[OtherViewController alloc]init];
-    other.titles = @"闪拍交易";
+    accountManager * other = [[accountManager alloc]init];
+    //other.titles = @"闪拍交易";
     [self.navigationController pushViewController:other animated:YES];
 }
 -(void)buttonfour{
@@ -489,7 +496,16 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section == 1) {
-        return 105;
+        
+        //return 105;
+        
+        return [tableView DW_CalculateCellWithIdentifier:@"Cell" indexPath:indexPath configuration:^(OneTableViewCell * cell) {
+            cell.titleLabel.text = [_arrayDS[indexPath.row]objectForKey:@"Title"];//一定要在返回高度时将内容注入，否则返回高度无效
+            cell.name.text = [_arrayDS [indexPath.row]objectForKey:@"Collection"];
+            cell.discribe.text = [_arrayDS[indexPath.row]objectForKey:@"PreviewContent"];
+           // [cell.titleImage setImageWithURL:[NSURL URLWithString:[_arrayDS[indexPath.row]objectForKey:@"Img"]]];
+        }];
+
     }else{
        // OneTableViewCell * cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
         return 88 * PROPORTION_HEIGHT;

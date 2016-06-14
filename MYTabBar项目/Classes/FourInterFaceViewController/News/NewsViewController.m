@@ -8,6 +8,10 @@
 
 #import "NewsViewController.h"
 #import "LPCTools.h"
+#import "API.h"
+#import "LoadingView.h"
+#import "HIKLoadView.h"
+#import "ZY_Animation.h"
 @interface NewsViewController ()<ButtonDelegate>
 
 @end
@@ -16,6 +20,8 @@
 {
     UIView * Vieww;
     LPCTools * viewDele;
+    ZY_Animation * Loading_view;
+    HIKLoadView * HIKLoading_View;
 
 
 }
@@ -70,7 +76,7 @@
     //圆的半径
     CGFloat radius = 40;
     
-    CGFloat startAngle = 0.0;
+    CGFloat startAngle = 0.1;
     CGFloat endAngle = M_PI * 2;
     // 创建 UIBezierPath对象
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:arcCenter radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
@@ -93,22 +99,47 @@
 -(void)createBU{
   
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 400, 100, 100);
+    button.frame = CGRectMake(0, 400, 100, 50);
     button.backgroundColor = [UIColor purpleColor];
     [button addTarget:self action:@selector(classsss) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 
+    UIButton * but = [UIButton buttonWithType:UIButtonTypeCustom];
+    but.frame = CGRectMake(0, 500, 100, 50);
+    but.backgroundColor = [UIColor purpleColor];
+    [but addTarget:self action:@selector(classssss) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:but];
+
     
-  
-    
+    Loading_view = [[LoadingView alloc]initWithFrame:CGRectMake(SCREEN_W - 150, SCREEN_H - 150, 100, 100)];
+    [self.view addSubview:Loading_view];
+    [Loading_view startRotating];
+//    HIKLoading_View = [[HIKLoadView alloc]initWithHIKLoadViewStyle:HIKLoadViewStyleSqureClockWise];
+//    HIKLoading_View.frame = CGRectMake(SCREEN_W - 150, SCREEN_H - 150, 100, 100);
+//    [self.view addSubview:HIKLoading_View];
+//    [HIKLoading_View startSquareClcokwiseAnimation];
 
 
 }
 
 -(void)classsss{
    
+        [Loading_view stopRotating];
+   // [HIKLoading_View stopSquareClockwiseAnimation];
     
+ 
     
+
+}
+-(void)classssss{
+
+    
+//        Loading_view = [[LoadingView alloc]initWithFrame:CGRectMake(SCREEN_W - 150, SCREEN_H - 150, 100, 100)];
+//        [self.view addSubview:Loading_view];
+        [Loading_view startRotating];
+    
+   // [HIKLoading_View startSquareClcokwiseAnimation];
+
 
 }
 - (void)didReceiveMemoryWarning {

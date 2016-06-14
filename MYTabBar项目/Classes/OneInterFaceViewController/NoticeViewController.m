@@ -10,6 +10,7 @@
 #import "NoticeTableViewCell.h"
 #import "Masonry.h"
 #import "API.h"
+#import "UITableView+HeightCache.h"
 @interface NoticeViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 @end
@@ -130,7 +131,9 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   
+//    return [tableView DW_CalculateCellWithIdentifier:@"tableCell" indexPath:indexPath configuration:^(NoticeTableViewCell * cell) {
+//        cell.label.text = array[indexPath.row];//一定要在返回高度时将内容注入，否则返回高度无效
+//    }];
 
     CGFloat contentWidth = self.view.frame.size.width;
     UIFont *font = [UIFont systemFontOfSize:17];

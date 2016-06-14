@@ -191,6 +191,9 @@
 		DF3ED92A1C7C5A7600597967 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3ED9151C7C5A7600597967 /* UIScrollView+MJExtension.m */; };
 		DF3ED92B1C7C5A7600597967 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3ED9171C7C5A7600597967 /* UIScrollView+MJRefresh.m */; };
 		DF3ED92C1C7C5A7600597967 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3ED9191C7C5A7600597967 /* UIView+MJExtension.m */; };
+		DF4177581D05569C00D6F01E /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = DF4177571D05569C00D6F01E /* loading.png */; };
+		DF41775F1D055A1300D6F01E /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF41775E1D055A1300D6F01E /* LoadingView.m */; };
+		DF4177621D056C7200D6F01E /* ZY_Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4177611D056C7200D6F01E /* ZY_Animation.m */; };
 		DF42D6AA1CB35D89008DD4E0 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = DF42D68E1CB35D89008DD4E0 /* NSData+ImageContentType.m */; };
 		DF42D6AB1CB35D89008DD4E0 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF42D6901CB35D89008DD4E0 /* SDImageCache.m */; };
 		DF42D6AC1CB35D89008DD4E0 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DF42D6921CB35D89008DD4E0 /* SDWebImageCompat.m */; };
@@ -276,6 +279,17 @@
 		DFB7A24C1CB7919C00F0BAB3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB7A24B1CB7919C00F0BAB3 /* libsqlite3.tbd */; };
 		DFB7A24E1CB791B000F0BAB3 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB7A24D1CB791B000F0BAB3 /* libstdc++.tbd */; };
 		DFB7A2501CB791BD00F0BAB3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB7A24F1CB791BD00F0BAB3 /* libz.tbd */; };
+		DFDD8B451D0FB64700C9354D /* UITableView+HeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDD8B441D0FB64700C9354D /* UITableView+HeightCache.m */; };
+		DFDDCD431D08067100062190 /* accountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDCD351D08067100062190 /* accountManager.m */; };
+		DFDDCD441D08067100062190 /* accountManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDDCD361D08067100062190 /* accountManager.xib */; };
+		DFDDCD451D08067100062190 /* ChangeParentInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDCD381D08067100062190 /* ChangeParentInformationViewController.m */; };
+		DFDDCD461D08067100062190 /* ChangeParentInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDDCD391D08067100062190 /* ChangeParentInformationViewController.xib */; };
+		DFDDCD471D08067100062190 /* ChangePassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDCD3B1D08067100062190 /* ChangePassWordViewController.m */; };
+		DFDDCD481D08067100062190 /* ChangePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDDCD3C1D08067100062190 /* ChangePassWordViewController.xib */; };
+		DFDDCD491D08067100062190 /* StudentChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDCD3E1D08067100062190 /* StudentChangeViewController.m */; };
+		DFDDCD4A1D08067100062190 /* StudentChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDDCD3F1D08067100062190 /* StudentChangeViewController.xib */; };
+		DFDDCD4B1D08067100062190 /* StudentInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDDCD411D08067100062190 /* StudentInformationViewController.m */; };
+		DFDDCD4C1D08067100062190 /* StudentInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDDCD421D08067100062190 /* StudentInformationViewController.xib */; };
 		DFE23DB21CCF5E130074836A /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE23DB01CCF5E130074836A /* CarViewController.m */; };
 		DFE23DB31CCF5E130074836A /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE23DB11CCF5E130074836A /* CarViewController.xib */; };
 		DFE23DCE1CCF5FD30074836A /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE23DB61CCF5FD30074836A /* MASCompositeConstraint.m */; };
@@ -664,6 +678,11 @@
 		DF3ED9171C7C5A7600597967 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		DF3ED9181C7C5A7600597967 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		DF3ED9191C7C5A7600597967 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		DF4177571D05569C00D6F01E /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		DF41775D1D055A1300D6F01E /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingView.h; path = Loading_View/LoadingView.h; sourceTree = "<group>"; };
+		DF41775E1D055A1300D6F01E /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingView.m; path = Loading_View/LoadingView.m; sourceTree = "<group>"; };
+		DF4177601D056C7200D6F01E /* ZY_Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZY_Animation.h; path = Loading_View/ZY_Animation.h; sourceTree = "<group>"; };
+		DF4177611D056C7200D6F01E /* ZY_Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZY_Animation.m; path = Loading_View/ZY_Animation.m; sourceTree = "<group>"; };
 		DF42D68D1CB35D89008DD4E0 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		DF42D68E1CB35D89008DD4E0 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		DF42D68F1CB35D89008DD4E0 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -789,6 +808,23 @@
 		DFB7A24B1CB7919C00F0BAB3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DFB7A24D1CB791B000F0BAB3 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		DFB7A24F1CB791BD00F0BAB3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DFDD8B431D0FB64700C9354D /* UITableView+HeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HeightCache.h"; sourceTree = "<group>"; };
+		DFDD8B441D0FB64700C9354D /* UITableView+HeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HeightCache.m"; sourceTree = "<group>"; };
+		DFDDCD341D08067100062190 /* accountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountManager.h; sourceTree = "<group>"; };
+		DFDDCD351D08067100062190 /* accountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountManager.m; sourceTree = "<group>"; };
+		DFDDCD361D08067100062190 /* accountManager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = accountManager.xib; sourceTree = "<group>"; };
+		DFDDCD371D08067100062190 /* ChangeParentInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeParentInformationViewController.h; sourceTree = "<group>"; };
+		DFDDCD381D08067100062190 /* ChangeParentInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeParentInformationViewController.m; sourceTree = "<group>"; };
+		DFDDCD391D08067100062190 /* ChangeParentInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeParentInformationViewController.xib; sourceTree = "<group>"; };
+		DFDDCD3A1D08067100062190 /* ChangePassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePassWordViewController.h; sourceTree = "<group>"; };
+		DFDDCD3B1D08067100062190 /* ChangePassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePassWordViewController.m; sourceTree = "<group>"; };
+		DFDDCD3C1D08067100062190 /* ChangePassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePassWordViewController.xib; sourceTree = "<group>"; };
+		DFDDCD3D1D08067100062190 /* StudentChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentChangeViewController.h; sourceTree = "<group>"; };
+		DFDDCD3E1D08067100062190 /* StudentChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentChangeViewController.m; sourceTree = "<group>"; };
+		DFDDCD3F1D08067100062190 /* StudentChangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentChangeViewController.xib; sourceTree = "<group>"; };
+		DFDDCD401D08067100062190 /* StudentInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentInformationViewController.h; sourceTree = "<group>"; };
+		DFDDCD411D08067100062190 /* StudentInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentInformationViewController.m; sourceTree = "<group>"; };
+		DFDDCD421D08067100062190 /* StudentInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentInformationViewController.xib; sourceTree = "<group>"; };
 		DFE23DAF1CCF5E130074836A /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarViewController.h; path = sanpeng/CarViewController.h; sourceTree = "<group>"; };
 		DFE23DB01CCF5E130074836A /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarViewController.m; path = sanpeng/CarViewController.m; sourceTree = "<group>"; };
 		DFE23DB11CCF5E130074836A /* CarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CarViewController.xib; path = sanpeng/CarViewController.xib; sourceTree = "<group>"; };
@@ -1404,6 +1440,8 @@
 		DF3ED8461C7C0AC100597967 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				DFDD8B421D0FB64700C9354D /* TableViewCell_Height */,
+				DF4177591D05599200D6F01E /* Loading_View */,
 				DF19D5BF1D01353B00A0CBD9 /* YYStarView */,
 				DF8B45EE1CFBE709002FC057 /* InternetView */,
 				DF21E4CF1CF43BDF00642691 /* XTPopView */,
@@ -1460,6 +1498,7 @@
 				DFF790E71CC5DDEF00352D57 /* ziliao.png */,
 				DF25A5291CD9AACA0035D6A2 /* qq1.png */,
 				DF25A52B1CD9AAD20035D6A2 /* qq2.png */,
+				DF4177571D05569C00D6F01E /* loading.png */,
 				DF3ED8581C7C0B7F00597967 /* 标签栏控制器素材 */,
 			);
 			path = Resource;
@@ -1526,6 +1565,7 @@
 		DF3ED86F1C7C0CB300597967 /* OneInterFaceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DFDDCD331D08067100062190 /* manage */,
 				DFA3CCB41CC9B13F00509FB5 /* sanpeng */,
 				DF3ED8E21C7C352000597967 /* Controller */,
 				DF3ED8E11C7C351100597967 /* View */,
@@ -1799,6 +1839,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		DF4177591D05599200D6F01E /* Loading_View */ = {
+			isa = PBXGroup;
+			children = (
+				DF41775D1D055A1300D6F01E /* LoadingView.h */,
+				DF41775E1D055A1300D6F01E /* LoadingView.m */,
+				DF4177601D056C7200D6F01E /* ZY_Animation.h */,
+				DF4177611D056C7200D6F01E /* ZY_Animation.m */,
+			);
+			name = Loading_View;
+			sourceTree = "<group>";
+		};
 		DF42D68C1CB35D89008DD4E0 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2019,6 +2070,37 @@
 				DFB7A17D1CB78EEB00F0BAB3 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DFDD8B421D0FB64700C9354D /* TableViewCell_Height */ = {
+			isa = PBXGroup;
+			children = (
+				DFDD8B431D0FB64700C9354D /* UITableView+HeightCache.h */,
+				DFDD8B441D0FB64700C9354D /* UITableView+HeightCache.m */,
+			);
+			path = TableViewCell_Height;
+			sourceTree = "<group>";
+		};
+		DFDDCD331D08067100062190 /* manage */ = {
+			isa = PBXGroup;
+			children = (
+				DFDDCD341D08067100062190 /* accountManager.h */,
+				DFDDCD351D08067100062190 /* accountManager.m */,
+				DFDDCD361D08067100062190 /* accountManager.xib */,
+				DFDDCD371D08067100062190 /* ChangeParentInformationViewController.h */,
+				DFDDCD381D08067100062190 /* ChangeParentInformationViewController.m */,
+				DFDDCD391D08067100062190 /* ChangeParentInformationViewController.xib */,
+				DFDDCD3A1D08067100062190 /* ChangePassWordViewController.h */,
+				DFDDCD3B1D08067100062190 /* ChangePassWordViewController.m */,
+				DFDDCD3C1D08067100062190 /* ChangePassWordViewController.xib */,
+				DFDDCD3D1D08067100062190 /* StudentChangeViewController.h */,
+				DFDDCD3E1D08067100062190 /* StudentChangeViewController.m */,
+				DFDDCD3F1D08067100062190 /* StudentChangeViewController.xib */,
+				DFDDCD401D08067100062190 /* StudentInformationViewController.h */,
+				DFDDCD411D08067100062190 /* StudentInformationViewController.m */,
+				DFDDCD421D08067100062190 /* StudentInformationViewController.xib */,
+			);
+			path = manage;
 			sourceTree = "<group>";
 		};
 		DFE23DB41CCF5FD30074836A /* Masonry */ = {
@@ -2248,6 +2330,7 @@
 				DFF790E61CC5DDE800352D57 /* miaoshu.png in Resources */,
 				DF24CD9D1CDC7A990061A68D /* NoticeViewController.xib in Resources */,
 				DF1F07D41CED60B800BF27EF /* logo_loading_3@2x.png in Resources */,
+				DFDDCD4A1D08067100062190 /* StudentChangeViewController.xib in Resources */,
 				DF2B4B901CD1A1F6005A4B1F /* tableTableViewCell.xib in Resources */,
 				DF42D6E91CB36ADA008DD4E0 /* 进入符.png in Resources */,
 				DFFDC1201CBF625800E3FBA5 /* 二维码.png in Resources */,
@@ -2256,6 +2339,7 @@
 				DF3ED8661C7C0B7F00597967 /* tab_1.png in Resources */,
 				DF3ED8811C7C0D3500597967 /* ThreeInterFaceViewController.xib in Resources */,
 				DF3ED8E71C7C36D300597967 /* OneTableViewCell.xib in Resources */,
+				DFDDCD461D08067100062190 /* ChangeParentInformationViewController.xib in Resources */,
 				DF42D6E61CB363A2008DD4E0 /* ifree_load_08@2x.png in Resources */,
 				DF202A691CC097CD0081B23E /* VideoViewController.xib in Resources */,
 				DF037A941CE322EA00A21AA4 /* BanbenViewController.xib in Resources */,
@@ -2300,6 +2384,7 @@
 				DF26884C1CC87C3500334D9D /* goods.json in Resources */,
 				DF3ED81E1C7C09E300597967 /* Assets.xcassets in Resources */,
 				DF3ED87C1C7C0D1200597967 /* TwoInterFaceViewController.xib in Resources */,
+				DF4177581D05569C00D6F01E /* loading.png in Resources */,
 				DFF7913B1CC6076000352D57 /* ErweimaViewController.xib in Resources */,
 				DFFDC1251CBF626F00E3FBA5 /* 技术帮.png in Resources */,
 				DFF791431CC60CB200352D57 /* NewsViewController.xib in Resources */,
@@ -2314,6 +2399,7 @@
 				DF3ED8651C7C0B7F00597967 /* tab_0.png in Resources */,
 				DF42D7971CB3AB91008DD4E0 /* Flashontrading@2x.png in Resources */,
 				DF24CD5C1CDC2DF00061A68D /* AddressListViewController.xib in Resources */,
+				DFDDCD481D08067100062190 /* ChangePassWordViewController.xib in Resources */,
 				DF202A7D1CC0D4940081B23E /* FMGVideoPlayView.xib in Resources */,
 				DF3ED86E1C7C0B7F00597967 /* tabbg.png in Resources */,
 				DF1F07D31CED60B800BF27EF /* logo_loading_3.png in Resources */,
@@ -2329,6 +2415,7 @@
 				DF42D7951CB3AB91008DD4E0 /* Biddingtransaction@2x.png in Resources */,
 				DFF3A7DD1CB4A7B300EC911F /* 1.jpg in Resources */,
 				DF19D5CD1D0135CF00A0CBD9 /* GradeViewController.xib in Resources */,
+				DFDDCD4C1D08067100062190 /* StudentInformationViewController.xib in Resources */,
 				DF3ED81C1C7C09E300597967 /* Main.storyboard in Resources */,
 				DF3ED8671C7C0B7F00597967 /* tab_2.png in Resources */,
 				DF436E231CBB9D270058565C /* AMap.bundle in Resources */,
@@ -2338,6 +2425,7 @@
 				DFF790E81CC5DDEF00352D57 /* ziliao.png in Resources */,
 				DFF790DF1CC5CF1100352D57 /* DecripeCollectionViewCell.xib in Resources */,
 				DFFDC1271CBF626F00E3FBA5 /* 人工关节登记.png in Resources */,
+				DFDDCD441D08067100062190 /* accountManager.xib in Resources */,
 				DF42D79A1CB3AB91008DD4E0 /* trailer@3x.png in Resources */,
 				DF42D7931CB3AB91008DD4E0 /* Bargainingdeal@2x.png in Resources */,
 				DF3ED8681C7C0B7F00597967 /* tab_3.png in Resources */,
@@ -2437,6 +2525,8 @@
 				DF2688671CC87D0F00334D9D /* MJFoundation.m in Sources */,
 				DF24CD9C1CDC7A990061A68D /* NoticeViewController.m in Sources */,
 				DF42D6B51CB35D89008DD4E0 /* UIImageView+HighlightedWebCache.m in Sources */,
+				DFDD8B451D0FB64700C9354D /* UITableView+HeightCache.m in Sources */,
+				DF41775F1D055A1300D6F01E /* LoadingView.m in Sources */,
 				DF42D6AF1CB35D89008DD4E0 /* SDWebImageDownloaderOperation.m in Sources */,
 				DF04B4201CE4713800F99F2E /* IQUIScrollView+Additions.m in Sources */,
 				DF42D6B21CB35D89008DD4E0 /* UIButton+WebCache.m in Sources */,
@@ -2444,6 +2534,7 @@
 				DF3ED8DE1C7C32FE00597967 /* IsLogin.m in Sources */,
 				DF3ED8161C7C09E300597967 /* AppDelegate.m in Sources */,
 				DF3ED8CB1C7C32FE00597967 /* AFNetworkReachabilityManager.m in Sources */,
+				DFDDCD491D08067100062190 /* StudentChangeViewController.m in Sources */,
 				DF3ED8801C7C0D3500597967 /* ThreeInterFaceViewController.m in Sources */,
 				DF2695F41CD34E7B00223B3B /* WMSettingGroup.m in Sources */,
 				DF436E211CBB9BE30058565C /* BaseMapViewController.m in Sources */,
@@ -2476,6 +2567,7 @@
 				DF3ED8C81C7C32FE00597967 /* AFHTTPRequestOperation.m in Sources */,
 				DFE23DCE1CCF5FD30074836A /* MASCompositeConstraint.m in Sources */,
 				DF3ED91D1C7C5A7600597967 /* MJRefreshFooter.m in Sources */,
+				DFDDCD451D08067100062190 /* ChangeParentInformationViewController.m in Sources */,
 				DF26884A1CC87C2300334D9D /* ShopCartView.m in Sources */,
 				DF42D6AD1CB35D89008DD4E0 /* SDWebImageDecoder.m in Sources */,
 				DFF790E31CC5DB9700352D57 /* DescripeDetailViewController.m in Sources */,
@@ -2484,9 +2576,11 @@
 				DF1F07C51CED5D9100BF27EF /* HIKLoadPercentView.m in Sources */,
 				DF42D6B61CB35D89008DD4E0 /* UIImageView+WebCache.m in Sources */,
 				DFF790DE1CC5CF1100352D57 /* DecripeCollectionViewCell.m in Sources */,
+				DF4177621D056C7200D6F01E /* ZY_Animation.m in Sources */,
 				DF2695F51CD34E7B00223B3B /* WMSettingItem.m in Sources */,
 				DFF791421CC60CB200352D57 /* NewsViewController.m in Sources */,
 				DF202A7C1CC0D4940081B23E /* FMGVideoPlayView.m in Sources */,
+				DFDDCD431D08067100062190 /* accountManager.m in Sources */,
 				DF42D6CD1CB35DE4008DD4E0 /* SDCycleScrollView.m in Sources */,
 				DF42D6B01CB35D89008DD4E0 /* SDWebImageManager.m in Sources */,
 				DF26886F1CC87D0F00334D9D /* NSString+MJExtension.m in Sources */,
@@ -2545,6 +2639,7 @@
 				DF3DA4941CC4E69700775A7E /* DescripeViewController.m in Sources */,
 				DF04B4291CE4713800F99F2E /* IQPreviousNextView.m in Sources */,
 				DF26886B1CC87D0F00334D9D /* NSObject+MJClass.m in Sources */,
+				DFDDCD471D08067100062190 /* ChangePassWordViewController.m in Sources */,
 				DF3ED8DA1C7C32FE00597967 /* commonModel.m in Sources */,
 				DF436E0F1CBB80C70058565C /* split.c in Sources */,
 				DF2B4B8F1CD1A1F6005A4B1F /* tableTableViewCell.m in Sources */,
@@ -2561,6 +2656,7 @@
 				DFE23DD61CCF5FD30074836A /* View+MASAdditions.m in Sources */,
 				DF2695F11CD34E7B00223B3B /* WMSettingViewController.m in Sources */,
 				DF3ED87B1C7C0D1200597967 /* TwoInterFaceViewController.m in Sources */,
+				DFDDCD4B1D08067100062190 /* StudentInformationViewController.m in Sources */,
 				DF3ED8531C7C0B5E00597967 /* RootNavigationController.m in Sources */,
 				DF26886E1CC87D0F00334D9D /* NSObject+MJProperty.m in Sources */,
 				DF04B4281CE4713800F99F2E /* IQBarButtonItem.m in Sources */,
