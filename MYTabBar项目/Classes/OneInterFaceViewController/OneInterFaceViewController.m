@@ -70,7 +70,7 @@
     [self createUI];
     
     
-    // Do any additional setup after loading the view from its nib.
+   
 }
 //判断屏幕方向
 - (void)viewWillLayoutSubviews
@@ -239,10 +239,10 @@
     for (NSDictionary * dic1 in array2) {
         
         [_arrayDS addObject:dic1];
-        //NSLog(@"数据====%@",_arrayDS);
+        
         
     }
-    //NSLog(@"数据%@",_arrayDS);
+    
     for (NSDictionary * dic2 in arrayAD) {
         [_arratAD addObject:dic2];
     }
@@ -271,19 +271,19 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//    if (offsetY > NAVBAR_CHANGE_POINT) {
-//        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
-//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-//    } else {
-//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-//    }
+    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > NAVBAR_CHANGE_POINT) {
+        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+    } else {
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
 }
 - (void)setNavigationBarTransformProgress:(CGFloat)progress
 {
-//    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
-//    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
+    [self.navigationController.navigationBar lt_setTranslationY:(-44 * progress)];
+    [self.navigationController.navigationBar lt_setElementsAlpha:(1-progress)];
 }
 
 -(void)erweimas:(UIButton *)button{
@@ -472,10 +472,7 @@
     CarViewController * carVC = [CarViewController new];
     [self.view.window.layer addAnimation:animation forKey:nil];
     [self presentModalViewController:carVC animated:YES];
-    //[self.navigationController pushViewController:carVC animated:YES];
-//    OtherViewController * other = [[OtherViewController alloc]init];
-//    other.titles = @"竞价交易";
-//    [self.navigationController pushViewController:other animated:YES];
+   
 }
 -(void)buttonthree{
      NSLog(@"闪拍交易");
