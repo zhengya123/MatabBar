@@ -35,6 +35,7 @@ UIActionSheetDelegate>
     NSMutableArray * paramitems;
     NSMutableArray * valueitems;
     NSMutableArray * arrays;
+    NSArray * laji;
     UILongPressGestureRecognizer* longPress;
     
 }
@@ -52,7 +53,7 @@ UIActionSheetDelegate>
     paramitems = [[NSMutableArray alloc]init];
     valueitems = [[NSMutableArray alloc]init];
     arrays = [[NSMutableArray alloc]init];
-
+    laji = @[@"1.1L手动挡",@"1.2L手动挡",@"1.3L手动挡",@"1.4L手动挡",@"1.5L手动挡",@"1.6L手动挡",@"1.7L手动挡",@"1.8L手动挡",@"1.9L手动挡",@"2.0L手动挡",@"2.1L手动挡",@"2.2L手动挡",@"2.3L手动挡"];
 
 }
 -(void)request{
@@ -61,7 +62,7 @@ UIActionSheetDelegate>
     requestData.delegate = self;
     
 
-
+   
 
 }
 -(void)gotTheData:(NSArray *)dataDic and:(commonModel *)connect{
@@ -268,7 +269,7 @@ UIActionSheetDelegate>
     static NSString *cellIde = @"cell";
     //如果从重用队列中取不到cell对象,集合视图会根据注册的信息自动创建cell
     CarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
-    cell.titless.text = @"1.6L手动挡";
+    cell.titless.text = laji[indexPath.row];
     cell.titless.font = [UIFont systemFontOfSize:14];
     cell.backgroundColor = [UIColor yellowColor];
     return cell;

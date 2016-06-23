@@ -28,6 +28,7 @@
 #import "LookViewController.h"
 #import "accountManager.h"
 #import "UITableView+HeightCache.h"//动态计算tableView的高度
+#import "tableViewController.h"
 #define NAVBAR_CHANGE_POINT 50
 @interface OneInterFaceViewController ()<
       SDCycleScrollViewDelegate,
@@ -326,6 +327,8 @@
     switch (index) {
         case 0:
         {
+            tableViewController * table = [[tableViewController alloc]init];
+            [self.navigationController pushViewController:table animated:YES];
             
             NSLog(@"Click 0 ......");
         }
@@ -545,6 +548,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [view1 dismiss];
    // [self.navigationController.navigationBar lt_reset];
 }
 -(void)viewDidDisappear:(BOOL)animated{
