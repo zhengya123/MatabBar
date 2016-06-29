@@ -27,6 +27,11 @@
 }
 - (void)setupVideoPlayView
 {
+    
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 100, SCREEN_W, SCREEN_W* 16/9)];
+    [self.view addSubview:view];
+    
+    
     FMGVideoPlayView *playView = [FMGVideoPlayView videoPlayView];
     // 视频资源路径
     [playView setUrlString:@"http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4"];
@@ -34,7 +39,7 @@
     // 播放器显示位置（竖屏时）
      playView.frame = CGRectMake(0, 0, SCREEN_W, 250);
     // 添加到当前控制器的view上
-    [self.view addSubview:playView];
+    [view addSubview:playView];
     
     // 指定一个作为播放的控制器
     playView.contrainerViewController = self;
